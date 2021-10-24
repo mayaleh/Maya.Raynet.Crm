@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+	  <Authors>Salim Mayaleh</Authors>
+	  <Title>Maya.Raynet.Crm</Title>
+	  <PackageId>Maya.Raynet.Crm</PackageId>
+	  <Description>Maya.Raynet.Crm SDK library for Raynet API.</Description>
+	  <Summary>SDK for Raynet CRM API</Summary>
+	  <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+	  <NeutralLanguage>en</NeutralLanguage>
+
+	  <Deterministic>true</Deterministic>
+	  <EmbedUntrackedSources>true</EmbedUntrackedSources>
+	  <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	  <DebugType>embedded</DebugType>
+	  <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
+	  <FileVersion>1.0.0.0</FileVersion>
+	  <AssemblyVersion>1.0.0.0</AssemblyVersion>
+	  <RepositoryUrl>https://github.com/mayaleh/Maya.Raynet.Crm</RepositoryUrl>
+	  <PackageProjectUrl>https://mayaleh.github.io/Maya.Raynet.Crm</PackageProjectUrl>
+	  <Version>1.0.0</Version>
+	  <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Domain\Company\Model\" />
+    <Folder Include="Domain\Person\Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Maya.AnyHttpClient" Version="1.0.0" />
+  </ItemGroup>
+</Project>
