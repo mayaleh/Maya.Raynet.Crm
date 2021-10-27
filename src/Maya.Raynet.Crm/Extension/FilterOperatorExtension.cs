@@ -29,7 +29,7 @@ namespace Maya.Raynet.Crm.Extension
             };
         }
 
-        public static string BuildQueryFilter()
+        public static string BuildCriteriaQuery()
         {
             /* Operátor se zapisuje do hranatých závorek za název atributu. Je tak možné zadat více filtrovacích kritérií nad stejným atributem.
              * http://ww..../?validFrom[GT]="2014-06-01"&validTill[LT]="2014-06-10" Častým scénářem je vyfiltrování všech záznamů,
