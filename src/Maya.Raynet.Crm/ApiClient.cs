@@ -5,14 +5,26 @@ namespace Maya.Raynet.Crm
 {
     public class ApiClient
     {
-        private readonly Model.RaynetApiOption raynetApiOption;
+        internal readonly Model.RaynetApiOption raynetApiOption;
+
+        private readonly BaseHttpClient baseHttpClient;
+
+        public const string Endpoint = "https://app.raynet.cz/api/v2";
 
         public ApiClient(Model.RaynetApiOption raynetApiOption)
         {
             ValidateRaynetOption(raynetApiOption);
 
             this.raynetApiOption = raynetApiOption;
+            var option = InitHttpClient(this.raynetApiOption);
+            this.baseHttpClient = new BaseHttpClient(option);
         }
+
+        internal BaseHttpClient GetHttpClient()
+            => this.baseHttpClient;
+
+        internal Model.RaynetApiOption GetApiOption() 
+            => this.raynetApiOption;
 
         private static void ValidateRaynetOption(Model.RaynetApiOption config)
         {
@@ -49,7 +61,7 @@ namespace Maya.Raynet.Crm
                     {
                         new AnyHttpClient.Model.KeyValue { Name = "X-Instance-Name", Value = raynetApiOption.InstanceName}
                     },
-                    Endpoint = "https://app.raynet.cz/api/v2/company/",
+                    Endpoint = $"{Endpoint}/company/",
                     AuthType = "Basic",
                     UserName = raynetApiOption.UserName,
                     Password = raynetApiOption.ApiKey,
