@@ -10,17 +10,19 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Get
 {
-    public class Company : GetRequest
+    public class EnumerationItems : GetRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public Company(long companyId)
+        public EnumerationItems(string entityName, string fieldName)
         {
-                Actions.Add("company");
-                Actions.Add(companyId.ToString());
+                Actions.Add("customField");
+                Actions.Add("enum");
+                Actions.Add(entityName.ToString());
+                Actions.Add(fieldName.ToString());
         }
-        public async Task<Model.DataResult<Response.Company>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.Company>(apiClient);
+        public async Task<Model.DataResult<Response.EnumerationItems>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Response.EnumerationItems>(apiClient);
 
     }
 }

@@ -10,17 +10,19 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Get
 {
-    public class Company : GetRequest
+    public class FoldersAndFiles : GetRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public Company(long companyId)
+        public FoldersAndFiles()
         {
-                Actions.Add("company");
-                Actions.Add(companyId.ToString());
+                Actions.Add("dms");
         }
-        public async Task<Model.DataResult<Response.Company>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.Company>(apiClient);
+        public async Task<Model.DataResult<Response.FoldersAndFiles>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Response.FoldersAndFiles>(apiClient);
+
+        [RaynetUriParam("path")]
+        public string Path { get; set; }
 
     }
 }

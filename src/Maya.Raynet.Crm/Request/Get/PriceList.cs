@@ -10,17 +10,17 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Get
 {
-    public class Company : GetRequest
+    public class PriceList : GetRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public Company(long companyId)
+        public PriceList(long priceListId)
         {
-                Actions.Add("company");
-                Actions.Add(companyId.ToString());
+                Actions.Add("priceList");
+                Actions.Add(priceListId.ToString());
         }
-        public async Task<Model.DataResult<Response.Company>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.Company>(apiClient);
+        public async Task<Model.DataResult<Response.PriceList>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Response.PriceList>(apiClient);
 
     }
 }

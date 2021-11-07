@@ -10,17 +10,17 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Get
 {
-    public class Company : GetRequest
+    public class DownloadFileMetaInformation : GetRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public Company(long companyId)
+        public DownloadFileMetaInformation(long fileId)
         {
-                Actions.Add("company");
-                Actions.Add(companyId.ToString());
+                Actions.Add("fileHeader");
+                Actions.Add(fileId.ToString());
         }
-        public async Task<Model.DataResult<Response.Company>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.Company>(apiClient);
+        public async Task<Model.DataResult<Response.DownloadFileMetaInformation>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Response.DownloadFileMetaInformation>(apiClient);
 
     }
 }

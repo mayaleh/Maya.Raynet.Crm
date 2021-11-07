@@ -10,17 +10,20 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Get
 {
-    public class Company : GetRequest
+    public class ExportOfferToPDF : GetRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public Company(long companyId)
+        public ExportOfferToPDF(long offerId)
         {
-                Actions.Add("company");
-                Actions.Add(companyId.ToString());
+                Actions.Add("offer");
+                Actions.Add(offerId.ToString());
         }
-        public async Task<Model.DataResult<Response.Company>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.Company>(apiClient);
+        public async Task<Model.DataResult<Response.ExportOfferToPDF>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Response.ExportOfferToPDF>(apiClient);
+
+        [RaynetUriParam("locale")]
+        public string Locale { get; set; }
 
     }
 }
