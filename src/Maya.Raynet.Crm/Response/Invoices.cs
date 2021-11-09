@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -10,153 +10,153 @@ namespace Maya.Raynet.Crm.Response
 {
     public class Invoices
     {
-        [JsonProperty("id")]
+        [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
-        [JsonProperty("code")]
+        [JsonProperty("code", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Code { get; set; }
 
-        [JsonProperty("title")]
+        [JsonProperty("title", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Title { get; set; }
 
         /* "company": {
   "id": 1,
   "name": "RAYNET s.r.o."
 } */
-        [JsonProperty("company")]
+        [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Company { get; set; }
 
-        [JsonProperty("invoiceType")]
+        [JsonProperty("invoiceType", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string InvoiceType { get; set; }
 
-        [JsonProperty("issueDate")]
+        [JsonProperty("issueDate", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string IssueDate { get; set; }
 
-        [JsonProperty("dueDate")]
+        [JsonProperty("dueDate", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string DueDate { get; set; }
 
-        [JsonProperty("taxableSupplyDate")]
+        [JsonProperty("taxableSupplyDate", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string TaxableSupplyDate { get; set; }
 
-        [JsonProperty("invoiceState")]
+        [JsonProperty("invoiceState", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string InvoiceState { get; set; }
 
-        [JsonProperty("baseAmount")]
+        [JsonProperty("baseAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int BaseAmount { get; set; }
 
-        [JsonProperty("totalAmount")]
+        [JsonProperty("totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public float TotalAmount { get; set; }
 
-        [JsonProperty("unpaidAmount")]
+        [JsonProperty("unpaidAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public float UnpaidAmount { get; set; }
 
-        [JsonProperty("currencyExchangeRate")]
+        [JsonProperty("currencyExchangeRate", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int CurrencyExchangeRate { get; set; }
 
         /* "currency": {
   "id": 15,
   "value": "Kč"
 } */
-        [JsonProperty("currency")]
+        [JsonProperty("currency", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Currency { get; set; }
 
-        [JsonProperty("variableSymbol")]
+        [JsonProperty("variableSymbol", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string VariableSymbol { get; set; }
 
-        [JsonProperty("constantSymbol")]
+        [JsonProperty("constantSymbol", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string ConstantSymbol { get; set; }
 
         /* "specificSymbol": null */
-        [JsonProperty("specificSymbol")]
+        [JsonProperty("specificSymbol", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object SpecificSymbol { get; set; }
 
         /* "category": null */
-        [JsonProperty("category")]
+        [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Category { get; set; }
 
         /* "owner": {
   "id": 2,
   "fullName": "M P"
 } */
-        [JsonProperty("owner")]
+        [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Owner { get; set; }
 
-        [JsonProperty("note")]
+        [JsonProperty("note", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Note { get; set; }
 
         /* "privateNote": null */
-        [JsonProperty("privateNote")]
+        [JsonProperty("privateNote", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object PrivateNote { get; set; }
 
         /* "deliveryNote": null */
-        [JsonProperty("deliveryNote")]
+        [JsonProperty("deliveryNote", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object DeliveryNote { get; set; }
 
         /* "creditNoteReason": null */
-        [JsonProperty("creditNoteReason")]
+        [JsonProperty("creditNoteReason", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object CreditNoteReason { get; set; }
 
         /* "vendorName": null */
-        [JsonProperty("vendorName")]
+        [JsonProperty("vendorName", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object VendorName { get; set; }
 
         /* "vendorBankAccountNumber": null */
-        [JsonProperty("vendorBankAccountNumber")]
+        [JsonProperty("vendorBankAccountNumber", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object VendorBankAccountNumber { get; set; }
 
-        [JsonProperty("badDebt")]
+        [JsonProperty("badDebt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool BadDebt { get; set; }
 
         /* "businessCase": null */
-        [JsonProperty("businessCase")]
+        [JsonProperty("businessCase", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object BusinessCase { get; set; }
 
-        [JsonProperty("paymentType")]
+        [JsonProperty("paymentType", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string PaymentType { get; set; }
 
-        [JsonProperty("decimalPrecision")]
+        [JsonProperty("decimalPrecision", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int DecimalPrecision { get; set; }
 
-        [JsonProperty("taxPayer")]
+        [JsonProperty("taxPayer", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string TaxPayer { get; set; }
 
-        [JsonProperty("rounding")]
+        [JsonProperty("rounding", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool Rounding { get; set; }
 
-        [JsonProperty("roundingType")]
+        [JsonProperty("roundingType", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RoundingType { get; set; }
 
-        [JsonProperty("reverseTax")]
+        [JsonProperty("reverseTax", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool ReverseTax { get; set; }
 
-        [JsonProperty("rowInfo.createdAt")]
-        public string RowInfo.createdAt { get; set; }
+        [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdAt { get; set; }
 
-        [JsonProperty("rowInfo.createdBy")]
-        public string RowInfo.createdBy { get; set; }
+        [JsonProperty("rowInfo.createdBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdBy { get; set; }
 
-        [JsonProperty("rowInfo.updatedAt")]
-        public string RowInfo.updatedAt { get; set; }
+        [JsonProperty("rowInfo.updatedAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedAt { get; set; }
 
-        [JsonProperty("rowInfo.updatedBy")]
-        public string RowInfo.updatedBy { get; set; }
+        [JsonProperty("rowInfo.updatedBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedBy { get; set; }
 
         /* "rowInfo.rowAccess": null */
-        [JsonProperty("rowInfo.rowAccess")]
-        public object RowInfo.rowAccess { get; set; }
+        [JsonProperty("rowInfo.rowAccess", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowAccess { get; set; }
 
         /* "rowInfo.rowState": null */
-        [JsonProperty("rowInfo.rowState")]
-        public object RowInfo.rowState { get; set; }
+        [JsonProperty("rowInfo.rowState", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowState { get; set; }
 
         /* "securityLevel": {
   "id": 1,
   "name": "Sdílená"
 } */
-        [JsonProperty("securityLevel")]
+        [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object SecurityLevel { get; set; }
 
-        [JsonProperty("tags")]
+        [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<> Tags { get; set; }
 
     }

@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -10,19 +10,19 @@ namespace Maya.Raynet.Crm.Response
 {
     public class People
     {
-        [JsonProperty("id")]
+        [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
-        [JsonProperty("titleBefore")]
+        [JsonProperty("titleBefore", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string TitleBefore { get; set; }
 
-        [JsonProperty("firstName")]
+        [JsonProperty("firstName", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string FirstName { get; set; }
 
-        [JsonProperty("lastName")]
+        [JsonProperty("lastName", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string LastName { get; set; }
 
-        [JsonProperty("titleAfter")]
+        [JsonProperty("titleAfter", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string TitleAfter { get; set; }
 
         /* "primaryRelationship": {
@@ -33,14 +33,14 @@ namespace Maya.Raynet.Crm.Response
     "name": "RAYNET s.r.o."
   }
 } */
-        [JsonProperty("primaryRelationship")]
+        [JsonProperty("primaryRelationship", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object PrimaryRelationship { get; set; }
 
         /* "owner": {
   "id": 2,
   "fullName": "test test"
 } */
-        [JsonProperty("owner")]
+        [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Owner { get; set; }
 
         /* "contactInfo": {
@@ -53,7 +53,7 @@ namespace Maya.Raynet.Crm.Response
   "www": null,
   "otherContact": null
 } */
-        [JsonProperty("contactInfo")]
+        [JsonProperty("contactInfo", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object ContactInfo { get; set; }
 
         /* "privateAddress": {
@@ -64,58 +64,58 @@ namespace Maya.Raynet.Crm.Response
   "street": "Ocelářská 177",
   "zipCode": "703 00"
 } */
-        [JsonProperty("privateAddress")]
+        [JsonProperty("privateAddress", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object PrivateAddress { get; set; }
 
         /* "category": {
   "id": 96,
   "value": "kat 1"
 } */
-        [JsonProperty("category")]
+        [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Category { get; set; }
 
         /* "personClassification1": {
   "id": 97,
   "value": "kla 1"
 } */
-        [JsonProperty("personClassification1")]
+        [JsonProperty("personClassification1", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object PersonClassification1 { get; set; }
 
         /* "personClassification2": {
   "id": 98,
   "value": "kla 2"
 } */
-        [JsonProperty("personClassification2")]
+        [JsonProperty("personClassification2", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object PersonClassification2 { get; set; }
 
         /* "personClassification3": {
   "id": 99,
   "value": "kla 3"
 } */
-        [JsonProperty("personClassification3")]
+        [JsonProperty("personClassification3", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object PersonClassification3 { get; set; }
 
-        [JsonProperty("salutation")]
+        [JsonProperty("salutation", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Salutation { get; set; }
 
-        [JsonProperty("birthday")]
+        [JsonProperty("birthday", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Birthday { get; set; }
 
         /* "language": {
   "id": 70,
   "value": "Český"
 } */
-        [JsonProperty("language")]
+        [JsonProperty("language", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Language { get; set; }
 
         /* "maritalStatus": {
   "id": 78,
   "value": "Svobodný/Svobodná"
 } */
-        [JsonProperty("maritalStatus")]
+        [JsonProperty("maritalStatus", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object MaritalStatus { get; set; }
 
-        [JsonProperty("gender")]
+        [JsonProperty("gender", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Gender { get; set; }
 
         /* "companyAddress": {
@@ -130,53 +130,53 @@ namespace Maya.Raynet.Crm.Response
   },
   "territory": null
 } */
-        [JsonProperty("companyAddress")]
+        [JsonProperty("companyAddress", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object CompanyAddress { get; set; }
 
         /* "customFields": null */
-        [JsonProperty("customFields")]
+        [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object CustomFields { get; set; }
 
-        [JsonProperty("rowInfo.createdAt")]
-        public string RowInfo.createdAt { get; set; }
+        [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdAt { get; set; }
 
-        [JsonProperty("rowInfo.createdBy")]
-        public string RowInfo.createdBy { get; set; }
+        [JsonProperty("rowInfo.createdBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdBy { get; set; }
 
-        [JsonProperty("rowInfo.updatedAt")]
-        public string RowInfo.updatedAt { get; set; }
+        [JsonProperty("rowInfo.updatedAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedAt { get; set; }
 
-        [JsonProperty("rowInfo.updatedBy")]
-        public string RowInfo.updatedBy { get; set; }
+        [JsonProperty("rowInfo.updatedBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedBy { get; set; }
 
         /* "rowInfo.rowAccess": null */
-        [JsonProperty("rowInfo.rowAccess")]
-        public object RowInfo.rowAccess { get; set; }
+        [JsonProperty("rowInfo.rowAccess", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowAccess { get; set; }
 
         /* "rowInfo.rowState": null */
-        [JsonProperty("rowInfo.rowState")]
-        public object RowInfo.rowState { get; set; }
+        [JsonProperty("rowInfo.rowState", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowState { get; set; }
 
         /* "securityLevel": {
   "id": 1,
   "name": "Sdílená"
 } */
-        [JsonProperty("securityLevel")]
+        [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object SecurityLevel { get; set; }
 
-        [JsonProperty("notice")]
+        [JsonProperty("notice", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Notice { get; set; }
 
-        [JsonProperty("activeUserAccount")]
+        [JsonProperty("activeUserAccount", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool ActiveUserAccount { get; set; }
 
-        [JsonProperty("keyman")]
+        [JsonProperty("keyman", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool Keyman { get; set; }
 
-        [JsonProperty("tags")]
+        [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<> Tags { get; set; }
 
-        [JsonProperty("_version")]
+        [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }
 
         /* "inlineGdpr": [
@@ -189,7 +189,7 @@ namespace Maya.Raynet.Crm.Response
     "gdprTemplate": 1
   }
 ] */
-        [JsonProperty("inlineGdpr")]
+        [JsonProperty("inlineGdpr", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<object> InlineGdpr { get; set; }
 
     }

@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -10,7 +10,7 @@ namespace Maya.Raynet.Crm.Response
 {
     public class Notifications
     {
-        [JsonProperty("id")]
+        [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
         /* "context": [
@@ -21,10 +21,10 @@ namespace Maya.Raynet.Crm.Response
     "value": "Test NX s.r.o."
   }
 ] */
-        [JsonProperty("context")]
+        [JsonProperty("context", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<object> Context { get; set; }
 
-        [JsonProperty("date")]
+        [JsonProperty("date", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Date { get; set; }
 
         /* "message": {
@@ -36,30 +36,30 @@ namespace Maya.Raynet.Crm.Response
     }
   ]
 } */
-        [JsonProperty("message")]
+        [JsonProperty("message", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Message { get; set; }
 
         /* "sender": {
   "id": 2,
   "fullName": "Petr Svetr"
 } */
-        [JsonProperty("sender")]
+        [JsonProperty("sender", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Sender { get; set; }
 
         /* "recipient": {
   "id": 9,
   "fullName": "Jan Novák"
 } */
-        [JsonProperty("recipient")]
+        [JsonProperty("recipient", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Recipient { get; set; }
 
-        [JsonProperty("type")]
+        [JsonProperty("type", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Type { get; set; }
 
-        [JsonProperty("read")]
+        [JsonProperty("read", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool Read { get; set; }
 
-        [JsonProperty("flag")]
+        [JsonProperty("flag", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool Flag { get; set; }
 
     }

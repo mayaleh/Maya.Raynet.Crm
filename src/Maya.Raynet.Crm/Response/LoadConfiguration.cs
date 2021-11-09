@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -26,7 +26,7 @@ namespace Maya.Raynet.Crm.Response
     "name": "Spoluprace_2aa2c"
   }
 ] */
-        [JsonProperty("Company")]
+        [JsonProperty("Company", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<object> Company { get; set; }
 
         /* "Person": [
@@ -38,7 +38,7 @@ namespace Maya.Raynet.Crm.Response
     "name": "VIP_b91d1"
   }
 ] */
-        [JsonProperty("Person")]
+        [JsonProperty("Person", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<object> Person { get; set; }
 
         /* "BusinessCase": [
@@ -55,16 +55,16 @@ namespace Maya.Raynet.Crm.Response
     "name": "Priorita_O_a5fab"
   }
 ] */
-        [JsonProperty("BusinessCase")]
+        [JsonProperty("BusinessCase", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<object> BusinessCase { get; set; }
 
-        [JsonProperty("Offer")]
+        [JsonProperty("Offer", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<> Offer { get; set; }
 
-        [JsonProperty("SalesOrder")]
+        [JsonProperty("SalesOrder", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<> SalesOrder { get; set; }
 
-        [JsonProperty("Product")]
+        [JsonProperty("Product", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<> Product { get; set; }
 
     }

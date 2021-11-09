@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -10,26 +10,26 @@ namespace Maya.Raynet.Crm.Response
 {
     public class Product
     {
-        [JsonProperty("id")]
+        [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
-        [JsonProperty("code")]
+        [JsonProperty("code", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Code { get; set; }
 
-        [JsonProperty("name")]
+        [JsonProperty("name", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Name { get; set; }
 
-        [JsonProperty("description")]
+        [JsonProperty("description", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Description { get; set; }
 
-        [JsonProperty("taxRate")]
+        [JsonProperty("taxRate", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int TaxRate { get; set; }
 
         /* "category": {
   "id": 791,
   "value": "Náklady"
 } */
-        [JsonProperty("category")]
+        [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Category { get; set; }
 
         /* "primaryPriceListItem": {
@@ -40,66 +40,66 @@ namespace Maya.Raynet.Crm.Response
     "currency": "CZK"
   }
 } */
-        [JsonProperty("primaryPriceListItem")]
+        [JsonProperty("primaryPriceListItem", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object PrimaryPriceListItem { get; set; }
 
         /* "productLine": {
   "id": 206,
   "value": "fabie I"
 } */
-        [JsonProperty("productLine")]
+        [JsonProperty("productLine", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object ProductLine { get; set; }
 
-        [JsonProperty("unit")]
+        [JsonProperty("unit", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Unit { get; set; }
 
-        [JsonProperty("cost")]
+        [JsonProperty("cost", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Cost { get; set; }
 
-        [JsonProperty("validFrom")]
+        [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string ValidFrom { get; set; }
 
         /* "validTill": null */
-        [JsonProperty("validTill")]
+        [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object ValidTill { get; set; }
 
-        [JsonProperty("rowInfo.createdAt")]
-        public string RowInfo.createdAt { get; set; }
+        [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdAt { get; set; }
 
-        [JsonProperty("rowInfo.createdBy")]
-        public string RowInfo.createdBy { get; set; }
+        [JsonProperty("rowInfo.createdBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdBy { get; set; }
 
-        [JsonProperty("rowInfo.updatedAt")]
-        public string RowInfo.updatedAt { get; set; }
+        [JsonProperty("rowInfo.updatedAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedAt { get; set; }
 
-        [JsonProperty("rowInfo.updatedBy")]
-        public string RowInfo.updatedBy { get; set; }
+        [JsonProperty("rowInfo.updatedBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedBy { get; set; }
 
         /* "rowInfo.rowAccess": null */
-        [JsonProperty("rowInfo.rowAccess")]
-        public object RowInfo.rowAccess { get; set; }
+        [JsonProperty("rowInfo.rowAccess", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowAccess { get; set; }
 
         /* "rowInfo.rowState": null */
-        [JsonProperty("rowInfo.rowState")]
-        public object RowInfo.rowState { get; set; }
+        [JsonProperty("rowInfo.rowState", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowState { get; set; }
 
-        [JsonProperty("tags")]
+        [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<string> Tags { get; set; }
 
         /* "photo": null */
-        [JsonProperty("photo")]
+        [JsonProperty("photo", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Photo { get; set; }
 
-        [JsonProperty("_version")]
+        [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }
 
-        [JsonProperty("attachments")]
+        [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<> Attachments { get; set; }
 
         /* "customFields": {
   "Vaha_(g)_80307": 10
 } */
-        [JsonProperty("customFields")]
+        [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object CustomFields { get; set; }
 
     }

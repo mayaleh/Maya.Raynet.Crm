@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -10,70 +10,70 @@ namespace Maya.Raynet.Crm.Response
 {
     public class User
     {
-        [JsonProperty("id")]
+        [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
-        [JsonProperty("_version")]
+        [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }
 
         /* "person": {
   "id": 2,
   "fullName": "Milan Buldog"
 } */
-        [JsonProperty("person")]
+        [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Person { get; set; }
 
-        [JsonProperty("username")]
+        [JsonProperty("username", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Username { get; set; }
 
-        [JsonProperty("email2")]
+        [JsonProperty("email2", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Email2 { get; set; }
 
-        [JsonProperty("userRole")]
+        [JsonProperty("userRole", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string UserRole { get; set; }
 
         /* "personRecordFilter": null */
-        [JsonProperty("personRecordFilter")]
+        [JsonProperty("personRecordFilter", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object PersonRecordFilter { get; set; }
 
-        [JsonProperty("listExportPermission")]
+        [JsonProperty("listExportPermission", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool ListExportPermission { get; set; }
 
-        [JsonProperty("detailReportPermission")]
+        [JsonProperty("detailReportPermission", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool DetailReportPermission { get; set; }
 
-        [JsonProperty("googleContactsPermission")]
+        [JsonProperty("googleContactsPermission", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool GoogleContactsPermission { get; set; }
 
-        [JsonProperty("bulkOperationPermission")]
+        [JsonProperty("bulkOperationPermission", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool BulkOperationPermission { get; set; }
 
-        [JsonProperty("codelistEditPermission")]
+        [JsonProperty("codelistEditPermission", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool CodelistEditPermission { get; set; }
 
-        [JsonProperty("editOnlyOwnedRecordsPermission")]
+        [JsonProperty("editOnlyOwnedRecordsPermission", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool EditOnlyOwnedRecordsPermission { get; set; }
 
-        [JsonProperty("onlyLockRecordsPermission")]
+        [JsonProperty("onlyLockRecordsPermission", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool OnlyLockRecordsPermission { get; set; }
 
         /* "deletePermissionConfig": null */
-        [JsonProperty("deletePermissionConfig")]
+        [JsonProperty("deletePermissionConfig", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object DeletePermissionConfig { get; set; }
 
-        [JsonProperty("twoFactorEnabled")]
+        [JsonProperty("twoFactorEnabled", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool TwoFactorEnabled { get; set; }
 
-        [JsonProperty("timezone")]
+        [JsonProperty("timezone", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Timezone { get; set; }
 
-        [JsonProperty("dateFormat")]
+        [JsonProperty("dateFormat", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string DateFormat { get; set; }
 
-        [JsonProperty("timeFormat")]
+        [JsonProperty("timeFormat", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string TimeFormat { get; set; }
 
-        [JsonProperty("startWeekDay")]
+        [JsonProperty("startWeekDay", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string StartWeekDay { get; set; }
 
         /* "securityLevels": [
@@ -86,20 +86,20 @@ namespace Maya.Raynet.Crm.Response
     "name": "Sdílená"
   }
 ] */
-        [JsonProperty("securityLevels")]
+        [JsonProperty("securityLevels", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<object> SecurityLevels { get; set; }
 
-        [JsonProperty("rowInfo.createdAt")]
-        public string RowInfo.createdAt { get; set; }
+        [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdAt { get; set; }
 
-        [JsonProperty("rowInfo.createdBy")]
-        public string RowInfo.createdBy { get; set; }
+        [JsonProperty("rowInfo.createdBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdBy { get; set; }
 
-        [JsonProperty("rowInfo.updatedAt")]
-        public string RowInfo.updatedAt { get; set; }
+        [JsonProperty("rowInfo.updatedAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedAt { get; set; }
 
-        [JsonProperty("rowInfo.updatedBy")]
-        public string RowInfo.updatedBy { get; set; }
+        [JsonProperty("rowInfo.updatedBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedBy { get; set; }
 
     }
 }

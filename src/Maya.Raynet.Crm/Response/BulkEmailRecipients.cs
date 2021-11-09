@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -10,46 +10,46 @@ namespace Maya.Raynet.Crm.Response
 {
     public class BulkEmailRecipients
     {
-        [JsonProperty("id")]
+        [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
         /* "massEmail": {
   "id": 9,
   "title": "Druhá emailová kampaň"
 } */
-        [JsonProperty("massEmail")]
+        [JsonProperty("massEmail", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object MassEmail { get; set; }
 
         /* "company": {
   "id": 3,
   "name": "Drozd a.s."
 } */
-        [JsonProperty("company")]
+        [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Company { get; set; }
 
         /* "lead": null */
-        [JsonProperty("lead")]
+        [JsonProperty("lead", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Lead { get; set; }
 
         /* "person": null */
-        [JsonProperty("person")]
+        [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Person { get; set; }
 
-        [JsonProperty("email")]
+        [JsonProperty("email", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Email { get; set; }
 
-        [JsonProperty("opened")]
+        [JsonProperty("opened", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Opened { get; set; }
 
         /* "clicked": null */
-        [JsonProperty("clicked")]
+        [JsonProperty("clicked", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Clicked { get; set; }
 
         /* "unsubscribed": null */
-        [JsonProperty("unsubscribed")]
+        [JsonProperty("unsubscribed", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Unsubscribed { get; set; }
 
-        [JsonProperty("status")]
+        [JsonProperty("status", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Status { get; set; }
 
     }

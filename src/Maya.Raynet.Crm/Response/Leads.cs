@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -10,16 +10,16 @@ namespace Maya.Raynet.Crm.Response
 {
     public class Leads
     {
-        [JsonProperty("id")]
+        [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
-        [JsonProperty("code")]
+        [JsonProperty("code", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Code { get; set; }
 
-        [JsonProperty("leadDate")]
+        [JsonProperty("leadDate", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string LeadDate { get; set; }
 
-        [JsonProperty("topic")]
+        [JsonProperty("topic", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /* "leadPhase": {
@@ -29,31 +29,31 @@ namespace Maya.Raynet.Crm.Response
   "status": "B_ACTIVE",
   "locked": false
 } */
-        [JsonProperty("leadPhase")]
+        [JsonProperty("leadPhase", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object LeadPhase { get; set; }
 
         /* "owner": {
   "id": 63,
   "fullName": "Pan Tau"
 } */
-        [JsonProperty("owner")]
+        [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Owner { get; set; }
 
-        [JsonProperty("priority")]
+        [JsonProperty("priority", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Priority { get; set; }
 
         /* "company": {
   "id": 1093,
   "name": "Králíček"
 } */
-        [JsonProperty("company")]
+        [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Company { get; set; }
 
         /* "person": {
   "id": 16255,
   "fullName": "Pan Ušák"
 } */
-        [JsonProperty("person")]
+        [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Person { get; set; }
 
         /* "businessCase": {
@@ -61,31 +61,31 @@ namespace Maya.Raynet.Crm.Response
   "code": "OP-21-809",
   "name": "Zájemce o zeleninu"
 } */
-        [JsonProperty("businessCase")]
+        [JsonProperty("businessCase", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object BusinessCase { get; set; }
 
-        [JsonProperty("companyName")]
+        [JsonProperty("companyName", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string CompanyName { get; set; }
 
-        [JsonProperty("lastName")]
+        [JsonProperty("lastName", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string LastName { get; set; }
 
         /* "convertDate": null */
-        [JsonProperty("convertDate")]
+        [JsonProperty("convertDate", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object ConvertDate { get; set; }
 
         /* "contactSource": {
   "id": 815,
   "value": "web A - našli nás na internetu"
 } */
-        [JsonProperty("contactSource")]
+        [JsonProperty("contactSource", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object ContactSource { get; set; }
 
         /* "category": null */
-        [JsonProperty("category")]
+        [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Category { get; set; }
 
-        [JsonProperty("firstName")]
+        [JsonProperty("firstName", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string FirstName { get; set; }
 
         /* "contactInfo": {
@@ -99,7 +99,7 @@ namespace Maya.Raynet.Crm.Response
   "fax": null,
   "otherContact": null
 } */
-        [JsonProperty("contactInfo")]
+        [JsonProperty("contactInfo", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object ContactInfo { get; set; }
 
         /* "address": {
@@ -112,7 +112,7 @@ namespace Maya.Raynet.Crm.Response
   "lat": null,
   "lng": null
 } */
-        [JsonProperty("address")]
+        [JsonProperty("address", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Address { get; set; }
 
         /* "socialNetworkContact": {
@@ -125,53 +125,53 @@ namespace Maya.Raynet.Crm.Response
   "skype": null,
   "youtube": null
 } */
-        [JsonProperty("socialNetworkContact")]
+        [JsonProperty("socialNetworkContact", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object SocialNetworkContact { get; set; }
 
         /* "customFields": null */
-        [JsonProperty("customFields")]
+        [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object CustomFields { get; set; }
 
-        [JsonProperty("rowInfo.createdAt")]
-        public string RowInfo.createdAt { get; set; }
+        [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdAt { get; set; }
 
-        [JsonProperty("rowInfo.createdBy")]
-        public string RowInfo.createdBy { get; set; }
+        [JsonProperty("rowInfo.createdBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdBy { get; set; }
 
         /* "rowInfo.updatedAt": null */
-        [JsonProperty("rowInfo.updatedAt")]
-        public object RowInfo.updatedAt { get; set; }
+        [JsonProperty("rowInfo.updatedAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_updatedAt { get; set; }
 
         /* "rowInfo.updatedBy": null */
-        [JsonProperty("rowInfo.updatedBy")]
-        public object RowInfo.updatedBy { get; set; }
+        [JsonProperty("rowInfo.updatedBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_updatedBy { get; set; }
 
         /* "rowInfo.rowAccess": null */
-        [JsonProperty("rowInfo.rowAccess")]
-        public object RowInfo.rowAccess { get; set; }
+        [JsonProperty("rowInfo.rowAccess", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowAccess { get; set; }
 
         /* "rowInfo.rowState": null */
-        [JsonProperty("rowInfo.rowState")]
-        public object RowInfo.rowState { get; set; }
+        [JsonProperty("rowInfo.rowState", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowState { get; set; }
 
         /* "securityLevel": {
   "id": 1,
   "name": "Sdílená"
 } */
-        [JsonProperty("securityLevel")]
+        [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object SecurityLevel { get; set; }
 
-        [JsonProperty("_version")]
+        [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }
 
-        [JsonProperty("tags")]
+        [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<> Tags { get; set; }
 
-        [JsonProperty("notice")]
+        [JsonProperty("notice", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Notice { get; set; }
 
         /* "regNumber": null */
-        [JsonProperty("regNumber")]
+        [JsonProperty("regNumber", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object RegNumber { get; set; }
 
         /* "inlineGdpr": [
@@ -184,7 +184,7 @@ namespace Maya.Raynet.Crm.Response
     "gdprTemplate": 1
   }
 ] */
-        [JsonProperty("inlineGdpr")]
+        [JsonProperty("inlineGdpr", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<object> InlineGdpr { get; set; }
 
     }

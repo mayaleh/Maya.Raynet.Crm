@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -10,134 +10,134 @@ namespace Maya.Raynet.Crm.Response
 {
     public class Project
     {
-        [JsonProperty("id")]
+        [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
-        [JsonProperty("code")]
+        [JsonProperty("code", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Code { get; set; }
 
-        [JsonProperty("name")]
+        [JsonProperty("name", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Name { get; set; }
 
         /* "company": {
   "id": 4,
   "name": "Extra company a.s."
 } */
-        [JsonProperty("company")]
+        [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Company { get; set; }
 
         /* "person": {
   "id": 9,
   "fullName": "Ing. Milan Buldog"
 } */
-        [JsonProperty("person")]
+        [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Person { get; set; }
 
         /* "owner": {
   "id": 2,
   "fullName": "Petr Svetr"
 } */
-        [JsonProperty("owner")]
+        [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Owner { get; set; }
 
         /* "category": {
   "id": 128,
   "value": "Výroba"
 } */
-        [JsonProperty("category")]
+        [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Category { get; set; }
 
-        [JsonProperty("totalAmount")]
+        [JsonProperty("totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int TotalAmount { get; set; }
 
-        [JsonProperty("tradingProfit")]
+        [JsonProperty("tradingProfit", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int TradingProfit { get; set; }
 
-        [JsonProperty("estimatedValue")]
+        [JsonProperty("estimatedValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int EstimatedValue { get; set; }
 
-        [JsonProperty("avgValue.totalAmount")]
-        public int AvgValue.totalAmount { get; set; }
+        [JsonProperty("avgValue.totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int AvgValue_totalAmount { get; set; }
 
-        [JsonProperty("avgValue.tradingProfit")]
-        public int AvgValue.tradingProfit { get; set; }
+        [JsonProperty("avgValue.tradingProfit", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int AvgValue_tradingProfit { get; set; }
 
-        [JsonProperty("avgValue.estimatedValue")]
-        public int AvgValue.estimatedValue { get; set; }
+        [JsonProperty("avgValue.estimatedValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int AvgValue_estimatedValue { get; set; }
 
-        [JsonProperty("minValue.totalAmount")]
-        public int MinValue.totalAmount { get; set; }
+        [JsonProperty("minValue.totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int MinValue_totalAmount { get; set; }
 
-        [JsonProperty("minValue.tradingProfit")]
-        public int MinValue.tradingProfit { get; set; }
+        [JsonProperty("minValue.tradingProfit", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int MinValue_tradingProfit { get; set; }
 
-        [JsonProperty("minValue.estimatedValue")]
-        public int MinValue.estimatedValue { get; set; }
+        [JsonProperty("minValue.estimatedValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int MinValue_estimatedValue { get; set; }
 
-        [JsonProperty("maxValue.totalAmount")]
-        public int MaxValue.totalAmount { get; set; }
+        [JsonProperty("maxValue.totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int MaxValue_totalAmount { get; set; }
 
-        [JsonProperty("maxValue.tradingProfit")]
-        public int MaxValue.tradingProfit { get; set; }
+        [JsonProperty("maxValue.tradingProfit", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int MaxValue_tradingProfit { get; set; }
 
-        [JsonProperty("maxValue.estimatedValue")]
-        public int MaxValue.estimatedValue { get; set; }
+        [JsonProperty("maxValue.estimatedValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int MaxValue_estimatedValue { get; set; }
 
-        [JsonProperty("status")]
+        [JsonProperty("status", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Status { get; set; }
 
         /* "projectStatus": {
   "id": 59,
   "value": "Aktivní (v běhu)"
 } */
-        [JsonProperty("projectStatus")]
+        [JsonProperty("projectStatus", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object ProjectStatus { get; set; }
 
-        [JsonProperty("validFrom")]
+        [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string ValidFrom { get; set; }
 
         /* "validTill": null */
-        [JsonProperty("validTill")]
+        [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object ValidTill { get; set; }
 
-        [JsonProperty("scheduledEnd")]
+        [JsonProperty("scheduledEnd", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string ScheduledEnd { get; set; }
 
         /* "customFields": null */
-        [JsonProperty("customFields")]
+        [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object CustomFields { get; set; }
 
-        [JsonProperty("rowInfo.createdAt")]
-        public string RowInfo.createdAt { get; set; }
+        [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdAt { get; set; }
 
-        [JsonProperty("rowInfo.createdBy")]
-        public string RowInfo.createdBy { get; set; }
+        [JsonProperty("rowInfo.createdBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdBy { get; set; }
 
-        [JsonProperty("rowInfo.updatedAt")]
-        public string RowInfo.updatedAt { get; set; }
+        [JsonProperty("rowInfo.updatedAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedAt { get; set; }
 
-        [JsonProperty("rowInfo.updatedBy")]
-        public string RowInfo.updatedBy { get; set; }
+        [JsonProperty("rowInfo.updatedBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedBy { get; set; }
 
         /* "rowInfo.rowAccess": null */
-        [JsonProperty("rowInfo.rowAccess")]
-        public object RowInfo.rowAccess { get; set; }
+        [JsonProperty("rowInfo.rowAccess", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowAccess { get; set; }
 
         /* "rowInfo.rowState": null */
-        [JsonProperty("rowInfo.rowState")]
-        public object RowInfo.rowState { get; set; }
+        [JsonProperty("rowInfo.rowState", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowState { get; set; }
 
         /* "securityLevel": {
   "id": 1,
   "name": "Sdílená"
 } */
-        [JsonProperty("securityLevel")]
+        [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object SecurityLevel { get; set; }
 
-        [JsonProperty("description")]
+        [JsonProperty("description", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Description { get; set; }
 
-        [JsonProperty("tags")]
+        [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<> Tags { get; set; }
 
         /* "attachments": [
@@ -154,7 +154,7 @@ namespace Maya.Raynet.Crm.Response
     "folder": null
   }
 ] */
-        [JsonProperty("attachments")]
+        [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<object> Attachments { get; set; }
 
         /* "businessCases": [
@@ -188,10 +188,10 @@ namespace Maya.Raynet.Crm.Response
     }
   }
 ] */
-        [JsonProperty("businessCases")]
+        [JsonProperty("businessCases", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<object> BusinessCases { get; set; }
 
-        [JsonProperty("_version")]
+        [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }
 
     }

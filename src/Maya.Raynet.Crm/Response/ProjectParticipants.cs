@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -10,56 +10,56 @@ namespace Maya.Raynet.Crm.Response
 {
     public class ProjectParticipants
     {
-        [JsonProperty("id")]
+        [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
         /* "company": {
   "id": 2,
   "name": "a"
 } */
-        [JsonProperty("company")]
+        [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Company { get; set; }
 
         /* "person": {
   "id": 5,
   "fullName": "Magdaléna Pišlová"
 } */
-        [JsonProperty("person")]
+        [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Person { get; set; }
 
         /* "project": {
   "id": 4,
   "code": "PRO-17-001"
 } */
-        [JsonProperty("project")]
+        [JsonProperty("project", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Project { get; set; }
 
-        [JsonProperty("note")]
+        [JsonProperty("note", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Note { get; set; }
 
-        [JsonProperty("rowInfo.createdAt")]
-        public string RowInfo.createdAt { get; set; }
+        [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdAt { get; set; }
 
-        [JsonProperty("rowInfo.createdBy")]
-        public string RowInfo.createdBy { get; set; }
+        [JsonProperty("rowInfo.createdBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdBy { get; set; }
 
         /* "rowInfo.updatedAt": null */
-        [JsonProperty("rowInfo.updatedAt")]
-        public object RowInfo.updatedAt { get; set; }
+        [JsonProperty("rowInfo.updatedAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_updatedAt { get; set; }
 
         /* "rowInfo.updatedBy": null */
-        [JsonProperty("rowInfo.updatedBy")]
-        public object RowInfo.updatedBy { get; set; }
+        [JsonProperty("rowInfo.updatedBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_updatedBy { get; set; }
 
         /* "rowInfo.rowAccess": null */
-        [JsonProperty("rowInfo.rowAccess")]
-        public object RowInfo.rowAccess { get; set; }
+        [JsonProperty("rowInfo.rowAccess", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowAccess { get; set; }
 
         /* "rowInfo.rowState": null */
-        [JsonProperty("rowInfo.rowState")]
-        public object RowInfo.rowState { get; set; }
+        [JsonProperty("rowInfo.rowState", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowState { get; set; }
 
-        [JsonProperty("_version")]
+        [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }
 
     }

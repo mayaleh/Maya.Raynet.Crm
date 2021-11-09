@@ -1,6 +1,6 @@
 // Copyright (c) 2021 Salim Mayaleh. All Rights Reserved
 // Licensed under the BSD-3-Clause License
-// Generated at 07.11.2021 14:38:09 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
+// Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
 using System;
 using Newtonsoft.Json;
@@ -10,46 +10,46 @@ namespace Maya.Raynet.Crm.Response
 {
     public class Document
     {
-        [JsonProperty("id")]
+        [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
-        [JsonProperty("code")]
+        [JsonProperty("code", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Code { get; set; }
 
-        [JsonProperty("name")]
+        [JsonProperty("name", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Name { get; set; }
 
-        [JsonProperty("tags")]
+        [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<> Tags { get; set; }
 
         /* "description": null */
-        [JsonProperty("description")]
+        [JsonProperty("description", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Description { get; set; }
 
         /* "owner": {
   "id": 1,
   "fullName": "RAYNET CRM"
 } */
-        [JsonProperty("owner")]
+        [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Owner { get; set; }
 
         /* "category": {
   "id": 289,
   "value": "Kategorie dokumentu"
 } */
-        [JsonProperty("category")]
+        [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Category { get; set; }
 
-        [JsonProperty("validFrom")]
+        [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string ValidFrom { get; set; }
 
-        [JsonProperty("validTill")]
+        [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string ValidTill { get; set; }
 
-        [JsonProperty("status")]
+        [JsonProperty("status", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Status { get; set; }
 
-        [JsonProperty("template")]
+        [JsonProperty("template", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool Template { get; set; }
 
         /* "folder": {
@@ -57,7 +57,7 @@ namespace Maya.Raynet.Crm.Response
   "name": "Rejnoci",
   "path": "/Dokumenty/Rejnoci"
 } */
-        [JsonProperty("folder")]
+        [JsonProperty("folder", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Folder { get; set; }
 
         /* "attachments": [
@@ -79,11 +79,11 @@ namespace Maya.Raynet.Crm.Response
     }
   }
 ] */
-        [JsonProperty("attachments")]
+        [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<object> Attachments { get; set; }
 
         /* "link": null */
-        [JsonProperty("link")]
+        [JsonProperty("link", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Link { get; set; }
 
         /* "file": {
@@ -92,41 +92,41 @@ namespace Maya.Raynet.Crm.Response
   "fileName": "MaMaZu.jpg",
   "size": 218878
 } */
-        [JsonProperty("file")]
+        [JsonProperty("file", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object File { get; set; }
 
-        [JsonProperty("rowInfo.createdAt")]
-        public string RowInfo.createdAt { get; set; }
+        [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdAt { get; set; }
 
-        [JsonProperty("rowInfo.createdBy")]
-        public string RowInfo.createdBy { get; set; }
+        [JsonProperty("rowInfo.createdBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_createdBy { get; set; }
 
-        [JsonProperty("rowInfo.updatedAt")]
-        public string RowInfo.updatedAt { get; set; }
+        [JsonProperty("rowInfo.updatedAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedAt { get; set; }
 
-        [JsonProperty("rowInfo.updatedBy")]
-        public string RowInfo.updatedBy { get; set; }
+        [JsonProperty("rowInfo.updatedBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string RowInfo_updatedBy { get; set; }
 
         /* "rowInfo.rowAccess": null */
-        [JsonProperty("rowInfo.rowAccess")]
-        public object RowInfo.rowAccess { get; set; }
+        [JsonProperty("rowInfo.rowAccess", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowAccess { get; set; }
 
         /* "rowInfo.rowState": null */
-        [JsonProperty("rowInfo.rowState")]
-        public object RowInfo.rowState { get; set; }
+        [JsonProperty("rowInfo.rowState", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object RowInfo_rowState { get; set; }
 
         /* "securityLevel": {
   "id": 4,
   "name": "Asistentka/Asistent"
 } */
-        [JsonProperty("securityLevel")]
+        [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object SecurityLevel { get; set; }
 
         /* "extIds": null */
-        [JsonProperty("extIds")]
+        [JsonProperty("extIds", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object ExtIds { get; set; }
 
-        [JsonProperty("_version")]
+        [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }
 
     }
