@@ -21,7 +21,7 @@ namespace Maya.Raynet.Crm.Response
   "fullName": "Milan Buldog"
 } */
         [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Person { get; set; }
+        public Person Person { get; set; }
 
         [JsonProperty("username", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Username { get; set; }

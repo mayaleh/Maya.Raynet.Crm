@@ -8,32 +8,22 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Response
 {
-    public class BulkEmailRecipients
+    public class BulkEmailRecipient
     {
         [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
-        /* "massEmail": {
-  "id": 9,
-  "title": "Druhá emailová kampaň"
-} */
         [JsonProperty("massEmail", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object MassEmail { get; set; }
+        public MassEmail MassEmail { get; set; }
 
-        /* "company": {
-  "id": 3,
-  "name": "Drozd a.s."
-} */
         [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Company { get; set; }
+        public Company Company { get; set; }
 
-        /* "lead": null */
         [JsonProperty("lead", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Lead { get; set; }
+        public Lead Lead { get; set; }
 
-        /* "person": null */
         [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Person { get; set; }
+        public Person Person { get; set; }
 
         [JsonProperty("email", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Email { get; set; }

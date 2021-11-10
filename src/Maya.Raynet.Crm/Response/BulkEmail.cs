@@ -40,14 +40,8 @@ namespace Maya.Raynet.Crm.Response
         [JsonProperty("externalThumbnailUrl", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string ExternalThumbnailUrl { get; set; }
 
-        /* "stats": {
-  "sent": "900",
-  "clicked": "600",
-  "opened": "800",
-  "unsubscribed": "500"
-} */
         [JsonProperty("stats", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Stats { get; set; }
+        public EmailStatistics Stats { get; set; }
 
         [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_createdAt { get; set; }
@@ -61,20 +55,14 @@ namespace Maya.Raynet.Crm.Response
         [JsonProperty("rowInfo.updatedBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_updatedBy { get; set; }
 
-        /* "rowInfo.rowAccess": null */
         [JsonProperty("rowInfo.rowAccess", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object RowInfo_rowAccess { get; set; }
+        public string RowInfo_rowAccess { get; set; }
 
-        /* "rowInfo.rowState": null */
         [JsonProperty("rowInfo.rowState", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object RowInfo_rowState { get; set; }
+        public string RowInfo_rowState { get; set; }
 
-        /* "securityLevel": {
-  "id": 1,
-  "name": "Sdílená"
-} */
         [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SecurityLevel { get; set; }
+        public SecurityLevel SecurityLevel { get; set; }
 
         [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }

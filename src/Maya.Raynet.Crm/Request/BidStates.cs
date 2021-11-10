@@ -18,8 +18,8 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("offerStatus");
         }
-        public async Task<Model.DataResult<List<Response.BidStates>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.BidStates>>(apiClient);
+        public async Task<Model.DataResult<List<Response.BidState>>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<List<Response.BidState>>(apiClient);
 
     }
 }

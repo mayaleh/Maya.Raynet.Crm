@@ -37,7 +37,7 @@ namespace Maya.Raynet.Crm.Response
   "fullName": "RAYNET CRM"
 } */
         [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Owner { get; set; }
+        public Owner Owner { get; set; }
 
         [JsonProperty("priority", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Priority { get; set; }

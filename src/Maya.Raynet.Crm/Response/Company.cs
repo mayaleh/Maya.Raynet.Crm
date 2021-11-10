@@ -55,59 +55,27 @@ namespace Maya.Raynet.Crm.Response
         [JsonProperty("contactSource", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public IdValue ContactSource { get; set; }
 
-        /* "employeesNumber": {
-  "id": 64,
-  "value": "1 - 10"
-} */
         [JsonProperty("employeesNumber", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public IdValue EmployeesNumber { get; set; }
 
-        /* "legalForm": {
-  "id": 64,
-  "value": "s.r.o."
-} */
         [JsonProperty("legalForm", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public IdValue LegalForm { get; set; }
 
-        /* "paymentTerm": {
-  "id": 64,
-  "value": "7 dní"
-} */
         [JsonProperty("paymentTerm", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public IdValue PaymentTerm { get; set; }
 
-        /* "turnover": {
-  "id": 82,
-  "value": "do 1 mil. Kč"
-} */
         [JsonProperty("turnover", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public IdValue Turnover { get; set; }
 
-        /* "economyActivity": {
-  "id": 92,
-  "value": "obor 1"
-} */
         [JsonProperty("economyActivity", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public IdValue EconomyActivity { get; set; }
 
-        /* "companyClassification1": {
-  "id": 93,
-  "value": "kla 1"
-} */
         [JsonProperty("companyClassification1", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public IdValue CompanyClassification1 { get; set; }
 
-        /* "companyClassification2": {
-  "id": 94,
-  "value": "kla 2"
-} */
         [JsonProperty("companyClassification2", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public IdValue CompanyClassification2 { get; set; }
 
-        /* "companyClassification3": {
-  "id": 95,
-  "value": "kla 3"
-} */
         [JsonProperty("companyClassification3", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public IdValue CompanyClassification3 { get; set; }
 
@@ -117,7 +85,6 @@ namespace Maya.Raynet.Crm.Response
         [JsonProperty("taxNumber", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string TaxNumber { get; set; }
 
-        /* "taxNumber2": null */
         [JsonProperty("taxNumber2", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string TaxNumber2 { get; set; }
 
@@ -127,76 +94,23 @@ namespace Maya.Raynet.Crm.Response
         [JsonProperty("bankAccount", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string BankAccount { get; set; }
 
-        /* "birthday": null */
         [JsonProperty("birthday", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public DateTime? Birthday { get; set; }
 
-        /*{ "primaryAddress": {
-  "id": 2,
-  "primary": true,
-  "contactAddress": false,
-  "address": {
-    "id": 2,
-    "city": "Ostrava-Slezská Ostrava",
-    "country": "Česká republika",
-    "name": "Sídlo firmy",
-    "province": "Moravskoslezský kraj",
-    "street": "Těšínská",
-    "zipCode": "710 00",
-    "lat": null,
-    "lng": null
-  },
-  "territory": {
-    "id": 91,
-    "value": "Morava"
-  },
-  "contactInfo": {
-    "email": "test@test.cz",
-    "email2": "test2@test.cz",
-    "primary": true,
-    "tel1": "123 456 789",
-    "tel1Type": "mobil",
-    "tel2": "987 654 321",
-    "tel2Type": "pevná linka",
-    "www": "www.test.cz",
-    "otherContact": null
-  }}
-} */
         [JsonProperty("primaryAddress", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public ComapnyAddress PrimaryAddress { get; set; }
 
         [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<string> Tags { get; set; }
 
-        /* "logo": {
-  "id": 428,
-  "contentType": "image/png",
-  "fileName": "logo.png",
-  "size": 17485
-} */
         [JsonProperty("logo", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Logo { get; set; }
+        public FileInfo Logo { get; set; }
 
-        /* "socialNetworkContact": {
-  "facebook": "abcd",
-  "googleplus": null,
-  "twitter": null,
-  "linkedin": null,
-  "pinterest": null,
-  "instagram": null,
-  "skype": null,
-  "youtube": null
-} */
         [JsonProperty("socialNetworkContact", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SocialNetworkContact { get; set; }
+        public SocialNetwork SocialNetworkContact { get; set; }
 
-        /* "customFields": {
-  "Cislo_klie_cd702": "AB123",
-  "Lonsky_zis_7aac1": 500,
-  "Spoluprace_2aa2c": "2016-02-02"
-} */
         [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object CustomFields { get; set; }
+        public Dictionary<string, object> CustomFields { get; set; }
 
         [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_createdAt { get; set; }
@@ -210,121 +124,25 @@ namespace Maya.Raynet.Crm.Response
         [JsonProperty("rowInfo.updatedBy", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_updatedBy { get; set; }
 
-        /* "rowInfo.rowAccess": null */
         [JsonProperty("rowInfo.rowAccess", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object RowInfo_rowAccess { get; set; }
+        public string RowInfo_rowAccess { get; set; }
 
-        /* "rowInfo.rowState": null */
         [JsonProperty("rowInfo.rowState", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object RowInfo_rowState { get; set; }
+        public string RowInfo_rowState { get; set; }
 
         [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int _version { get; set; }
+        public int? _version { get; set; }
 
-        /* "attachments": [
-  {
-    "id": 213,
-    "link": null,
-    "linkName": null,
-    "file": {
-      "id": 631,
-      "contentType": "application/zip",
-      "fileName": "test_zip.zip",
-      "size": 4413
-    },
-    "folder": "Test"
-  }
-] */
         [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
 
-        /* "addresses": [
-  {
-    "id": 2,
-    "primary": true,
-    "contactAddress": false,
-    "address": {
-      "id": 2,
-      "city": "Ostrava-Slezská Ostrava",
-      "country": "Česká republika",
-      "name": "Sídlo firmy",
-      "province": "Moravskoslezský kraj",
-      "street": "Těšínská",
-      "zipCode": "710 00",
-      "lat": null,
-      "lng": null
-    },
-    "territory": {
-      "id": 91,
-      "value": "Morava"
-    },
-    "contactInfo": {
-      "email": "test@test.cz",
-      "email2": "test2@test.cz",
-      "primary": true,
-      "tel1": "123 456 789",
-      "tel1Type": "mobil",
-      "tel2": "987 654 321",
-      "tel2Type": "pevná linka",
-      "www": "www.test.cz",
-      "otherContact": null
-    }
-  },
-  {
-    "id": 3,
-    "primary": false,
-    "contactAddress": true,
-    "address": {
-      "id": 3,
-      "city": "Ostrava-Moravská Ostrava",
-      "country": "Česká republika",
-      "name": "Provozovna",
-      "province": "Moravskoslezský kraj",
-      "street": "Českobratrská 113",
-      "zipCode": "702 00",
-      "lat": null,
-      "lng": null
-    },
-    "territory": {
-      "id": 91,
-      "value": "Morava"
-    },
-    "contactInfo": {
-      "email": "provozovna@test.cz",
-      "email2": null,
-      "primary": true,
-      "tel1": "444 444 444",
-      "tel1Type": "mobil",
-      "tel2": "111 111 111",
-      "tel2Type": "pevná linka",
-      "www": null,
-      "otherContact": null
-    }
-  }
-] */
         [JsonProperty("addresses", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> Addresses { get; set; }
+        public List<ComapnyAddress> Addresses { get; set; }
 
-        /* "inlineGdpr": [
-  {
-    "id": 1,
-    "validFrom": "2018-01-01",
-    "validTill": "2019-01-01",
-    "legalTitle": "LEGITIMATE_INTEREST",
-    "templateName": "Opravněný zájem",
-    "gdprTemplate": 1
-  }
-] */
         [JsonProperty("inlineGdpr", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> InlineGdpr { get; set; }
+        public List<InlineGdpr> InlineGdpr { get; set; }
 
-        /* "originLead": {
-  "id": 4,
-  "code": "L-18-002",
-  "topic": "Můj lead"
-} */
         [JsonProperty("originLead", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object OriginLead { get; set; }
-
+        public Lead OriginLead { get; set; }
     }
 }

@@ -18,8 +18,8 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("businessCaseClassification3");
         }
-        public async Task<Model.DataResult<List<Response.BusinessCaseClassifications>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.BusinessCaseClassifications>>(apiClient);
+        public async Task<Model.DataResult<List<Response.BusinessCaseClassification>>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<List<Response.BusinessCaseClassification>>(apiClient);
 
     }
 }

@@ -19,44 +19,26 @@ namespace Maya.Raynet.Crm.Response
         [JsonProperty("name", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Name { get; set; }
 
-        /* "company": {
-  "id": 1,
-  "name": "RAYNET s.r.o."
-} */
         [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Company { get; set; }
+        public Company Company { get; set; }
 
-        /* "person": {
-  "id": 3,
-  "fullName": "Jan Novák"
-} */
         [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Person { get; set; }
+        public Person Person { get; set; }
 
-        /* "owner": {
-  "id": 3,
-  "fullName": "Marie Vyležíková"
-} */
         [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Owner { get; set; }
+        public Person Owner { get; set; }
 
-        /* "currency": {
-  "id": 17,
-  "value": "$"
-} */
         [JsonProperty("currency", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Currency { get; set; }
+        public IdValue Currency { get; set; }
 
         [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string ValidFrom { get; set; }
 
-        /* "validTill": null */
         [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ValidTill { get; set; }
+        public DateTimeOffset? ValidTill { get; set; }
 
-        /* "scheduledEnd": null */
         [JsonProperty("scheduledEnd", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ScheduledEnd { get; set; }
+        public DateTimeOffset? ScheduledEnd { get; set; }
 
         [JsonProperty("totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int TotalAmount { get; set; }
@@ -79,43 +61,32 @@ namespace Maya.Raynet.Crm.Response
         [JsonProperty("exchangeRate", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int ExchangeRate { get; set; }
 
-        /* "businessCasePhase": {
-  "id": 39,
-  "value": "Identifikace příležitosti"
-} */
         [JsonProperty("businessCasePhase", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object BusinessCasePhase { get; set; }
+        public IdValue BusinessCasePhase { get; set; }
 
-        /* "businessCaseType": null */
         [JsonProperty("businessCaseType", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object BusinessCaseType { get; set; }
+        public BusinessCaseTypes BusinessCaseType { get; set; }
 
-        /* "category": null */
         [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Category { get; set; }
+        public BusinessCaseCategory Category { get; set; }
 
-        /* "project": null */
         [JsonProperty("project", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Project { get; set; }
+        public Project Project { get; set; }
 
         /* "source": null */
         [JsonProperty("source", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Source { get; set; }
 
-        /* "businessCaseClassification1": {
-  "id": 93,
-  "value": "test"
-} */
         [JsonProperty("businessCaseClassification1", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object BusinessCaseClassification1 { get; set; }
+        public IdValue BusinessCaseClassification1 { get; set; }
 
         /* "businessCaseClassification2": null */
         [JsonProperty("businessCaseClassification2", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object BusinessCaseClassification2 { get; set; }
+        public IdValue BusinessCaseClassification2 { get; set; }
 
         /* "businessCaseClassification3": null */
         [JsonProperty("businessCaseClassification3", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object BusinessCaseClassification3 { get; set; }
+        public IdValue BusinessCaseClassification3 { get; set; }
 
         /* "losingReason": null */
         [JsonProperty("losingReason", DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -139,50 +110,29 @@ namespace Maya.Raynet.Crm.Response
 
         /* "rowInfo.rowAccess": null */
         [JsonProperty("rowInfo.rowAccess", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object RowInfo_rowAccess { get; set; }
+        public string RowInfo_rowAccess { get; set; }
 
         /* "rowInfo.rowState": null */
         [JsonProperty("rowInfo.rowState", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object RowInfo_rowState { get; set; }
+        public string RowInfo_rowState { get; set; }
 
-        /* "securityLevel": {
-  "id": 1,
-  "name": "Sdílená"
-} */
         [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SecurityLevel { get; set; }
+        public SecurityLevel SecurityLevel { get; set; }
 
         [JsonProperty("description", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Description { get; set; }
 
         [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Tags { get; set; }
+        public List<string> Tags { get; set; }
 
         [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
 
-        /* "customFields": {
-  "Popis_prio_c49d5": "Text text",
-  "Priorita_O_a5fab": "TOP"
-} */
         [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object CustomFields { get; set; }
+        public Dictionary<string, object> CustomFields { get; set; }
 
-        /* "items": [
-  {
-    "id": 1,
-    "priceListItem": null,
-    "name": "Nekategorizovaný produkt",
-    "description": null,
-    "price": 122,
-    "taxRate": 0,
-    "unit": "ks",
-    "discountPercent": 0,
-    "count": 1
-  }
-] */
         [JsonProperty("items", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> Items { get; set; }
+        public List<BusinessCaseItem> Items { get; set; }
 
     }
 }
