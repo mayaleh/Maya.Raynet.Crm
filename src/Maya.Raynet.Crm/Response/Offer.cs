@@ -120,7 +120,7 @@ namespace Maya.Raynet.Crm.Response
         public List<string> Tags { get; set; }
 
         [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
 
         /* "customFields": {
   "Popis_prio_c49d5": "Text text",

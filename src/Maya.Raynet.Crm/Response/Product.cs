@@ -94,7 +94,7 @@ namespace Maya.Raynet.Crm.Response
         public int _version { get; set; }
 
         [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
 
         /* "customFields": {
   "Vaha_(g)_80307": 10

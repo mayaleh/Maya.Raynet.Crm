@@ -138,7 +138,7 @@ namespace Maya.Raynet.Crm.Response
         public string Description { get; set; }
 
         [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Tags { get; set; }
+        public List<string> Tags { get; set; }
 
         /* "attachments": [
   {

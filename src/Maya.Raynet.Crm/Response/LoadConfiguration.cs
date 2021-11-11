@@ -56,16 +56,16 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("BusinessCase", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> BusinessCase { get; set; }
+        public List<BusinessCase> BusinessCase { get; set; }
 
         [JsonProperty("Offer", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Offer { get; set; }
+        public List<Offer> Offer { get; set; }
 
         [JsonProperty("SalesOrder", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> SalesOrder { get; set; }
+        public List<Order> SalesOrder { get; set; }
 
         [JsonProperty("Product", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Product { get; set; }
+        public List<Product> Product { get; set; }
 
     }
 }
