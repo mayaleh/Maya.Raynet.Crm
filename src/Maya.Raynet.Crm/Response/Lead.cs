@@ -17,7 +17,7 @@ namespace Maya.Raynet.Crm.Response
         public string Code { get; set; }
 
         [JsonProperty("leadDate", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string LeadDate { get; set; }
+        public DateTimeOffset? LeadDate { get; set; }
 
         [JsonProperty("topic", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Topic { get; set; }
@@ -30,7 +30,7 @@ namespace Maya.Raynet.Crm.Response
   "locked": false
 } */
         [JsonProperty("leadPhase", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object LeadPhase { get; set; }
+        public LeadPhase LeadPhase { get; set; }
 
         /* "owner": {
   "id": 1,
@@ -50,36 +50,36 @@ namespace Maya.Raynet.Crm.Response
   "name": "Neteče a nepoteče s.r.o"
 } */
         [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Company { get; set; }
+        public Company Company { get; set; }
 
         /* "person": null */
         [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Person { get; set; }
+        public Person Person { get; set; }
 
         /* "businessCase": null */
         [JsonProperty("businessCase", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object BusinessCase { get; set; }
+        public BusinessCase BusinessCase { get; set; }
 
         [JsonProperty("lastName", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string LastName { get; set; }
 
         /* "convertDate": null */
         [JsonProperty("convertDate", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ConvertDate { get; set; }
+        public DateTimeOffset? ConvertDate { get; set; }
 
         /* "contactSource": {
   "id": 61,
   "value": "e-mail"
 } */
         [JsonProperty("contactSource", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ContactSource { get; set; }
+        public IdValue ContactSource { get; set; }
 
         /* "category": {
   "id": 91,
   "value": "asd"
 } */
         [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Category { get; set; }
+        public IdValue Category { get; set; }
 
         [JsonProperty("firstName", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string FirstName { get; set; }
@@ -95,7 +95,7 @@ namespace Maya.Raynet.Crm.Response
   "value": "Morava"
 } */
         [JsonProperty("territory", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Territory { get; set; }
+        public IdValue Territory { get; set; }
 
         /* "contactInfo": {
   "email": "netece@nepotece.cz",
@@ -109,7 +109,7 @@ namespace Maya.Raynet.Crm.Response
   "otherContact": null
 } */
         [JsonProperty("contactInfo", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ContactInfo { get; set; }
+        public ContactInfo ContactInfo { get; set; }
 
         /* "address": {
   "city": "Velká Lhota",
@@ -122,7 +122,7 @@ namespace Maya.Raynet.Crm.Response
   "lng": null
 } */
         [JsonProperty("address", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Address { get; set; }
+        public Address Address { get; set; }
 
         /* "socialNetworkContact": {
   "facebook": "kapkafb",
@@ -135,11 +135,11 @@ namespace Maya.Raynet.Crm.Response
   "youtube": "kapkayo"
 } */
         [JsonProperty("socialNetworkContact", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SocialNetworkContact { get; set; }
+        public SocialNetwork SocialNetworkContact { get; set; }
 
         /* "customFields": null */
         [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object CustomFields { get; set; }
+        public Dictionary<string, object> CustomFields { get; set; }
 
         [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_createdAt { get; set; }
@@ -165,10 +165,10 @@ namespace Maya.Raynet.Crm.Response
   "name": "Sdílená"
 } */
         [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SecurityLevel { get; set; }
+        public SecurityLevels SecurityLevel { get; set; }
 
         [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Tags { get; set; }
+        public List<string> Tags { get; set; }
 
         [JsonProperty("notice", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Notice { get; set; }
@@ -180,7 +180,7 @@ namespace Maya.Raynet.Crm.Response
         public int _version { get; set; }
 
         [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
 
         /* "inlineGdpr": [
   {
@@ -193,7 +193,7 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("inlineGdpr", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> InlineGdpr { get; set; }
+        public List<InlineGdpr> InlineGdpr { get; set; }
 
     }
 }

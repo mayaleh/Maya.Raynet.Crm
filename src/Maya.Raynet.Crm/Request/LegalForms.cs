@@ -18,8 +18,8 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("legalForm");
         }
-        public async Task<Model.DataResult<List<Response.LegalForms>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.LegalForms>>(apiClient);
+        public async Task<Model.DataResult<List<Response.LegalForm>>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<List<Response.LegalForm>>(apiClient);
 
     }
 }

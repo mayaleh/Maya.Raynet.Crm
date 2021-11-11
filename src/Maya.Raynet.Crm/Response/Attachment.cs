@@ -15,7 +15,7 @@ namespace Maya.Raynet.Crm.Response
         public string Link { get; set; }
 
         [JsonProperty("linkName", NullValueHandling = NullValueHandling.Ignore)]
-        public object LinkName { get; set; }
+        public string LinkName { get; set; }
 
         [JsonProperty("file", NullValueHandling = NullValueHandling.Ignore)]
         public FileInfo File { get; set; }

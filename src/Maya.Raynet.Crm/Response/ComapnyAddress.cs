@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Maya.Raynet.Crm.Response
 {
-    public partial class ComapnyAddress
+    public class ComapnyAddress
     {
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public long? Id { get; set; }

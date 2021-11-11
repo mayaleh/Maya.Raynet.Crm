@@ -8,13 +8,20 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Response
 {
-    public class CompanyClassifications
+    public class DiscussionFollower
     {
         [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
-        [JsonProperty("code01", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Code01 { get; set; }
+        /* "person": {
+  "id": 2,
+  "fullName": "Dušan Gálik"
+} */
+        [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public Person Person { get; set; }
+
+        [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int _version { get; set; }
 
     }
 }

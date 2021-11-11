@@ -20,8 +20,8 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add(entityId.ToString());
                 Actions.Add("watcher");
         }
-        public async Task<Model.DataResult<List<Response.DiscussionFollowers>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.DiscussionFollowers>>(apiClient);
+        public async Task<Model.DataResult<List<Response.DiscussionFollower>>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<List<Response.DiscussionFollower>>(apiClient);
 
     }
 }

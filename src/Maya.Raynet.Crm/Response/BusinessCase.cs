@@ -65,7 +65,7 @@ namespace Maya.Raynet.Crm.Response
         public IdValue BusinessCasePhase { get; set; }
 
         [JsonProperty("businessCaseType", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public BusinessCaseTypes BusinessCaseType { get; set; }
+        public BusinessCaseType BusinessCaseType { get; set; }
 
         [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public BusinessCaseCategory Category { get; set; }

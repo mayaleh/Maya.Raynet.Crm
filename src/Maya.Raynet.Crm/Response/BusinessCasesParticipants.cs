@@ -13,26 +13,14 @@ namespace Maya.Raynet.Crm.Response
         [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
-        /* "company": {
-  "id": 2,
-  "name": "a"
-} */
         [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Company { get; set; }
+        public Company Company { get; set; }
 
-        /* "person": {
-  "id": 5,
-  "fullName": "Magdaléna Pišlová"
-} */
         [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Person { get; set; }
+        public Person Person { get; set; }
 
-        /* "businessCase": {
-  "id": 4,
-  "code": "OP-17-001"
-} */
         [JsonProperty("businessCase", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object BusinessCase { get; set; }
+        public BusinessCase BusinessCase { get; set; }
 
         [JsonProperty("note", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Note { get; set; }

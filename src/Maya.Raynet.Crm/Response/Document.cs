@@ -20,37 +20,37 @@ namespace Maya.Raynet.Crm.Response
         public string Name { get; set; }
 
         [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Tags { get; set; }
+        public List<string> Tags { get; set; }
 
         /* "description": null */
         [JsonProperty("description", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Description { get; set; }
+        public string Description { get; set; }
 
         /* "owner": {
   "id": 1,
   "fullName": "RAYNET CRM"
 } */
         [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Owner { get; set; }
+        public Person Owner { get; set; }
 
         /* "category": {
   "id": 289,
   "value": "Kategorie dokumentu"
 } */
         [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Category { get; set; }
+        public IdValue Category { get; set; }
 
         [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidFrom { get; set; }
+        public DateTimeOffset? ValidFrom { get; set; }
 
         [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidTill { get; set; }
+        public DateTimeOffset? ValidTill { get; set; }
 
         [JsonProperty("status", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Status { get; set; }
 
         [JsonProperty("template", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool Template { get; set; }
+        public bool? Template { get; set; }
 
         /* "folder": {
   "id": 8,
@@ -58,7 +58,7 @@ namespace Maya.Raynet.Crm.Response
   "path": "/Dokumenty/Rejnoci"
 } */
         [JsonProperty("folder", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Folder { get; set; }
+        public FoldersAndFiles Folder { get; set; }
 
         /* "attachments": [
   {
@@ -80,11 +80,11 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
 
         /* "link": null */
         [JsonProperty("link", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Link { get; set; }
+        public string Link { get; set; }
 
         /* "file": {
   "id": 488,
@@ -93,7 +93,7 @@ namespace Maya.Raynet.Crm.Response
   "size": 218878
 } */
         [JsonProperty("file", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object File { get; set; }
+        public FileInfo File { get; set; }
 
         [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_createdAt { get; set; }
@@ -120,11 +120,11 @@ namespace Maya.Raynet.Crm.Response
   "name": "Asistentka/Asistent"
 } */
         [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SecurityLevel { get; set; }
+        public SecurityLevel SecurityLevel { get; set; }
 
         /* "extIds": null */
         [JsonProperty("extIds", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ExtIds { get; set; }
+        public string ExtIds { get; set; }
 
         [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }

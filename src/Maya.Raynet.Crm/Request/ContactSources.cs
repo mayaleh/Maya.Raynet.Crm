@@ -18,8 +18,8 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("contactSource");
         }
-        public async Task<Model.DataResult<List<Response.ContactSources>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.ContactSources>>(apiClient);
+        public async Task<Model.DataResult<List<Response.ContactSource>>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<List<Response.ContactSource>>(apiClient);
 
     }
 }

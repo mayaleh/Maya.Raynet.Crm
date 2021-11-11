@@ -24,41 +24,41 @@ namespace Maya.Raynet.Crm.Response
   "name": "RAYNET s.r.o."
 } */
         [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Company { get; set; }
+        public Company Company { get; set; }
 
         [JsonProperty("invoiceType", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string InvoiceType { get; set; }
 
         [JsonProperty("issueDate", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string IssueDate { get; set; }
+        public DateTimeOffset? IssueDate { get; set; }
 
         [JsonProperty("dueDate", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string DueDate { get; set; }
+        public DateTimeOffset? DueDate { get; set; }
 
         [JsonProperty("taxableSupplyDate", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string TaxableSupplyDate { get; set; }
+        public DateTimeOffset? TaxableSupplyDate { get; set; }
 
         [JsonProperty("invoiceState", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string InvoiceState { get; set; }
 
         [JsonProperty("baseAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int BaseAmount { get; set; }
+        public decimal BaseAmount { get; set; }
 
         [JsonProperty("totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public float TotalAmount { get; set; }
+        public decimal TotalAmount { get; set; }
 
         [JsonProperty("unpaidAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public float UnpaidAmount { get; set; }
+        public decimal UnpaidAmount { get; set; }
 
         [JsonProperty("currencyExchangeRate", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int CurrencyExchangeRate { get; set; }
+        public decimal CurrencyExchangeRate { get; set; }
 
         /* "currency": {
   "id": 15,
   "value": "Kč"
 } */
         [JsonProperty("currency", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Currency { get; set; }
+        public IdValue Currency { get; set; }
 
         [JsonProperty("variableSymbol", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string VariableSymbol { get; set; }
@@ -68,7 +68,7 @@ namespace Maya.Raynet.Crm.Response
 
         /* "specificSymbol": null */
         [JsonProperty("specificSymbol", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SpecificSymbol { get; set; }
+        public string SpecificSymbol { get; set; }
 
         /* "category": null */
         [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -79,26 +79,26 @@ namespace Maya.Raynet.Crm.Response
   "fullName": "M P"
 } */
         [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Owner { get; set; }
+        public Person Owner { get; set; }
 
         [JsonProperty("note", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Note { get; set; }
 
         /* "privateNote": null */
         [JsonProperty("privateNote", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object PrivateNote { get; set; }
+        public string PrivateNote { get; set; }
 
         /* "deliveryNote": null */
         [JsonProperty("deliveryNote", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object DeliveryNote { get; set; }
+        public string DeliveryNote { get; set; }
 
         /* "creditNoteReason": null */
         [JsonProperty("creditNoteReason", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object CreditNoteReason { get; set; }
+        public string CreditNoteReason { get; set; }
 
         /* "vendorName": null */
         [JsonProperty("vendorName", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object VendorName { get; set; }
+        public string VendorName { get; set; }
 
         /* "vendorBankAccountNumber": null */
         [JsonProperty("vendorBankAccountNumber", DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -109,13 +109,13 @@ namespace Maya.Raynet.Crm.Response
 
         /* "businessCase": null */
         [JsonProperty("businessCase", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object BusinessCase { get; set; }
+        public BusinessCase BusinessCase { get; set; }
 
         [JsonProperty("paymentType", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string PaymentType { get; set; }
 
         [JsonProperty("decimalPrecision", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int DecimalPrecision { get; set; }
+        public decimal DecimalPrecision { get; set; }
 
         [JsonProperty("taxPayer", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string TaxPayer { get; set; }
@@ -154,10 +154,10 @@ namespace Maya.Raynet.Crm.Response
   "name": "Sdílená"
 } */
         [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SecurityLevel { get; set; }
+        public SecurityLevel SecurityLevel { get; set; }
 
         [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<> Tags { get; set; }
+        public List<string> Tags { get; set; }
 
     }
 }

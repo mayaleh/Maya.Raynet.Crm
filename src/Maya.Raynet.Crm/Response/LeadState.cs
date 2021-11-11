@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Response
 {
-    public class BusinessCaseStatuses
+    public class LeadState
     {
         [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
@@ -18,6 +18,9 @@ namespace Maya.Raynet.Crm.Response
 
         [JsonProperty("code02", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Code02 { get; set; }
+
+        [JsonProperty("locked", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public bool Locked { get; set; }
 
     }
 }

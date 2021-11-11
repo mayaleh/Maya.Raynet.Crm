@@ -18,15 +18,15 @@ namespace Maya.Raynet.Crm.Response
   "name": "RAYNET"
 } */
         [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Company { get; set; }
+        public Company Company { get; set; }
 
         /* "person": null */
         [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Person { get; set; }
+        public Person Person { get; set; }
 
         /* "lead": null */
         [JsonProperty("lead", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Lead { get; set; }
+        public Lead Lead { get; set; }
 
         /* "gdprTemplate": {
   "id": 1,
@@ -41,10 +41,10 @@ namespace Maya.Raynet.Crm.Response
         public object GdprFormAgreement { get; set; }
 
         [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidFrom { get; set; }
+        public DateTimeOffset? ValidFrom { get; set; }
 
         [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidTill { get; set; }
+        public DateTimeOffset? ValidTill { get; set; }
 
         [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_createdAt { get; set; }

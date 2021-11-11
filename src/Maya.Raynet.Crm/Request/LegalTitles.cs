@@ -18,8 +18,8 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("gdpr");
         }
-        public async Task<Model.DataResult<List<Response.LegalTitles>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.LegalTitles>>(apiClient);
+        public async Task<Model.DataResult<List<Response.LegalTitle>>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<List<Response.LegalTitle>>(apiClient);
 
         [RaynetUriParam("offset")]
         public int Offset { get; set; }

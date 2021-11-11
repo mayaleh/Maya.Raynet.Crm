@@ -58,7 +58,7 @@ namespace Maya.Raynet.Crm.Response
   }
 } */
         [JsonProperty("companyJoin", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object CompanyJoin { get; set; }
+        public Company CompanyJoin { get; set; }
 
         [JsonProperty("companyJoinType", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string CompanyJoinType { get; set; }

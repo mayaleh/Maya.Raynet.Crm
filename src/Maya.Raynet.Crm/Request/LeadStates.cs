@@ -18,8 +18,8 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("leadPhase");
         }
-        public async Task<Model.DataResult<List<Response.LeadStates>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.LeadStates>>(apiClient);
+        public async Task<Model.DataResult<List<Response.LeadState>>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<List<Response.LeadState>>(apiClient);
 
     }
 }

@@ -8,13 +8,16 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Response
 {
-    public class LegalForms
+    public class CompanyCategory
     {
         [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
 
         [JsonProperty("code01", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Code01 { get; set; }
+
+        [JsonProperty("code02", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string Code02 { get; set; }
 
     }
 }
