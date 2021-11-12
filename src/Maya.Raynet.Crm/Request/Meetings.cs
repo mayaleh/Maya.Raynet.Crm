@@ -18,8 +18,8 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("meeting");
         }
-        public async Task<Model.DataResult<List<Response.Meetings>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.Meetings>>(apiClient);
+        public async Task<Model.DataResult<List<Response.Meeting>>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<List<Response.Meeting>>(apiClient);
 
         [RaynetUriParam("offset")]
         public int Offset { get; set; }

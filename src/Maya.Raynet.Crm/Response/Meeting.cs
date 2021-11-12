@@ -21,7 +21,7 @@ namespace Maya.Raynet.Crm.Response
   "value": "Lékař"
 } */
         [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Category { get; set; }
+        public IdValue Category { get; set; }
 
         [JsonProperty("priority", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Priority { get; set; }
@@ -37,44 +37,44 @@ namespace Maya.Raynet.Crm.Response
   "fullName": "Petr Svetr"
 } */
         [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Owner { get; set; }
+        public Person Owner { get; set; }
 
         /* "company": {
   "id": 2,
   "name": "Firma s.r.o."
 } */
         [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Company { get; set; }
+        public Company Company { get; set; }
 
         /* "lead": null */
         [JsonProperty("lead", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Lead { get; set; }
+        public Lead Lead { get; set; }
 
         /* "businessCase": null */
         [JsonProperty("businessCase", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object BusinessCase { get; set; }
+        public BusinessCase BusinessCase { get; set; }
 
         /* "offer": null */
         [JsonProperty("offer", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Offer { get; set; }
+        public Offer Offer { get; set; }
 
         /* "salesOrder": null */
         [JsonProperty("salesOrder", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SalesOrder { get; set; }
+        public Order SalesOrder { get; set; }
 
         /* "project": null */
         [JsonProperty("project", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Project { get; set; }
+        public Project Project { get; set; }
 
         /* "activity": null */
         [JsonProperty("activity", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public object Activity { get; set; }
 
         [JsonProperty("scheduledFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ScheduledFrom { get; set; }
+        public DateTimeOffset? ScheduledFrom { get; set; }
 
         [JsonProperty("scheduledTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ScheduledTill { get; set; }
+        public DateTimeOffset? ScheduledTill { get; set; }
 
         /* "completed": null */
         [JsonProperty("completed", DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -117,13 +117,13 @@ namespace Maya.Raynet.Crm.Response
   "name": "Sdílená"
 } */
         [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SecurityLevel { get; set; }
+        public SecurityLevel SecurityLevel { get; set; }
 
         /* "customFields": {
   "VIP_b91d1": false
 } */
         [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object CustomFields { get; set; }
+        public Dictionary<string, object> CustomFields { get; set; }
 
         /* "participants": [
   {
@@ -155,7 +155,7 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("participants", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> Participants { get; set; }
+        public List<ActivityParticipant> Participants { get; set; }
 
         /* "recurrence": {
   "id": 5,
@@ -166,7 +166,7 @@ namespace Maya.Raynet.Crm.Response
   "startDate": "2018-03-05"
 } */
         [JsonProperty("recurrence", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Recurrence { get; set; }
+        public Recurrence Recurrence { get; set; }
 
     }
 }

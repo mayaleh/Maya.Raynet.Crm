@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Response
 {
-    public class LossCategories
+    public class LossCategory
     {
         [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }

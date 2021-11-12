@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Response
 {
-    public class Notifications
+    public class Notification
     {
         [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Id { get; set; }
@@ -22,10 +22,10 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("context", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> Context { get; set; }
+        public List<Context> Context { get; set; }
 
         [JsonProperty("date", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Date { get; set; }
+        public DateTimeOffset? Date { get; set; }
 
         /* "message": {
   "changes": [
@@ -37,21 +37,21 @@ namespace Maya.Raynet.Crm.Response
   ]
 } */
         [JsonProperty("message", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Message { get; set; }
+        public Message Message { get; set; }
 
         /* "sender": {
   "id": 2,
   "fullName": "Petr Svetr"
 } */
         [JsonProperty("sender", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Sender { get; set; }
+        public Person Sender { get; set; }
 
         /* "recipient": {
   "id": 9,
   "fullName": "Jan Novák"
 } */
         [JsonProperty("recipient", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Recipient { get; set; }
+        public Person Recipient { get; set; }
 
         [JsonProperty("type", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Type { get; set; }
