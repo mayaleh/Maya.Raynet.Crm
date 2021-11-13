@@ -6,19 +6,19 @@ using Newtonsoft.Json;
 
 namespace Maya.Raynet.Crm.Response
 {
-    public class BusinessCaseItem
+    public class OfferOrderItem
     {
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public long? Id { get; set; }
 
-        [JsonProperty("priceListItem", NullValueHandling = NullValueHandling.Ignore)]
-        public PriceListItem PriceListItem { get; set; }
+        [JsonProperty("priceListItem")]
+        public long? PriceListItem { get; set; }
 
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
+        [JsonProperty("description")]
+        public object Description { get; set; }
 
         [JsonProperty("price", NullValueHandling = NullValueHandling.Ignore)]
         public long? Price { get; set; }

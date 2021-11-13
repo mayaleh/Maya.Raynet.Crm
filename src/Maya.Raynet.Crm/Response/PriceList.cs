@@ -11,14 +11,14 @@ namespace Maya.Raynet.Crm.Response
     public class PriceList
     {
         [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         /* "category": {
   "id": 103,
   "value": "Ohoo"
 } */
         [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Category { get; set; }
+        public IdValue Category { get; set; }
 
         [JsonProperty("code", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Code { get; set; }
@@ -28,7 +28,7 @@ namespace Maya.Raynet.Crm.Response
   "value": "$"
 } */
         [JsonProperty("currency", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Currency { get; set; }
+        public IdValue Currency { get; set; }
 
         [JsonProperty("description", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Description { get; set; }
@@ -40,17 +40,17 @@ namespace Maya.Raynet.Crm.Response
         public bool Primary { get; set; }
 
         [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidFrom { get; set; }
+        public DateTimeOffset? ValidFrom { get; set; }
 
         [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidTill { get; set; }
+        public DateTimeOffset? ValidTill { get; set; }
 
         /* "owner": {
   "id": 2,
   "fullName": "Igor Hnízdo"
 } */
         [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Owner { get; set; }
+        public Owner Owner { get; set; }
 
         [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_createdAt { get; set; }
@@ -77,7 +77,7 @@ namespace Maya.Raynet.Crm.Response
   "name": "Sdílená"
 } */
         [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SecurityLevel { get; set; }
+        public SecurityLevel SecurityLevel { get; set; }
 
         /* "items": [
   {
@@ -97,7 +97,7 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("items", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> Items { get; set; }
+        public List<PriceListItem> Items { get; set; }
 
     }
 }

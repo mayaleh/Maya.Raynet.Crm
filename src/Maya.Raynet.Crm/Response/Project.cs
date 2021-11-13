@@ -11,7 +11,7 @@ namespace Maya.Raynet.Crm.Response
     public class Project
     {
         [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("code", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Code { get; set; }
@@ -24,64 +24,64 @@ namespace Maya.Raynet.Crm.Response
   "name": "Extra company a.s."
 } */
         [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Company { get; set; }
+        public Company Company { get; set; }
 
         /* "person": {
   "id": 9,
   "fullName": "Ing. Milan Buldog"
 } */
         [JsonProperty("person", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Person { get; set; }
+        public Person Person { get; set; }
 
         /* "owner": {
   "id": 2,
   "fullName": "Petr Svetr"
 } */
         [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Owner { get; set; }
+        public Owner Owner { get; set; }
 
         /* "category": {
   "id": 128,
   "value": "Výroba"
 } */
         [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Category { get; set; }
+        public IdValue Category { get; set; }
 
         [JsonProperty("totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int TotalAmount { get; set; }
+        public decimal TotalAmount { get; set; }
 
         [JsonProperty("tradingProfit", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int TradingProfit { get; set; }
+        public decimal TradingProfit { get; set; }
 
         [JsonProperty("estimatedValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int EstimatedValue { get; set; }
+        public decimal EstimatedValue { get; set; }
 
         [JsonProperty("avgValue.totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int AvgValue_totalAmount { get; set; }
+        public decimal AvgValue_totalAmount { get; set; }
 
         [JsonProperty("avgValue.tradingProfit", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int AvgValue_tradingProfit { get; set; }
+        public decimal AvgValue_tradingProfit { get; set; }
 
         [JsonProperty("avgValue.estimatedValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int AvgValue_estimatedValue { get; set; }
+        public decimal AvgValue_estimatedValue { get; set; }
 
         [JsonProperty("minValue.totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int MinValue_totalAmount { get; set; }
+        public decimal MinValue_totalAmount { get; set; }
 
         [JsonProperty("minValue.tradingProfit", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int MinValue_tradingProfit { get; set; }
+        public decimal MinValue_tradingProfit { get; set; }
 
         [JsonProperty("minValue.estimatedValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int MinValue_estimatedValue { get; set; }
+        public decimal MinValue_estimatedValue { get; set; }
 
         [JsonProperty("maxValue.totalAmount", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int MaxValue_totalAmount { get; set; }
+        public decimal MaxValue_totalAmount { get; set; }
 
         [JsonProperty("maxValue.tradingProfit", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int MaxValue_tradingProfit { get; set; }
+        public decimal MaxValue_tradingProfit { get; set; }
 
         [JsonProperty("maxValue.estimatedValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int MaxValue_estimatedValue { get; set; }
+        public decimal MaxValue_estimatedValue { get; set; }
 
         [JsonProperty("status", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Status { get; set; }
@@ -91,21 +91,21 @@ namespace Maya.Raynet.Crm.Response
   "value": "Aktivní (v běhu)"
 } */
         [JsonProperty("projectStatus", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ProjectStatus { get; set; }
+        public IdValue ProjectStatus { get; set; }
 
         [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidFrom { get; set; }
+        public DateTimeOffset? ValidFrom { get; set; }
 
         /* "validTill": null */
         [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ValidTill { get; set; }
+        public DateTimeOffset? ValidTill { get; set; }
 
         [JsonProperty("scheduledEnd", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ScheduledEnd { get; set; }
+        public DateTimeOffset? ScheduledEnd { get; set; }
 
         /* "customFields": null */
         [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object CustomFields { get; set; }
+        public Dictionary<string, object> CustomFields { get; set; }
 
         [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_createdAt { get; set; }
@@ -132,7 +132,7 @@ namespace Maya.Raynet.Crm.Response
   "name": "Sdílená"
 } */
         [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SecurityLevel { get; set; }
+        public SecurityLevel SecurityLevel { get; set; }
 
         [JsonProperty("description", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Description { get; set; }
@@ -155,7 +155,7 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
 
         /* "businessCases": [
   {
@@ -189,7 +189,7 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("businessCases", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> BusinessCases { get; set; }
+        public List<BusinessCase> BusinessCases { get; set; }
 
         [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }

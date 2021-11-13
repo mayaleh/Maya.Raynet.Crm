@@ -23,14 +23,14 @@ namespace Maya.Raynet.Crm.Response
         public string Description { get; set; }
 
         [JsonProperty("taxRate", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int TaxRate { get; set; }
+        public decimal TaxRate { get; set; }
 
         /* "category": {
   "id": 791,
   "value": "Náklady"
 } */
         [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Category { get; set; }
+        public IdValue Category { get; set; }
 
         /* "primaryPriceListItem": {
   "id": 249,
@@ -41,27 +41,27 @@ namespace Maya.Raynet.Crm.Response
   }
 } */
         [JsonProperty("primaryPriceListItem", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object PrimaryPriceListItem { get; set; }
+        public PriceListItem PrimaryPriceListItem { get; set; }
 
         /* "productLine": {
   "id": 206,
   "value": "fabie I"
 } */
         [JsonProperty("productLine", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ProductLine { get; set; }
+        public IdValue ProductLine { get; set; }
 
         [JsonProperty("unit", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Unit { get; set; }
 
         [JsonProperty("cost", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Cost { get; set; }
+        public decimal Cost { get; set; }
 
         [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidFrom { get; set; }
+        public DateTimeOffset? ValidFrom { get; set; }
 
         /* "validTill": null */
         [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ValidTill { get; set; }
+        public DateTimeOffset? ValidTill { get; set; }
 
         [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_createdAt { get; set; }
@@ -88,7 +88,7 @@ namespace Maya.Raynet.Crm.Response
 
         /* "photo": null */
         [JsonProperty("photo", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Photo { get; set; }
+        public FileInfo Photo { get; set; }
 
         [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int _version { get; set; }
@@ -100,7 +100,7 @@ namespace Maya.Raynet.Crm.Response
   "Vaha_(g)_80307": 10
 } */
         [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object CustomFields { get; set; }
+        public Dictionary<string, object> CustomFields { get; set; }
 
     }
 }

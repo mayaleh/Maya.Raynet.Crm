@@ -165,7 +165,7 @@ namespace Maya.Raynet.Crm.Response
   "name": "Sdílená"
 } */
         [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public SecurityLevels SecurityLevel { get; set; }
+        public SecurityLevel SecurityLevel { get; set; }
 
         [JsonProperty("tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<string> Tags { get; set; }

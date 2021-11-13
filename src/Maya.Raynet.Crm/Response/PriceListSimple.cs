@@ -6,16 +6,12 @@ using Newtonsoft.Json;
 
 namespace Maya.Raynet.Crm.Response
 {
-    public class SecurityLevel
+    public class PriceListSimple
     {
-
         [JsonProperty("id", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Id { get; set; }
+        public long? Id { get; set; }
 
-        [JsonProperty("name", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Name { get; set; }
-
-        [JsonProperty("locked", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public bool? Locked { get; set; }
+        [JsonProperty("currency", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string Currency { get; set; }
     }
 }

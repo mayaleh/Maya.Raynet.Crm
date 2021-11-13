@@ -30,14 +30,14 @@ namespace Maya.Raynet.Crm.Response
   "fullName": "test test"
 } */
         [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Owner { get; set; }
+        public Owner Owner { get; set; }
 
         /* "category": {
   "id": 96,
   "value": "kat 1"
 } */
         [JsonProperty("category", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Category { get; set; }
+        public IdValue Category { get; set; }
 
         /* "primaryRelationship": {
   "id": 1,
@@ -48,48 +48,48 @@ namespace Maya.Raynet.Crm.Response
   }
 } */
         [JsonProperty("primaryRelationship", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object PrimaryRelationship { get; set; }
+        public PersonRelationship PrimaryRelationship { get; set; }
 
         /* "personClassification1": {
   "id": 97,
   "value": "kla 1"
 } */
         [JsonProperty("personClassification1", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object PersonClassification1 { get; set; }
+        public IdValue PersonClassification1 { get; set; }
 
         /* "personClassification2": {
   "id": 98,
   "value": "kla 2"
 } */
         [JsonProperty("personClassification2", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object PersonClassification2 { get; set; }
+        public IdValue PersonClassification2 { get; set; }
 
         /* "personClassification3": {
   "id": 99,
   "value": "kla 3"
 } */
         [JsonProperty("personClassification3", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object PersonClassification3 { get; set; }
+        public IdValue PersonClassification3 { get; set; }
 
         [JsonProperty("salutation", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Salutation { get; set; }
 
         [JsonProperty("birthday", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Birthday { get; set; }
+        public DateTimeOffset? Birthday { get; set; }
 
         /* "language": {
   "id": 70,
   "value": "čeština"
 } */
         [JsonProperty("language", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Language { get; set; }
+        public IdValue Language { get; set; }
 
         /* "maritalStatus": {
   "id": 78,
   "value": "Svobodná/Svobodný"
 } */
         [JsonProperty("maritalStatus", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object MaritalStatus { get; set; }
+        public IdValue MaritalStatus { get; set; }
 
         [JsonProperty("gender", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Gender { get; set; }
@@ -106,7 +106,7 @@ namespace Maya.Raynet.Crm.Response
   "otherContact": "další kontakt"
 } */
         [JsonProperty("contactInfo", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object ContactInfo { get; set; }
+        public ContactInfo ContactInfo { get; set; }
 
         /* "socialNetworkContact": {
   "facebook": "vylezikovaface",
@@ -119,7 +119,7 @@ namespace Maya.Raynet.Crm.Response
   "youtube": null
 } */
         [JsonProperty("socialNetworkContact", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SocialNetworkContact { get; set; }
+        public SocialNetwork SocialNetworkContact { get; set; }
 
         /* "privateAddress": {
   "city": "Ostrava-Poruba",
@@ -130,13 +130,13 @@ namespace Maya.Raynet.Crm.Response
   "zipCode": "708 00"
 } */
         [JsonProperty("privateAddress", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object PrivateAddress { get; set; }
+        public Address PrivateAddress { get; set; }
 
         /* "customFields": {
   "VIP_b91d1": true
 } */
         [JsonProperty("customFields", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object CustomFields { get; set; }
+        public Dictionary<string, object> CustomFields { get; set; }
 
         [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_createdAt { get; set; }
@@ -157,7 +157,7 @@ namespace Maya.Raynet.Crm.Response
   "name": "Sdílená"
 } */
         [JsonProperty("securityLevel", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object SecurityLevel { get; set; }
+        public SecurityLevel SecurityLevel { get; set; }
 
         [JsonProperty("notice", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Notice { get; set; }
@@ -169,7 +169,7 @@ namespace Maya.Raynet.Crm.Response
   "size": 17485
 } */
         [JsonProperty("photo", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object Photo { get; set; }
+        public FileInfo Photo { get; set; }
 
         [JsonProperty("activeUserAccount", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool ActiveUserAccount { get; set; }
@@ -190,7 +190,7 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("attachments", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
 
         /* "relationships": [
   {
@@ -209,7 +209,7 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("relationships", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> Relationships { get; set; }
+        public List<PersonRelationship> Relationships { get; set; }
 
         /* "inlineGdpr": [
   {
@@ -222,7 +222,7 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("inlineGdpr", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> InlineGdpr { get; set; }
+        public List<InlineGdpr> InlineGdpr { get; set; }
 
         [JsonProperty("keyman", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool Keyman { get; set; }
@@ -233,7 +233,7 @@ namespace Maya.Raynet.Crm.Response
   "topic": "Můj lead"
 } */
         [JsonProperty("originLead", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public object OriginLead { get; set; }
+        public Lead OriginLead { get; set; }
 
     }
 }

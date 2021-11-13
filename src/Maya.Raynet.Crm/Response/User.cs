@@ -87,7 +87,7 @@ namespace Maya.Raynet.Crm.Response
   }
 ] */
         [JsonProperty("securityLevels", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<object> SecurityLevels { get; set; }
+        public List<SecurityLevel> SecurityLevels { get; set; }
 
         [JsonProperty("rowInfo.createdAt", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string RowInfo_createdAt { get; set; }
