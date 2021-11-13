@@ -21,8 +21,11 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add(accessToken.ToString());
                 Actions.Add(instanceName.ToString());
         }
-        public async Task<Model.DataResult<Response.DownloadExportBody>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.DownloadExportBody>(apiClient);
+
+        // TODO: HttpClient.GetByteArrayAsync:
+        //      Task<byte[]> GetByteArrayAsync (string? requestUri);
+        public new async Task<byte[]> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

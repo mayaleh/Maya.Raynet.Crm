@@ -26,5 +26,17 @@ namespace Maya.Raynet.Crm
                 return Result<Model.DataResult<T>, Exception>.Failed(e);
             }
         }
+
+        public async Task<Result<byte[], Exception>> GetBytesAsync(Uri uri)
+        {
+            try
+            {
+                return await this.HttpGet<byte[]>(uri);
+            }
+            catch (Exception e)
+            {
+                return Result<byte[], Exception>.Failed(e);
+            }
+        }
     }
 }

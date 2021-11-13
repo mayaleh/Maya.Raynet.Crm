@@ -58,5 +58,28 @@ namespace Maya.Raynet.Crm
                 throw;
             }
         }
+
+        internal async Task<byte[]> ExecuteAsync(ApiClient apiClient)
+        {
+            try
+            {
+                var uri = this.ComposeUri(ApiClient.Endpoint, Actions, this);
+
+                var result = await apiClient.GetHttpClient()
+                    .GetBytesAsync(uri)
+                    .ConfigureAwait(false);
+
+                if (result.IsFailure)
+                {
+                    throw result.Failure;
+                }
+
+                return result.Success;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
