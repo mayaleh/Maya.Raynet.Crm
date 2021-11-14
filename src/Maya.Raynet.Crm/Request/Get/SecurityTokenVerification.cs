@@ -21,8 +21,8 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add(token.ToString());
                 Actions.Add(personId.ToString());
         }
-        public async Task<Model.DataResult<Response.SecurityTokenVerification>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.SecurityTokenVerification>(apiClient);
+        public new async Task<Model.EmtpyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyAsync(apiClient);
 
     }
 }

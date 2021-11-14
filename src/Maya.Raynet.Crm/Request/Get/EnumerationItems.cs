@@ -21,8 +21,8 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add(entityName.ToString());
                 Actions.Add(fieldName.ToString());
         }
-        public async Task<Model.DataResult<List<Response.EnumerationItems>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.EnumerationItems>>(apiClient);
+        public new async Task<Model.DataResult<List<string>>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<List<string>>(apiClient);
 
     }
 }
