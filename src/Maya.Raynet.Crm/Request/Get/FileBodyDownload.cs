@@ -12,17 +12,18 @@ namespace Maya.Raynet.Crm.Request.Get
 {
     public class FileBodyDownload : GetRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public FileBodyDownload(string uuid, string accessToken, string instanceName)
         {
-                Actions.Add("fileBody");
-                Actions.Add(uuid.ToString());
-                Actions.Add(accessToken.ToString());
-                Actions.Add(instanceName.ToString());
+            Actions.Add("fileBody");
+            Actions.Add(uuid.ToString());
+            Actions.Add(accessToken.ToString());
+            Actions.Add(instanceName.ToString());
         }
-        public async Task<Model.DataResult<Response.FileBodyDownload>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.FileBodyDownload>(apiClient);
+
+        public new async Task<byte[]> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

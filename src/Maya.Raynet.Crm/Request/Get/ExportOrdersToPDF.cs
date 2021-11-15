@@ -12,15 +12,16 @@ namespace Maya.Raynet.Crm.Request.Get
 {
     public class ExportOrdersToPDF : GetRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public ExportOrdersToPDF(long salesOrderId)
         {
-                Actions.Add("salesOrder");
-                Actions.Add(salesOrderId.ToString());
+            Actions.Add("salesOrder");
+            Actions.Add(salesOrderId.ToString());
+            Actions.Add("pdfExport");
         }
-        public async Task<Model.DataResult<Response.ExportOrdersToPDF>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.ExportOrdersToPDF>(apiClient);
+        public new async Task<Response.PdfExportInfo> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteRequestAsync<Response.PdfExportInfo>(apiClient);
 
         [RaynetUriParam("locale")]
         public string Locale { get; set; }

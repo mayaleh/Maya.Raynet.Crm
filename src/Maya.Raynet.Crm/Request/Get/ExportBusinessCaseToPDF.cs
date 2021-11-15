@@ -18,9 +18,10 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("businessCase");
                 Actions.Add(businessCaseId.ToString());
+                Actions.Add("pdfExport");
         }
-        public async Task<Model.DataResult<Response.ExportBusinessCaseToPDF>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.ExportBusinessCaseToPDF>(apiClient);
+        public new async Task<Response.PdfExportInfo> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteRequestAsync<Response.PdfExportInfo>(apiClient);
 
         [RaynetUriParam("locale")]
         public string Locale { get; set; }
