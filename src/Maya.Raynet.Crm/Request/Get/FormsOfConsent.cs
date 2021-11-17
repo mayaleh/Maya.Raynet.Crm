@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("gdprFormAgreement");
         }
-        public async Task<Model.DataResult<List<Response.FormsOfConsent>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.FormsOfConsent>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.FormsOfConsent>>(apiClient);
 
     }

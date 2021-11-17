@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("icon");
                 Actions.Add(fileId.ToString());
         }
-        public async Task<Model.DataResult<Response.DownloadIconImage>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.DownloadIconImage>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.DownloadIconImage>(apiClient);
 
     }

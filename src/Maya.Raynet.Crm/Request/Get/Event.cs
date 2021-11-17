@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("event");
                 Actions.Add(eventId.ToString());
         }
-        public async Task<Model.DataResult<Response.Event>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.Event>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.Event>(apiClient);
 
     }

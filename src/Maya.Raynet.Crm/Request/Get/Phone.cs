@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("phoneCall");
                 Actions.Add(phoneCallId.ToString());
         }
-        public async Task<Model.DataResult<Response.Phone>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.Phone>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.Phone>(apiClient);
 
     }

@@ -20,7 +20,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add(businessCaseId.ToString());
                 Actions.Add("participants");
         }
-        public async Task<Model.DataResult<List<Response.BusinessCasesParticipants>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.BusinessCasesParticipants>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.BusinessCasesParticipants>>(apiClient);
 
         [RaynetUriParam("offset")]

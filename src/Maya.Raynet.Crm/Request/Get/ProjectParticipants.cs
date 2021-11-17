@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("project");
                 Actions.Add("participants");
         }
-        public async Task<Model.DataResult<List<Response.ProjectParticipant>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.ProjectParticipant>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.ProjectParticipant>>(apiClient);
 
         [RaynetUriParam("offset")]

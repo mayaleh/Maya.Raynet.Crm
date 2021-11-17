@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("email");
                 Actions.Add(emailId.ToString());
         }
-        public async Task<Model.DataResult<Response.Email>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.Email>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.Email>(apiClient);
 
     }

@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("priceList");
                 Actions.Add(priceListId.ToString());
         }
-        public async Task<Model.DataResult<Response.PriceList>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.PriceList>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.PriceList>(apiClient);
 
     }

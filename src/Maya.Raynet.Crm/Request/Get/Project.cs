@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("project");
                 Actions.Add(projectId.ToString());
         }
-        public async Task<Model.DataResult<Response.Project>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.Project>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.Project>(apiClient);
 
     }

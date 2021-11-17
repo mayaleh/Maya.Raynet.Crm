@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("gdpr");
                 Actions.Add(gdprId.ToString());
         }
-        public async Task<Model.DataResult<Response.LegalTitle>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.LegalTitle>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.LegalTitle>(apiClient);
 
     }

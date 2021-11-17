@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("language");
         }
-        public async Task<Model.DataResult<List<Response.Languages>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.Languages>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.Languages>>(apiClient);
 
     }

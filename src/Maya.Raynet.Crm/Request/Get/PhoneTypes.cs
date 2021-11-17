@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("telType");
         }
-        public async Task<Model.DataResult<List<Response.PhoneType>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.PhoneType>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.PhoneType>>(apiClient);
 
     }

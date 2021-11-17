@@ -20,7 +20,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("document");
                 Actions.Add(documentId.ToString());
         }
-        public async Task<Model.DataResult<Response.Document>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.Document>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.Document>(apiClient);
 
     }

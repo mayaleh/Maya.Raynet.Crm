@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("dms");
         }
-        public async Task<Model.DataResult<List<Response.FoldersAndFiles>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.FoldersAndFiles>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.FoldersAndFiles>>(apiClient);
 
         [RaynetUriParam("path")]

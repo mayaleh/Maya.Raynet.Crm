@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("letter");
                 Actions.Add(letterId.ToString());
         }
-        public async Task<Model.DataResult<Response.Letter>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.Letter>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.Letter>(apiClient);
 
     }

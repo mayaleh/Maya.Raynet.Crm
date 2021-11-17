@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("customField");
                 Actions.Add("config");
         }
-        public async Task<Model.DataResult<Response.LoadConfiguration>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.LoadConfiguration>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.LoadConfiguration>(apiClient);
 
     }

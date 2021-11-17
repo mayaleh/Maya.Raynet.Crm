@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("companyTurnover");
         }
-        public async Task<Model.DataResult<List<Response.CompanyTurnover>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.CompanyTurnover>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.CompanyTurnover>>(apiClient);
 
     }

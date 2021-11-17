@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("productLine");
         }
-        public async Task<Model.DataResult<List<Response.ProductLine>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.ProductLine>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.ProductLine>>(apiClient);
 
     }

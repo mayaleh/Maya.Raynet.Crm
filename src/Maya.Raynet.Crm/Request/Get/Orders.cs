@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("salesOrder");
         }
-        public async Task<Model.DataResult<List<Response.Order>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.Order>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.Order>>(apiClient);
 
         [RaynetUriParam("offset")]

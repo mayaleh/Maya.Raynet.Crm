@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("businessCase");
                 Actions.Add(businessCaseId.ToString());
         }
-        public async Task<Model.DataResult<Response.BusinessCase>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.BusinessCase>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.BusinessCase>(apiClient);
 
     }

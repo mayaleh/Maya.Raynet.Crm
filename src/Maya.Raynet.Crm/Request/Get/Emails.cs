@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("email");
         }
-        public async Task<Model.DataResult<List<Response.Email>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.Email>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.Email>>(apiClient);
 
         [RaynetUriParam("offset")]

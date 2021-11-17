@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("webhook");
         }
-        public async Task<Model.DataResult<List<Response.WebhookList>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.WebhookList>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.WebhookList>>(apiClient);
 
     }

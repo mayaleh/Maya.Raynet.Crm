@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("fileHeader");
                 Actions.Add(fileId.ToString());
         }
-        public async Task<Model.DataResult<Response.DownloadFileMetaInformation>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.DownloadFileMetaInformation>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.DownloadFileMetaInformation>(apiClient);
 
     }

@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
         {
                 Actions.Add("maritalStatus");
         }
-        public async Task<Model.DataResult<List<Response.MaritalStatus>>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<List<Response.MaritalStatus>>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<List<Response.MaritalStatus>>(apiClient);
 
     }

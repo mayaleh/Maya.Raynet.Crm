@@ -19,7 +19,7 @@ namespace Maya.Raynet.Crm.Request.Get
                 Actions.Add("invoice");
                 Actions.Add(invoiceId.ToString());
         }
-        public async Task<Model.DataResult<Response.Invoice>> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.DataResult<Response.Invoice>> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync<Response.Invoice>(apiClient);
 
     }
