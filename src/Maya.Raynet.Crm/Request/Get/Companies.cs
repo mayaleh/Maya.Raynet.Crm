@@ -2,8 +2,6 @@
 // Licensed under the BSD-3-Clause License
 // Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
-using System;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Maya.Raynet.Crm.Attribute;
@@ -12,14 +10,16 @@ namespace Maya.Raynet.Crm.Request.Get
 {
     public class Companies : GetRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Companies()
         {
-                Actions.Add("company");
+            Actions.Add("company");
         }
-        public new async Task<Model.DataResult<List<Response.Company>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.Company>>(apiClient);
+        public new async Task<Model.DataResult<List<Response.Get.Company>>> ExecuteAsync(ApiClient apiClient)
+        {
+            return await base.ExecuteAsync<List<Response.Get.Company>>(apiClient);
+        }
 
         [RaynetUriParam("offset")]
         public int Offset { get; set; }

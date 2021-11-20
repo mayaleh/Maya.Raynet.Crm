@@ -2,9 +2,8 @@
 // Licensed under the BSD-3-Clause License
 // Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
-using System;
-using Newtonsoft.Json;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Maya.Raynet.Crm.Response
 {
@@ -77,7 +76,7 @@ namespace Maya.Raynet.Crm.Response
         public object SecurityLevel { get; set; }
 
         [JsonProperty("_version", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int _version { get; set; }
+        public int Version { get; set; }
 
     }
 }

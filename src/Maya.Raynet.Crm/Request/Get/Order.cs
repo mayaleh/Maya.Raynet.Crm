@@ -2,25 +2,23 @@
 // Licensed under the BSD-3-Clause License
 // Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
-using System;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Get
 {
     public class Order : GetRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Order(long salesOrderId)
         {
-                Actions.Add("salesOrder");
-                Actions.Add(salesOrderId.ToString());
+            Actions.Add("salesOrder");
+            Actions.Add(salesOrderId.ToString());
         }
-        public new async Task<Model.DataResult<Response.Order>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.Order>(apiClient);
-
+        public new async Task<Model.DataResult<Response.Get.Order>> ExecuteAsync(ApiClient apiClient)
+        {
+            return await base.ExecuteAsync<Response.Get.Order>(apiClient);
+        }
     }
 }

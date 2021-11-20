@@ -2,8 +2,6 @@
 // Licensed under the BSD-3-Clause License
 // Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
-using System;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Maya.Raynet.Crm.Attribute;
@@ -12,16 +10,18 @@ namespace Maya.Raynet.Crm.Request.Get
 {
     public class PriceListItems : GetRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public PriceListItems(long priceListId)
         {
-                Actions.Add("priceList");
-                Actions.Add(priceListId.ToString());
-                Actions.Add("items");
+            Actions.Add("priceList");
+            Actions.Add(priceListId.ToString());
+            Actions.Add("items");
         }
-        public new async Task<Model.DataResult<List<Response.PriceListItem>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.PriceListItem>>(apiClient);
+        public new async Task<Model.DataResult<List<Response.Get.PriceListItem>>> ExecuteAsync(ApiClient apiClient)
+        {
+            return await base.ExecuteAsync<List<Response.Get.PriceListItem>>(apiClient);
+        }
 
         [RaynetUriParam("offset")]
         public int Offset { get; set; }

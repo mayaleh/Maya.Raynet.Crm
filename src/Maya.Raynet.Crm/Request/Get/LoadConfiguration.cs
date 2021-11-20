@@ -2,25 +2,23 @@
 // Licensed under the BSD-3-Clause License
 // Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
-using System;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Get
 {
     public class LoadConfiguration : GetRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public LoadConfiguration()
         {
-                Actions.Add("customField");
-                Actions.Add("config");
+            Actions.Add("customField");
+            Actions.Add("config");
         }
-        public new async Task<Model.DataResult<Response.LoadConfiguration>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.LoadConfiguration>(apiClient);
-
+        public new async Task<Model.DataResult<Response.Get.LoadConfiguration>> ExecuteAsync(ApiClient apiClient)
+        {
+            return await base.ExecuteAsync<Response.Get.LoadConfiguration>(apiClient);
+        }
     }
 }

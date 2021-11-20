@@ -1,22 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace Maya.Raynet.Crm.Response
 {
     internal class ParseStringToLongConverter : JsonConverter
     {
-        public override bool CanConvert(Type t) => t == typeof(long) || t == typeof(long?);
+        public override bool CanConvert(Type t)
+        {
+            return t == typeof(long) || t == typeof(long?);
+        }
 
         public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
         {
-            if (reader.TokenType == JsonToken.Null) return null;
+            if (reader.TokenType == JsonToken.Null)
+            {
+                return null;
+            }
+
             var value = serializer.Deserialize<string>(reader);
-            long l;
-            if (Int64.TryParse(value, out l))
+            if (long.TryParse(value, out var l))
             {
                 return l;
             }
@@ -35,6 +37,6 @@ namespace Maya.Raynet.Crm.Response
             return;
         }
 
-        public static readonly ParseStringToLongConverter Singleton = new ParseStringToLongConverter();
+        public static readonly ParseStringToLongConverter Singleton = new();
     }
 }

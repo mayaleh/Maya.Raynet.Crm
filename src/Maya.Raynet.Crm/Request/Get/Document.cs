@@ -2,26 +2,24 @@
 // Licensed under the BSD-3-Clause License
 // Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
-using System;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Get
 {
     public class Document : GetRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Document(long documentId)
         {
-                Actions.Add("dms");
-                Actions.Add("document");
-                Actions.Add(documentId.ToString());
+            Actions.Add("dms");
+            Actions.Add("document");
+            Actions.Add(documentId.ToString());
         }
-        public new async Task<Model.DataResult<Response.Document>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Response.Document>(apiClient);
-
+        public new async Task<Model.DataResult<Response.Get.Document>> ExecuteAsync(ApiClient apiClient)
+        {
+            return await base.ExecuteAsync<Response.Get.Document>(apiClient);
+        }
     }
 }

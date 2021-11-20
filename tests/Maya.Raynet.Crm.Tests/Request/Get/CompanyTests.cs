@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace Maya.Raynet.Crm.Tests.Request.Get
 {
@@ -22,8 +17,7 @@ namespace Maya.Raynet.Crm.Tests.Request.Get
             var apiClient = new ApiClient(options);
 
             var request = new Maya.Raynet.Crm.Request.Get.Company(123);
-
-            var response = request.ExecuteAsync(apiClient)
+            _ = request.ExecuteAsync(apiClient)
                 .GetAwaiter()
                 .GetResult();
         }

@@ -21,18 +21,23 @@ namespace Maya.Raynet.Crm
         }
 
         internal BaseHttpClient GetHttpClient()
-            => this.baseHttpClient;
+        {
+            return this.baseHttpClient;
+        }
 
-        internal Model.RaynetApiOption GetApiOption() 
-            => this.raynetApiOption;
+        internal Model.RaynetApiOption GetApiOption()
+        {
+            return this.raynetApiOption;
+        }
 
         private static void ValidateRaynetOption(Model.RaynetApiOption config)
         {
             if (config == null)
             {
-                throw new ArgumentNullException(nameof(Model.RaynetApiOption));
+                throw new ArgumentNullException(nameof(config));
             }
 
+#pragma warning disable CA2208 // Instantiate argument exceptions correctly
             if (string.IsNullOrEmpty(config.ApiKey))
             {
                 throw new ArgumentNullException(nameof(config.ApiKey));
@@ -46,6 +51,7 @@ namespace Maya.Raynet.Crm
             if (string.IsNullOrEmpty(config.InstanceName))
             {
                 throw new ArgumentNullException(nameof(config.InstanceName));
+#pragma warning restore CA2208 // Instantiate argument exceptions correctly
             }
 
             // it is ok.

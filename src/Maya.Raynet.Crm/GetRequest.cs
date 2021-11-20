@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using Maya.AnyHttpClient;
 
@@ -12,7 +10,7 @@ namespace Maya.Raynet.Crm
     {
         protected virtual List<string> Actions { get; set; }
 
-        protected Uri ComposeUri<T>(string endpoint, IEnumerable<string> actions, T uriParameters)
+        protected static Uri ComposeUri<T>(string endpoint, IEnumerable<string> actions, T uriParameters)
         {
             var _dict = new Dictionary<string, string>();
 
@@ -22,13 +20,14 @@ namespace Maya.Raynet.Crm
                 var attrs = prop.GetCustomAttributes(true);
                 foreach (var attr in attrs)
                 {
-                    var authAttr = attr as Attribute.RaynetUriParam;
-                    if (authAttr != null)
+                    if (attr is Attribute.RaynetUriParam authAttr)
                     {
                         var name = authAttr.Name;
                         var val = prop.GetValue(uriParameters);
                         if (val != null)
+                        {
                             _dict.Add(name, val.ToString());
+                        }
                     }
                 }
             }
@@ -40,7 +39,7 @@ namespace Maya.Raynet.Crm
         {
             try
             {
-                var uri = this.ComposeUri(ApiClient.Endpoint, Actions, this);
+                var uri = ComposeUri(ApiClient.Endpoint, Actions, this);
 
                 var result = await apiClient.GetHttpClient()
                     .GetAsync<T>(uri)
@@ -63,7 +62,7 @@ namespace Maya.Raynet.Crm
         {
             try
             {
-                var uri = this.ComposeUri(ApiClient.Endpoint, Actions, this);
+                var uri = ComposeUri(ApiClient.Endpoint, Actions, this);
 
                 var result = await apiClient.GetHttpClient()
                     .GetResultAsync<T>(uri)
@@ -86,7 +85,7 @@ namespace Maya.Raynet.Crm
         {
             try
             {
-                var uri = this.ComposeUri(ApiClient.Endpoint, Actions, this);
+                var uri = ComposeUri(ApiClient.Endpoint, Actions, this);
 
                 var result = await apiClient.GetHttpClient()
                     .GetEmptyAsync<Model.EmtpyResult>(uri)
@@ -109,7 +108,7 @@ namespace Maya.Raynet.Crm
         {
             try
             {
-                var uri = this.ComposeUri(ApiClient.Endpoint, Actions, this);
+                var uri = ComposeUri(ApiClient.Endpoint, Actions, this);
 
                 var result = await apiClient.GetHttpClient()
                     .GetBytesAsync(uri)

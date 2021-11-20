@@ -2,8 +2,6 @@
 // Licensed under the BSD-3-Clause License
 // Generated at 08.11.2021 21:25:55 by RaynetApiDocToDotnet.ApiDocParser, created by Salim Mayaleh. 
 
-using System;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Maya.Raynet.Crm.Attribute;
@@ -12,16 +10,18 @@ namespace Maya.Raynet.Crm.Request.Get
 {
     public class BulkEmailRecipients : GetRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public BulkEmailRecipients(long massEmailId)
         {
-                Actions.Add("massEmail");
-                Actions.Add(massEmailId.ToString());
-                Actions.Add("recipient");
+            Actions.Add("massEmail");
+            Actions.Add(massEmailId.ToString());
+            Actions.Add("recipient");
         }
-        public new async Task<Model.DataResult<List<Response.BulkEmailRecipient>>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<List<Response.BulkEmailRecipient>>(apiClient);
+        public new async Task<Model.DataResult<List<Response.Get.BulkEmailRecipient>>> ExecuteAsync(ApiClient apiClient)
+        {
+            return await base.ExecuteAsync<List<Response.Get.BulkEmailRecipient>>(apiClient);
+        }
 
         [RaynetUriParam("offset")]
         public int Offset { get; set; }

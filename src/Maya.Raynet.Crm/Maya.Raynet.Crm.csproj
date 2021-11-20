@@ -27,6 +27,9 @@
   <ItemGroup>
     <Folder Include="Domain\Company\Model\" />
     <Folder Include="Domain\Person\Model\" />
+    <Folder Include="Response\Delete\" />
+    <Folder Include="Response\Post\" />
+    <Folder Include="Response\Put\" />
   </ItemGroup>
 
   <ItemGroup>
