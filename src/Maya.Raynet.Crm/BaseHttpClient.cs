@@ -11,7 +11,7 @@ namespace Maya.Raynet.Crm
         public BaseHttpClient(IHttpClientConnector httpClientConnenctor) : base(httpClientConnenctor)
         {
         }
-
+        #region GET http
         public async Task<Result<Model.DataResult<T>, Exception>> GetAsync<T>(Uri uri)
         {
             try
@@ -59,5 +59,18 @@ namespace Maya.Raynet.Crm
                 return Result<byte[], Exception>.Failed(e);
             }
         }
+        #endregion
+
+        #region PUT http
+        public async Task PutAsync(Uri uri)
+        {
+
+        }
+
+        public async Task PutAsync<T>(Uri uri, T body)
+        {
+
+        }
+        #endregion
     }
 }

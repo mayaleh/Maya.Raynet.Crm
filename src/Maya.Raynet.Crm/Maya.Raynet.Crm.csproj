@@ -25,11 +25,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Company\Model\" />
-    <Folder Include="Domain\Person\Model\" />
+    <Folder Include="Model\Request\Delete\" />
+    <Folder Include="Model\Request\Post\" />
+    <Folder Include="Model\Request\Put\" />
+    <Folder Include="Request\Put\" />
     <Folder Include="Response\Delete\" />
     <Folder Include="Response\Post\" />
-    <Folder Include="Response\Put\" />
   </ItemGroup>
 
   <ItemGroup>
