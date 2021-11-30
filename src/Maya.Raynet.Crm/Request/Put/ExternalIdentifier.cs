@@ -26,8 +26,8 @@ namespace Maya.Raynet.Crm.Request.Put
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.ExternalIdentifier>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.ExternalIdentifier, Response.Put.ExternalIdentifier>(apiClient, this.requestBody);
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync<Model.Request.Put.ExternalIdentifier>(apiClient, this.requestBody);
 
         private Model.Request.Put.ExternalIdentifier requestBody;
 

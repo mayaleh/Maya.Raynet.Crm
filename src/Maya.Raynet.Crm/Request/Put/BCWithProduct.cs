@@ -10,26 +10,28 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Put
 {
-    public class OPItems : PutRequest
+    /// <summary>
+    /// BusinessCase With Products
+    /// </summary>
+    public class BCWithProduct : PutRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public OPItems(long businessCaseId)
+        public BCWithProduct()
         {
                 Actions.Add("businessCase");
-                Actions.Add(businessCaseId.ToString());
-                Actions.Add("item");
+                Actions.Add("createWithItems");
         }
-        public OPItems SetRequestData(Model.Request.Put.OPItems body)
+        public BCWithProduct SetRequestData(Model.Request.Put.BCWithProduct body)
          {
              this.requestBody = body;
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.OPItems>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.OPItems, Response.Put.OPItems>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.BCWithProduct, Response.Put.IdResult>(apiClient, this.requestBody);
 
-        private Model.Request.Put.OPItems requestBody;
+        private Model.Request.Put.BCWithProduct requestBody;
 
     }
 }

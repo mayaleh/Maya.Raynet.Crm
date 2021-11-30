@@ -25,8 +25,8 @@ namespace Maya.Raynet.Crm.Request.Put
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.Credit>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.Credit, Response.Put.Credit>(apiClient, this.requestBody);
+        public async Task ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultAsync<Model.Request.Put.Credit>(apiClient, this.requestBody);
 
         private Model.Request.Put.Credit requestBody;
 

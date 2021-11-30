@@ -26,8 +26,8 @@ namespace Maya.Raynet.Crm.Request.Put
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.MenuItems>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.MenuItems, Response.Put.MenuItems>(apiClient, this.requestBody);
+        public async Task ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultAsync<Model.Request.Put.MenuItems>(apiClient, this.requestBody);
 
         private Model.Request.Put.MenuItems requestBody;
 

@@ -2,7 +2,7 @@
 
 namespace Maya.Raynet.Crm.Model
 {
-    public class EmtpyResult
+    public class EmptyResult
     {
         [JsonProperty("success", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool? IsSuccess { get; set; }

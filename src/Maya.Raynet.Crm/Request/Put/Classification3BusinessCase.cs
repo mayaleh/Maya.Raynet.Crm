@@ -24,8 +24,8 @@ namespace Maya.Raynet.Crm.Request.Put
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.Classification3BusinessCase>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.Classification3BusinessCase, Response.Put.Classification3BusinessCase>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.Classification3BusinessCase, Response.Put.IdResult>(apiClient, this.requestBody);
 
         private Model.Request.Put.Classification3BusinessCase requestBody;
 

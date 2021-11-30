@@ -27,8 +27,8 @@ namespace Maya.Raynet.Crm.Request.Put
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.EnumerationItem>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.EnumerationItem, Response.Put.EnumerationItem>(apiClient, this.requestBody);
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync<Model.Request.Put.EnumerationItem>(apiClient, this.requestBody);
 
         private Model.Request.Put.EnumerationItem requestBody;
 

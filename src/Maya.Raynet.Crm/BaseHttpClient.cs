@@ -36,15 +36,15 @@ namespace Maya.Raynet.Crm
             }
         }
 
-        public async Task<Result<Model.EmtpyResult, Exception>> GetEmptyAsync<T>(Uri uri)
+        public async Task<Result<Model.EmptyResult, Exception>> GetEmptyAsync<T>(Uri uri)
         {
             try
             {
-                return await this.HttpGet<Model.EmtpyResult>(uri);
+                return await this.HttpGet<Model.EmptyResult>(uri);
             }
             catch (Exception e)
             {
-                return Result<Model.EmtpyResult, Exception>.Failed(e);
+                return Result<Model.EmptyResult, Exception>.Failed(e);
             }
         }
 
@@ -66,8 +66,16 @@ namespace Maya.Raynet.Crm
         {
 
         }
+        public async Task<TResult> PutAsync<TResult>(Uri uri)
+        {
+
+        }
 
         public async Task PutAsync<T>(Uri uri, T body)
+        {
+
+        }
+        public async Task<Result<Model.EmptyResult, Exception>> PutEmptyAsync<T>(Uri uri, T body)
         {
 
         }

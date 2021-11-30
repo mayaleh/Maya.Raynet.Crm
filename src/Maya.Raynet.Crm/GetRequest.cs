@@ -57,14 +57,14 @@ namespace Maya.Raynet.Crm
             }
         }
 
-        internal async Task<Model.EmtpyResult> ExecuteEmptyAsync(ApiClient apiClient)
+        internal async Task<Model.EmptyResult> ExecuteEmptyAsync(ApiClient apiClient)
         {
             try
             {
                 var uri = RequestHelper.ComposeUri(ApiClient.Endpoint, Actions, this);
 
                 var result = await apiClient.GetHttpClient()
-                    .GetEmptyAsync<Model.EmtpyResult>(uri)
+                    .GetEmptyAsync<Model.EmptyResult>(uri)
                     .ConfigureAwait(false);
 
                 if (result.IsFailure)

@@ -18,7 +18,7 @@ namespace Maya.Raynet.Crm.Request.Get
             Actions.Add(token.ToString());
             Actions.Add(personId.ToString());
         }
-        public new async Task<Model.EmtpyResult> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
         {
             return await base.ExecuteEmptyAsync(apiClient);
         }

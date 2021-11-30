@@ -21,16 +21,9 @@ namespace Maya.Raynet.Crm.Request.Put
                 Actions.Add("watcher");
                 Actions.Add(personId.ToString());
         }
-        public DiscussionTracker SetRequestData(Model.Request.Put.DiscussionTracker body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Put.DiscussionTracker>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.DiscussionTracker, Response.Put.DiscussionTracker>(apiClient, this.requestBody);
 
-        private Model.Request.Put.DiscussionTracker requestBody;
-
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoBodyAsync<Response.Put.IdResult>(apiClient);
     }
 }

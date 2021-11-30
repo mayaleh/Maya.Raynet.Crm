@@ -10,24 +10,24 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Put
 {
-    public class OrderCategory : PutRequest
+    public class LeadPhase : PutRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public OrderCategory()
+        public LeadPhase()
         {
-                Actions.Add("salesOrderCategory");
+                Actions.Add("leadPhase");
         }
-        public OrderCategory SetRequestData(Model.Request.Put.OrderCategory body)
+        public LeadPhase SetRequestData(Model.Request.Put.LeadPhase body)
          {
              this.requestBody = body;
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.OrderCategory>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.OrderCategory, Response.Put.OrderCategory>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<int>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.LeadPhase, int>(apiClient, this.requestBody);
 
-        private Model.Request.Put.OrderCategory requestBody;
+        private Model.Request.Put.LeadPhase requestBody;
 
     }
 }
