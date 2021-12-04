@@ -10,26 +10,24 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Put
 {
-    public class TAG : PutRequest
+    public class Currency : PutRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public TAG(long personId)
+        public Currency()
         {
-                Actions.Add("person");
-                Actions.Add(personId.ToString());
-                Actions.Add("tag");
+                Actions.Add("currency");
         }
-        public TAG SetRequestData(Model.Request.Put.TAG body)
+        public Currency SetRequestData(Model.Request.Put.Currency body)
          {
              this.requestBody = body;
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.TAG>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.TAG, Response.Put.TAG>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.Currency, Response.Put.IdResult>(apiClient, this.requestBody);
 
-        private Model.Request.Put.TAG requestBody;
+        private Model.Request.Put.Currency requestBody;
 
     }
 }

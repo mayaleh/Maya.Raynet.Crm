@@ -12,20 +12,20 @@ namespace Maya.Raynet.Crm.Request.Put
 {
     public class SecurityLevel : PutRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public SecurityLevel()
         {
-                Actions.Add("securityLevel");
+            Actions.Add("securityLevel");
         }
         public SecurityLevel SetRequestData(Model.Request.Put.SecurityLevel body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Put.SecurityLevel>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.SecurityLevel, Response.Put.SecurityLevel>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.SecurityLevel, Response.Put.IdResult>(apiClient, this.requestBody);
 
         private Model.Request.Put.SecurityLevel requestBody;
 

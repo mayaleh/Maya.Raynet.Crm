@@ -24,8 +24,8 @@ namespace Maya.Raynet.Crm.Request.Put
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.ProjectCategory>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.ProjectCategory, Response.Put.ProjectCategory>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<int>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.ProjectCategory, int>(apiClient, this.requestBody);
 
         private Model.Request.Put.ProjectCategory requestBody;
 

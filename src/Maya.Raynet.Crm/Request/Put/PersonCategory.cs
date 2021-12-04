@@ -12,20 +12,20 @@ namespace Maya.Raynet.Crm.Request.Put
 {
     public class PersonCategory : PutRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public PersonCategory()
         {
-                Actions.Add("personCategory");
+            Actions.Add("personCategory");
         }
         public PersonCategory SetRequestData(Model.Request.Put.PersonCategory body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Put.PersonCategory>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.PersonCategory, Response.Put.PersonCategory>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<int>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.PersonCategory, int>(apiClient, this.requestBody);
 
         private Model.Request.Put.PersonCategory requestBody;
 

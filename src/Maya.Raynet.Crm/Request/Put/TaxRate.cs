@@ -10,24 +10,24 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Put
 {
-    public class StateOfBusinessCase : PutRequest
+    public class TaxRate : PutRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public StateOfBusinessCase()
+        public TaxRate()
         {
-                Actions.Add("businessCasePhase");
+                Actions.Add("taxRate");
         }
-        public StateOfBusinessCase SetRequestData(Model.Request.Put.StateOfBusinessCase body)
+        public TaxRate SetRequestData(Model.Request.Put.TaxRate body)
          {
              this.requestBody = body;
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.StateOfBusinessCase>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.StateOfBusinessCase, Response.Put.StateOfBusinessCase>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<int>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.TaxRate, int>(apiClient, this.requestBody);
 
-        private Model.Request.Put.StateOfBusinessCase requestBody;
+        private Model.Request.Put.TaxRate requestBody;
 
     }
 }

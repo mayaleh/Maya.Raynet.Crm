@@ -8,16 +8,10 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Model.Request.Put
 {
-    public class StartACurrency
+    public class TaxRate
     {
         [JsonProperty("code01", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Code01 { get; set; }
-
-        [JsonProperty("code02", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Code02 { get; set; }
-
-        [JsonProperty("strValue01", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string StrValue01 { get; set; }
 
     }
 }

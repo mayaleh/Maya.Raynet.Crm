@@ -8,13 +8,13 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Model.Request.Put
 {
-    public class ToAnAttachmentWithAURLLink
+    public class BusinessCaseParticipant
     {
-        [JsonProperty("link", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Link { get; set; }
+        [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int Company { get; set; }
 
-        [JsonProperty("linkName", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string LinkName { get; set; }
+        [JsonProperty("note", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string Note { get; set; }
 
     }
 }

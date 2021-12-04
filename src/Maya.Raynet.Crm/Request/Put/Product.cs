@@ -24,8 +24,8 @@ namespace Maya.Raynet.Crm.Request.Put
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.Product>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.Product, Response.Put.Product>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.Product, Response.Put.IdResult>(apiClient, this.requestBody);
 
         private Model.Request.Put.Product requestBody;
 

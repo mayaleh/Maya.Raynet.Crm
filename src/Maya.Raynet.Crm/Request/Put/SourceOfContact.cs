@@ -24,8 +24,8 @@ namespace Maya.Raynet.Crm.Request.Put
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.SourceOfContact>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.SourceOfContact, Response.Put.SourceOfContact>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.SourceOfContact, Response.Put.IdResult>(apiClient, this.requestBody);
 
         private Model.Request.Put.SourceOfContact requestBody;
 

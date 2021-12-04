@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Model.Request.Put
 {
-    public class ToAFileAttachment
+    public class FileAttachment
     {
         [JsonProperty("uuid", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Uuid { get; set; }

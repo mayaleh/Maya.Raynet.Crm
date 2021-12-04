@@ -8,10 +8,13 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Model.Request.Put
 {
-    public class TAG
+    public class BusinessCasePhase
     {
-        [JsonProperty("tag", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Tag { get; set; }
+        [JsonProperty("code01", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string Code01 { get; set; }
+
+        [JsonProperty("code02", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string Code02 { get; set; }
 
     }
 }

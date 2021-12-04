@@ -12,22 +12,22 @@ namespace Maya.Raynet.Crm.Request.Put
 {
     public class Relationship : PutRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Relationship(long personId)
         {
-                Actions.Add("person");
-                Actions.Add(personId.ToString());
-                Actions.Add("relationship");
+            Actions.Add("person");
+            Actions.Add(personId.ToString());
+            Actions.Add("relationship");
         }
         public Relationship SetRequestData(Model.Request.Put.Relationship body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Put.Relationship>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.Relationship, Response.Put.Relationship>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.Relationship, Response.Put.IdResult>(apiClient, this.requestBody);
 
         private Model.Request.Put.Relationship requestBody;
 

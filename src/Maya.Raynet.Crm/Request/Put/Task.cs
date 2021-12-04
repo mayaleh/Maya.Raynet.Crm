@@ -12,20 +12,20 @@ namespace Maya.Raynet.Crm.Request.Put
 {
     public class Task : PutRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Task()
         {
-                Actions.Add("task");
+            Actions.Add("task");
         }
         public Task SetRequestData(Model.Request.Put.Task body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Put.Task>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.Task, Response.Put.Task>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.Task, Response.Put.IdResult>(apiClient, this.requestBody);
 
         private Model.Request.Put.Task requestBody;
 

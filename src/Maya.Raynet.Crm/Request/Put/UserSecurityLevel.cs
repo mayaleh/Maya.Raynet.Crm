@@ -10,27 +10,20 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Put
 {
-    public class UserLevelSecurity : PutRequest
+    public class UserSecurityLevel : PutRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public UserLevelSecurity(long userAccountId, long securityLevelId)
+        public UserSecurityLevel(long userAccountId, long securityLevelId)
         {
                 Actions.Add("userAccount");
                 Actions.Add(userAccountId.ToString());
                 Actions.Add("securityLevel");
                 Actions.Add(securityLevelId.ToString());
         }
-        public UserLevelSecurity SetRequestData(Model.Request.Put.UserLevelSecurity body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Put.UserLevelSecurity>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.UserLevelSecurity, Response.Put.UserLevelSecurity>(apiClient, this.requestBody);
 
-        private Model.Request.Put.UserLevelSecurity requestBody;
-
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoBodyEmptyResultAsync(apiClient);
     }
 }

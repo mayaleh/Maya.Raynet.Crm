@@ -10,24 +10,24 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Put
 {
-    public class PaymentTerms : PutRequest
+    public class CompanyTurnover : PutRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public PaymentTerms()
+        public CompanyTurnover()
         {
-                Actions.Add("paymentTerm");
+                Actions.Add("companyTurnover");
         }
-        public PaymentTerms SetRequestData(Model.Request.Put.PaymentTerms body)
+        public CompanyTurnover SetRequestData(Model.Request.Put.Turnover body)
          {
              this.requestBody = body;
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.PaymentTerms>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.PaymentTerms, Response.Put.PaymentTerms>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.Turnover, Response.Put.IdResult>(apiClient, this.requestBody);
 
-        private Model.Request.Put.PaymentTerms requestBody;
+        private Model.Request.Put.Turnover requestBody;
 
     }
 }

@@ -12,20 +12,20 @@ namespace Maya.Raynet.Crm.Request.Put
 {
     public class ProductLine : PutRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public ProductLine()
         {
-                Actions.Add("productLine");
+            Actions.Add("productLine");
         }
         public ProductLine SetRequestData(Model.Request.Put.ProductLine body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Put.ProductLine>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.ProductLine, Response.Put.ProductLine>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.ProductLine, Response.Put.IdResult>(apiClient, this.requestBody);
 
         private Model.Request.Put.ProductLine requestBody;
 

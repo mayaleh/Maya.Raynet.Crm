@@ -9,27 +9,27 @@ using System.Threading.Tasks;
 using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Put
-{
-    public class Participant : PutRequest
+{ 
+    public class BusinessCaseParticipant : PutRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public Participant(long businessCaseId)
+        public BusinessCaseParticipant(long businessCaseId)
         {
                 Actions.Add("businessCase");
                 Actions.Add(businessCaseId.ToString());
                 Actions.Add("participants");
         }
-        public Participant SetRequestData(Model.Request.Put.Participant body)
+        public BusinessCaseParticipant SetRequestData(Model.Request.Put.BusinessCaseParticipant body)
          {
              this.requestBody = body;
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Put.Participant>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.Participant, Response.Put.Participant>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.BusinessCaseParticipant, Response.Put.IdResult>(apiClient, this.requestBody);
 
-        private Model.Request.Put.Participant requestBody;
+        private Model.Request.Put.BusinessCaseParticipant requestBody;
 
     }
 }

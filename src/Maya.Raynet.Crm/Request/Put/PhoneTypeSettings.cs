@@ -12,20 +12,20 @@ namespace Maya.Raynet.Crm.Request.Put
 {
     public class PhoneTypeSettings : PutRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public PhoneTypeSettings()
         {
-                Actions.Add("telType");
+            Actions.Add("telType");
         }
         public PhoneTypeSettings SetRequestData(Model.Request.Put.PhoneTypeSettings body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Put.PhoneTypeSettings>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Put.PhoneTypeSettings, Response.Put.PhoneTypeSettings>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<Response.Put.IdResult>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<Model.Request.Put.PhoneTypeSettings, Response.Put.IdResult>(apiClient, this.requestBody);
 
         private Model.Request.Put.PhoneTypeSettings requestBody;
 
