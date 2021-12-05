@@ -27,10 +27,9 @@ namespace Maya.Raynet.Crm.Request.Post
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Post.BusinessAddress>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.BusinessAddress, Response.Post.BusinessAddress>(apiClient, this.requestBody);
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultAsync<Model.Request.Post.BusinessAddress>(apiClient, this.requestBody);
 
         private Model.Request.Post.BusinessAddress requestBody;
-
     }
 }

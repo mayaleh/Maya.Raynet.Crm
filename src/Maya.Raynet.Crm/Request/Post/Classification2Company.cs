@@ -12,23 +12,22 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class Classification2Company : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Classification2Company(long id)
         {
-                Actions.Add("companyClassification2");
-                Actions.Add(id.ToString());
+            Actions.Add("companyClassification2");
+            Actions.Add(id.ToString());
         }
         public Classification2Company SetRequestData(Model.Request.Post.Classification2Company body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Post.Classification2Company>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Classification2Company, Response.Post.Classification2Company>(apiClient, this.requestBody);
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync<Model.Request.Post.Classification2Company>(apiClient, this.requestBody);
 
         private Model.Request.Post.Classification2Company requestBody;
-
     }
 }

@@ -12,21 +12,21 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class BusinessTerritory : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public BusinessTerritory(long id)
         {
-                Actions.Add("territory");
-                Actions.Add(id.ToString());
+            Actions.Add("territory");
+            Actions.Add(id.ToString());
         }
         public BusinessTerritory SetRequestData(Model.Request.Post.BusinessTerritory body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Post.BusinessTerritory>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.BusinessTerritory, Response.Post.BusinessTerritory>(apiClient, this.requestBody);
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync<Model.Request.Post.BusinessTerritory>(apiClient, this.requestBody);
 
         private Model.Request.Post.BusinessTerritory requestBody;
 

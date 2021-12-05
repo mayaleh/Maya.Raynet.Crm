@@ -12,21 +12,21 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class Classification1PerPerson : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Classification1PerPerson(long id)
         {
-                Actions.Add("personClassification1");
-                Actions.Add(id.ToString());
+            Actions.Add("personClassification1");
+            Actions.Add(id.ToString());
         }
         public Classification1PerPerson SetRequestData(Model.Request.Post.Classification1PerPerson body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Post.Classification1PerPerson>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Classification1PerPerson, Response.Post.Classification1PerPerson>(apiClient, this.requestBody);
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync<Model.Request.Post.Classification1PerPerson>(apiClient, this.requestBody);
 
         private Model.Request.Post.Classification1PerPerson requestBody;
 
