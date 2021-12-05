@@ -62,22 +62,115 @@ namespace Maya.Raynet.Crm
         #endregion
 
         #region PUT http
-        public async Task PutAsync(Uri uri)
+        public async Task<Result<Maya.Ext.Unit, Exception>> PutAsync(Uri uri)
         {
-
+            try
+            {
+                return await this.HttpPut<Maya.Ext.Unit>(uri, null);
+            }
+            catch (Exception e)
+            {
+                return Result<Maya.Ext.Unit, Exception>.Failed(e);
+            }
         }
-        public async Task<TResult> PutAsync<TResult>(Uri uri)
+
+        public async Task<Result<TResult, Exception>> PutAsync<TResult>(Uri uri)
         {
-
+            try
+            {
+                return await this.HttpPut<TResult>(uri, null);
+            }
+            catch (Exception e)
+            {
+                return Result<TResult, Exception>.Failed(e);
+            }
         }
 
-        public async Task PutAsync<T>(Uri uri, T body)
+        public async Task<Result<Maya.Ext.Unit, Exception>> PutAsync<T>(Uri uri, T body)
         {
-
+            try
+            {
+                return await this.HttpPut<Maya.Ext.Unit>(uri, body);
+            }
+            catch (Exception e)
+            {
+                return Result<Maya.Ext.Unit, Exception>.Failed(e);
+            }
         }
+
         public async Task<Result<Model.EmptyResult, Exception>> PutEmptyAsync<T>(Uri uri, T body)
         {
+            try
+            {
+                return await this.HttpPut<Model.EmptyResult>(uri, body);
+            }
+            catch (Exception e)
+            {
+                return Result<Model.EmptyResult, Exception>.Failed(e);
+            }
+        }
 
+        public async Task<Result<TResult, Exception>> PutAsync<TBody, TResult>(Uri uri, TBody body)
+        {
+            try
+            {
+                return await this.HttpPut<TResult>(uri, body);
+            }
+            catch (Exception e)
+            {
+                return Result<TResult, Exception>.Failed(e);
+            }
+        }
+        #endregion
+
+        #region POST http
+
+        public async Task<Result<Maya.Ext.Unit, Exception>> PostAsync(Uri uri)
+        {
+            try
+            {
+                return await this.HttpPost<Maya.Ext.Unit>(uri, new { });
+            }
+            catch (Exception e)
+            {
+                return Result<Maya.Ext.Unit, Exception>.Failed(e);
+            }
+        }
+
+        public async Task<Result<Model.EmptyResult, Exception>> PostEmptyAsync<T>(Uri uri, T body)
+        {
+            try
+            {
+                return await this.HttpPost<Model.EmptyResult>(uri, body);
+            }
+            catch (Exception e)
+            {
+                return Result<Model.EmptyResult, Exception>.Failed(e);
+            }
+        }
+
+        public async Task<Result<Maya.Ext.Unit, Exception>> PostAsync<T>(Uri uri, T body)
+        {
+            try
+            {
+                return await this.HttpPost<Maya.Ext.Unit>(uri, body);
+            }
+            catch (Exception e)
+            {
+                return Result<Maya.Ext.Unit, Exception>.Failed(e);
+            }
+        }
+
+        public async Task<Result<TResult, Exception>> PostAsync<TBody, TResult>(Uri uri, TBody body)
+        {
+            try
+            {
+                return await this.HttpPost<TResult>(uri, body);
+            }
+            catch (Exception e)
+            {
+                return Result<TResult, Exception>.Failed(e);
+            }
         }
         #endregion
     }

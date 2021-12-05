@@ -10,6 +10,11 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
+    /// <summary>
+    /// hromadné pøidání/upravení položek ceníku
+    /// Hromadné pøidání/upravení položek na ceník. API je omezeno na 100 souèasnì vkládaných položek.
+    /// https://app.raynet.cz/api/v2/priceList/1/itemBulkInsert/
+    /// </summary>
     public class BulkPriceListItems : PostRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
@@ -20,16 +25,16 @@ namespace Maya.Raynet.Crm.Request.Post
                 Actions.Add(priceListId.ToString());
                 Actions.Add("itemBulkUpsert");
         }
-        public BulkPriceListItems SetRequestData(Model.Request.Post.BulkPriceListItems body)
+        public BulkPriceListItems SetRequestData(IEnumerable<Model.Request.Post.BulkPriceListItem> body)
          {
              this.requestBody = body;
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Post.BulkPriceListItems>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.BulkPriceListItems, Response.Post.BulkPriceListItems>(apiClient, this.requestBody);
+        public async Task<Model.DataResult<IEnumerable<Response.Post.BulkPriceListItem>>> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync<IEnumerable<Model.Request.Post.BulkPriceListItem>, IEnumerable<Response.Post.BulkPriceListItem>>(apiClient, this.requestBody);
 
-        private Model.Request.Post.BulkPriceListItems requestBody;
+        private IEnumerable<Model.Request.Post.BulkPriceListItem> requestBody;
 
     }
 }

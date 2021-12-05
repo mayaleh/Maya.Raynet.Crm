@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Response.Post
 {
-    public class BulkPriceListItems
+    public class BulkPriceListItem
     {
         [JsonProperty("product", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Product { get; set; }
@@ -21,6 +21,5 @@ namespace Maya.Raynet.Crm.Response.Post
 
         [JsonProperty("message", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Message { get; set; }
-
     }
 }

@@ -12,21 +12,21 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class Bid : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Bid(long offerId)
         {
-                Actions.Add("offer");
-                Actions.Add(offerId.ToString());
+            Actions.Add("offer");
+            Actions.Add(offerId.ToString());
         }
         public Bid SetRequestData(Model.Request.Post.Bid body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Post.Bid>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Bid, Response.Post.Bid>(apiClient, this.requestBody);
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Post.Bid requestBody;
 

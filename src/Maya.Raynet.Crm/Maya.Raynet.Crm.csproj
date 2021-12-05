@@ -26,9 +26,7 @@
 
   <ItemGroup>
     <Folder Include="Model\Request\Delete\" />
-    <Folder Include="Model\Request\Post\" />
     <Folder Include="Response\Delete\" />
-    <Folder Include="Response\Post\" />
   </ItemGroup>
 
   <ItemGroup>

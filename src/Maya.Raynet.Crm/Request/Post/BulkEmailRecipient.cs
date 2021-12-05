@@ -12,23 +12,23 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class BulkEmailRecipient : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public BulkEmailRecipient(long massEmailId, long recipientId)
         {
-                Actions.Add("massEmail");
-                Actions.Add(massEmailId.ToString());
-                Actions.Add("recipient");
-                Actions.Add(recipientId.ToString());
+            Actions.Add("massEmail");
+            Actions.Add(massEmailId.ToString());
+            Actions.Add("recipient");
+            Actions.Add(recipientId.ToString());
         }
         public BulkEmailRecipient SetRequestData(Model.Request.Post.BulkEmailRecipient body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Post.BulkEmailRecipient>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.BulkEmailRecipient, Response.Post.BulkEmailRecipient>(apiClient, this.requestBody);
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Post.BulkEmailRecipient requestBody;
 
