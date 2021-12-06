@@ -10,20 +10,18 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class DocumentRenewal : PostRequest
+    public class CompanyInvalidation : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public DocumentRenewal(long documentId)
+        public CompanyInvalidation(long companyId)
         {
-            Actions.Add("dms");
-            Actions.Add("document");
-            Actions.Add(documentId.ToString());
-            Actions.Add("valid");
+            Actions.Add("company");
+            Actions.Add(companyId.ToString());
+            Actions.Add("invalid");
         }
 
         public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
-            => await base.ExecuteNoResultNoBodyAsync(apiClient);
-
+                => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

@@ -12,21 +12,21 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class Email : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Email(long emailId)
         {
-                Actions.Add("email");
-                Actions.Add(emailId.ToString());
+            Actions.Add("email");
+            Actions.Add(emailId.ToString());
         }
         public Email SetRequestData(Model.Request.Post.Email body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Post.Email>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Email, Response.Post.Email>(apiClient, this.requestBody);
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteEmptyResultAsync<Model.Request.Post.Email>(apiClient, this.requestBody);
 
         private Model.Request.Post.Email requestBody;
 

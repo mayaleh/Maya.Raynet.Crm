@@ -25,8 +25,8 @@ namespace Maya.Raynet.Crm.Request.Post
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Post.CompanyCategory>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.CompanyCategory, Response.Post.CompanyCategory>(apiClient, this.requestBody);
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync<Model.Request.Post.CompanyCategory>(apiClient, this.requestBody);
 
         private Model.Request.Post.CompanyCategory requestBody;
 

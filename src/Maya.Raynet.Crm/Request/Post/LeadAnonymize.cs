@@ -10,26 +10,19 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class GDPRAnonymizeLead : PostRequest
+    public class LeadAnonymize : PostRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public GDPRAnonymizeLead(long leadId)
+        public LeadAnonymize(long leadId)
         {
                 Actions.Add("lead");
                 Actions.Add(leadId.ToString());
                 Actions.Add("anonymize");
         }
-        public GDPRAnonymizeLead SetRequestData(Model.Request.Post.GDPRAnonymizeLead body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.GDPRAnonymizeLead>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.GDPRAnonymizeLead, Response.Post.GDPRAnonymizeLead>(apiClient, this.requestBody);
-
-        private Model.Request.Post.GDPRAnonymizeLead requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteNoResultNoBodyAsync(apiClient);
 
     }
 }

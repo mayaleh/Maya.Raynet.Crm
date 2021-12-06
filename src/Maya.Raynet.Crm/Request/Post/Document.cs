@@ -25,13 +25,12 @@ namespace Maya.Raynet.Crm.Request.Post
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Post.Document>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Document, Response.Post.Document>(apiClient, this.requestBody);
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultAsync<Model.Request.Post.Document>(apiClient, this.requestBody);
 
         private Model.Request.Post.Document requestBody;
 
         [RaynetUriParam("businessCaseId")]
         public long BusinessCaseId { get; set; }
-
     }
 }

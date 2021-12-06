@@ -10,25 +10,25 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class FormOfConsent : PostRequest
+    public class PersonClassification2 : PostRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public FormOfConsent(long id)
+        public PersonClassification2(long id)
         {
-                Actions.Add("gdprFormAgreement");
+                Actions.Add("personClassification2");
                 Actions.Add(id.ToString());
         }
-        public FormOfConsent SetRequestData(Model.Request.Post.FormOfConsent body)
+        public PersonClassification2 SetRequestData(Model.Request.Post.PersonClassification2 body)
          {
              this.requestBody = body;
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Post.FormOfConsent>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.FormOfConsent, Response.Post.FormOfConsent>(apiClient, this.requestBody);
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync<Model.Request.Post.PersonClassification2>(apiClient, this.requestBody);
 
-        private Model.Request.Post.FormOfConsent requestBody;
+        private Model.Request.Post.PersonClassification2 requestBody;
 
     }
 }

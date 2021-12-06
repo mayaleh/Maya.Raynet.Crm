@@ -12,25 +12,18 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class DocumentInvalidation : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public DocumentInvalidation(long documentId)
         {
-                Actions.Add("dms");
-                Actions.Add("document");
-                Actions.Add(documentId.ToString());
-                Actions.Add("invalid");
+            Actions.Add("dms");
+            Actions.Add("document");
+            Actions.Add(documentId.ToString());
+            Actions.Add("invalid");
         }
-        public DocumentInvalidation SetRequestData(Model.Request.Post.DocumentInvalidation body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.DocumentInvalidation>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.DocumentInvalidation, Response.Post.DocumentInvalidation>(apiClient, this.requestBody);
 
-        private Model.Request.Post.DocumentInvalidation requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

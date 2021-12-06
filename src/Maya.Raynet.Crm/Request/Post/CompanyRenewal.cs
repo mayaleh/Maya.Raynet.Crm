@@ -12,24 +12,16 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class CompanyRenewal : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public CompanyRenewal(long companyId)
         {
-                Actions.Add("company");
-                Actions.Add(companyId.ToString());
-                Actions.Add("valid");
+            Actions.Add("company");
+            Actions.Add(companyId.ToString());
+            Actions.Add("valid");
         }
-        public CompanyRenewal SetRequestData(Model.Request.Post.CompanyRenewal body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.CompanyRenewal>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.CompanyRenewal, Response.Post.CompanyRenewal>(apiClient, this.requestBody);
-
-        private Model.Request.Post.CompanyRenewal requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

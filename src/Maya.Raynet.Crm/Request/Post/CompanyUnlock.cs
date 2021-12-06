@@ -12,24 +12,16 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class CompanyUnlock : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public CompanyUnlock(long companyId)
         {
-                Actions.Add("company");
-                Actions.Add(companyId.ToString());
-                Actions.Add("unlock");
+            Actions.Add("company");
+            Actions.Add(companyId.ToString());
+            Actions.Add("unlock");
         }
-        public CompanyUnlock SetRequestData(Model.Request.Post.CompanyUnlock body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.CompanyUnlock>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.CompanyUnlock, Response.Post.CompanyUnlock>(apiClient, this.requestBody);
-
-        private Model.Request.Post.CompanyUnlock requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

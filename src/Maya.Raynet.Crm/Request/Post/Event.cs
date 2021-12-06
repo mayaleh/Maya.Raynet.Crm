@@ -12,21 +12,22 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class Event : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Event(long eventId)
         {
-                Actions.Add("event");
-                Actions.Add(eventId.ToString());
+            Actions.Add("event");
+            Actions.Add(eventId.ToString());
         }
-        public Event SetRequestData(Model.Request.Post.Event body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.Event>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Event, Response.Post.Event>(apiClient, this.requestBody);
+        public Event SetRequestData(Model.Request.Post.Event body)
+        {
+            this.requestBody = body;
+            return this;
+        }
+
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Post.Event requestBody;
 

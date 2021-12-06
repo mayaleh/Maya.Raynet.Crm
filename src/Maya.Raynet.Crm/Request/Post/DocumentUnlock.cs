@@ -12,25 +12,17 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class DocumentUnlock : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public DocumentUnlock(long documentId)
         {
-                Actions.Add("dms");
-                Actions.Add("document");
-                Actions.Add(documentId.ToString());
-                Actions.Add("unlock");
+            Actions.Add("dms");
+            Actions.Add("document");
+            Actions.Add(documentId.ToString());
+            Actions.Add("unlock");
         }
-        public DocumentUnlock SetRequestData(Model.Request.Post.DocumentUnlock body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.DocumentUnlock>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.DocumentUnlock, Response.Post.DocumentUnlock>(apiClient, this.requestBody);
-
-        private Model.Request.Post.DocumentUnlock requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }
