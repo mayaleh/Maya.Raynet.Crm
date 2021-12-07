@@ -12,21 +12,22 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class Lead : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Lead(long leadId)
         {
-                Actions.Add("lead");
-                Actions.Add(leadId.ToString());
+            Actions.Add("lead");
+            Actions.Add(leadId.ToString());
         }
-        public Lead SetRequestData(Model.Request.Post.Lead body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.Lead>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Lead, Response.Post.Lead>(apiClient, this.requestBody);
+        public Lead SetRequestData(Model.Request.Post.Lead body)
+        {
+            this.requestBody = body;
+            return this;
+        }
+
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Post.Lead requestBody;
 

@@ -10,16 +10,17 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class MaritalStatus : PostRequest
+    public class LosingCategory : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public MaritalStatus(long id)
+        public LosingCategory(long id)
         {
-            Actions.Add("maritalStatus");
+            Actions.Add("losingCategory");
             Actions.Add(id.ToString());
         }
-        public MaritalStatus SetRequestData(Model.Request.Post.MaritalStatus body)
+
+        public LosingCategory SetRequestData(Model.Request.Post.LossCategory body)
         {
             this.requestBody = body;
             return this;
@@ -28,7 +29,7 @@ namespace Maya.Raynet.Crm.Request.Post
         public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
-        private Model.Request.Post.MaritalStatus requestBody;
+        private Model.Request.Post.LossCategory requestBody;
 
     }
 }

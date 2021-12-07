@@ -12,23 +12,23 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class Letter : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Letter(long letterId)
         {
-                Actions.Add("letter");
-                Actions.Add(letterId.ToString());
+            Actions.Add("letter");
+            Actions.Add(letterId.ToString());
         }
-        public Letter SetRequestData(Model.Request.Post.Letter body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.Letter>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Letter, Response.Post.Letter>(apiClient, this.requestBody);
+        public Letter SetRequestData(Model.Request.Post.Letter body)
+        {
+            this.requestBody = body;
+            return this;
+        }
+
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Post.Letter requestBody;
-
     }
 }

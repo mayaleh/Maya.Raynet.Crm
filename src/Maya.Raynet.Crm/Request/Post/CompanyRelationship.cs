@@ -10,26 +10,28 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class InvoiceCodeChange : PostRequest
+    public class CompanyRelationship : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public InvoiceCodeChange(long invoiceId)
+        public CompanyRelationship(long companyId, long relationshipId)
         {
-            Actions.Add("invoice");
-            Actions.Add(invoiceId.ToString());
-            Actions.Add("changeCode");
+            Actions.Add("company");
+            Actions.Add(companyId.ToString());
+            Actions.Add("relationship");
+            Actions.Add(relationshipId.ToString());
         }
-        public InvoiceCodeChange SetRequestData(Model.Request.Post.InvoiceCodeChange body)
+
+        public CompanyRelationship SetRequestData(Model.Request.Post.ModifyTheConnectionToAnotherClient body)
         {
             this.requestBody = body;
             return this;
         }
 
         public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
-            => await base.ExecuteNoResultAsync<Model.Request.Post.InvoiceCodeChange>(apiClient, this.requestBody);
+            => await base.ExecuteNoResultAsync(apiClient, this.requestBody);
 
-        private Model.Request.Post.InvoiceCodeChange requestBody;
+        private Model.Request.Post.ModifyTheConnectionToAnotherClient requestBody;
 
     }
 }

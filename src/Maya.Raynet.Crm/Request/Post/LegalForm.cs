@@ -12,21 +12,21 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class LegalForm : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public LegalForm(long id)
         {
-                Actions.Add("legalForm");
-                Actions.Add(id.ToString());
+            Actions.Add("legalForm");
+            Actions.Add(id.ToString());
         }
         public LegalForm SetRequestData(Model.Request.Post.LegalForm body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Post.LegalForm>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.LegalForm, Response.Post.LegalForm>(apiClient, this.requestBody);
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Post.LegalForm requestBody;
 

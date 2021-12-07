@@ -12,24 +12,16 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class InvoiceLock : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public InvoiceLock(long invoiceId)
         {
-                Actions.Add("invoice");
-                Actions.Add(invoiceId.ToString());
-                Actions.Add("lock");
+            Actions.Add("invoice");
+            Actions.Add(invoiceId.ToString());
+            Actions.Add("lock");
         }
-        public InvoiceLock SetRequestData(Model.Request.Post.InvoiceLock body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.InvoiceLock>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.InvoiceLock, Response.Post.InvoiceLock>(apiClient, this.requestBody);
-
-        private Model.Request.Post.InvoiceLock requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

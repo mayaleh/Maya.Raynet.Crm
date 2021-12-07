@@ -10,18 +10,25 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class InvoiceRenewal : PostRequest
+    public class InvoiceChangeDecimalPrecision : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public InvoiceRenewal(long invoiceId)
+        public InvoiceChangeDecimalPrecision(long invoiceId)
         {
             Actions.Add("invoice");
             Actions.Add(invoiceId.ToString());
-            Actions.Add("renew");
+            Actions.Add("changeDecimalPrecision");
+        }
+        public InvoiceChangeDecimalPrecision SetRequestData(Model.Request.Post.InvoiceChangeDecimalPrecision body)
+        {
+            this.requestBody = body;
+            return this;
         }
 
         public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
-            => await base.ExecuteNoResultNoBodyAsync(apiClient);
+            => await base.ExecuteNoResultAsync(apiClient, this.requestBody);
+
+        private Model.Request.Post.InvoiceChangeDecimalPrecision requestBody;
     }
 }

@@ -12,21 +12,21 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class Invoice : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Invoice(long invoiceId)
         {
-                Actions.Add("invoice");
-                Actions.Add(invoiceId.ToString());
+            Actions.Add("invoice");
+            Actions.Add(invoiceId.ToString());
         }
         public Invoice SetRequestData(Model.Request.Post.Invoice body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Post.Invoice>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Invoice, Response.Post.Invoice>(apiClient, this.requestBody);
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultAsync<Model.Request.Post.Invoice>(apiClient, this.requestBody);
 
         private Model.Request.Post.Invoice requestBody;
 

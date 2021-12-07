@@ -8,10 +8,10 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Model.Request.Post
 {
-    public class NumberOfEmployees
+    public class InvoiceChangeDecimalPrecision
     {
-        [JsonProperty("code01", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Code01 { get; set; }
+        [JsonProperty("decimalPrecision", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int DecimalPrecision { get; set; }
 
     }
 }

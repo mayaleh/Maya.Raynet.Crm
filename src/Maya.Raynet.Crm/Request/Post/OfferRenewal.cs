@@ -10,26 +10,21 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
+    /// <summary>
+    /// Set an offer as Valid
+    /// </summary>
     public class OfferRenewal : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public OfferRenewal(long offerId)
         {
-                Actions.Add("offer");
-                Actions.Add(offerId.ToString());
-                Actions.Add("valid");
+            Actions.Add("offer");
+            Actions.Add(offerId.ToString());
+            Actions.Add("valid");
         }
-        public OfferRenewal SetRequestData(Model.Request.Post.OfferRenewal body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.OfferRenewal>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.OfferRenewal, Response.Post.OfferRenewal>(apiClient, this.requestBody);
-
-        private Model.Request.Post.OfferRenewal requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

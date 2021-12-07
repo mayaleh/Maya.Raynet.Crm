@@ -10,25 +10,27 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class MaritalStatus : PostRequest
+    public class OfferItem : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public MaritalStatus(long id)
+        public OfferItem(long offerId, long offerItemId)
         {
-            Actions.Add("maritalStatus");
-            Actions.Add(id.ToString());
+            Actions.Add("offer");
+            Actions.Add(offerId.ToString());
+            Actions.Add("item");
+            Actions.Add(offerItemId.ToString());
         }
-        public MaritalStatus SetRequestData(Model.Request.Post.MaritalStatus body)
+
+        public OfferItem SetRequestData(Model.Request.Post.OfferItem body)
         {
             this.requestBody = body;
             return this;
         }
 
-        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteNoResultAsync(apiClient, this.requestBody);
 
-        private Model.Request.Post.MaritalStatus requestBody;
-
+        private Model.Request.Post.OfferItem requestBody;
     }
 }

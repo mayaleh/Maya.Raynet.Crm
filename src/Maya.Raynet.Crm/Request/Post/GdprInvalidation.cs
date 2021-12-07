@@ -10,18 +10,18 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class InvoiceRenewal : PostRequest
+    public class GdprInvalidation : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public InvoiceRenewal(long invoiceId)
+        public GdprInvalidation(long gdprId)
         {
-            Actions.Add("invoice");
-            Actions.Add(invoiceId.ToString());
-            Actions.Add("renew");
+            Actions.Add("gdpr");
+            Actions.Add(gdprId.ToString());
+            Actions.Add("invalid");
         }
 
         public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
-            => await base.ExecuteNoResultNoBodyAsync(apiClient);
+                => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

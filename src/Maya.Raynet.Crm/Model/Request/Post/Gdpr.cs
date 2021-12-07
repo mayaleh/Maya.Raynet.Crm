@@ -8,10 +8,13 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Model.Request.Post
 {
-    public class NumberDecimalPlacesChange
+    public class Gdpr
     {
-        [JsonProperty("decimalPrecision", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int DecimalPrecision { get; set; }
+        [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string ValidFrom { get; set; }
+
+        [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string ValidTill { get; set; }
 
     }
 }

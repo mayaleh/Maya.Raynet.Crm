@@ -12,24 +12,16 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class OfferLock : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public OfferLock(long offerId)
         {
-                Actions.Add("offer");
-                Actions.Add(offerId.ToString());
-                Actions.Add("lock");
+            Actions.Add("offer");
+            Actions.Add(offerId.ToString());
+            Actions.Add("lock");
         }
-        public OfferLock SetRequestData(Model.Request.Post.OfferLock body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.OfferLock>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.OfferLock, Response.Post.OfferLock>(apiClient, this.requestBody);
-
-        private Model.Request.Post.OfferLock requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

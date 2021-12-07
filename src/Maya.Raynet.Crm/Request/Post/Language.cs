@@ -12,21 +12,22 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class Language : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Language(long id)
         {
-                Actions.Add("language");
-                Actions.Add(id.ToString());
+            Actions.Add("language");
+            Actions.Add(id.ToString());
         }
-        public Language SetRequestData(Model.Request.Post.Language body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.Language>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Language, Response.Post.Language>(apiClient, this.requestBody);
+        public Language SetRequestData(Model.Request.Post.Language body)
+        {
+            this.requestBody = body;
+            return this;
+        }
+
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Post.Language requestBody;
 

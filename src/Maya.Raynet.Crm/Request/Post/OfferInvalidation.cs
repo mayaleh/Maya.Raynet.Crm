@@ -10,26 +10,18 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class OfferCancellation : PostRequest
+    public class OfferInvalidation : PostRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public OfferCancellation(long offerId)
+        public OfferInvalidation(long offerId)
         {
                 Actions.Add("offer");
                 Actions.Add(offerId.ToString());
                 Actions.Add("invalid");
         }
-        public OfferCancellation SetRequestData(Model.Request.Post.OfferCancellation body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.OfferCancellation>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.OfferCancellation, Response.Post.OfferCancellation>(apiClient, this.requestBody);
-
-        private Model.Request.Post.OfferCancellation requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

@@ -10,15 +10,16 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class InvoiceRenewal : PostRequest
+    public class LeadMergeDuplicity : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public InvoiceRenewal(long invoiceId)
+        public LeadMergeDuplicity(long leadId, long sourceLeadId)
         {
-            Actions.Add("invoice");
-            Actions.Add(invoiceId.ToString());
-            Actions.Add("renew");
+            Actions.Add("lead");
+            Actions.Add(leadId.ToString());
+            Actions.Add("merge");
+            Actions.Add(sourceLeadId.ToString());
         }
 
         public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)

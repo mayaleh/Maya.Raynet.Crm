@@ -8,13 +8,10 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Model.Request.Post
 {
-    public class LegalTitle
+    public class EmployeesNumber
     {
-        [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidFrom { get; set; }
-
-        [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidTill { get; set; }
+        [JsonProperty("code01", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string Code01 { get; set; }
 
     }
 }
