@@ -10,15 +10,15 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class OfferUnlock : PostRequest
+    public class SalesOrderValidation : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public OfferUnlock(long offerId)
+        public SalesOrderValidation(long salesOrderId)
         {
-            Actions.Add("offer");
-            Actions.Add(offerId.ToString());
-            Actions.Add("unlock");
+            Actions.Add("salesOrder");
+            Actions.Add(salesOrderId.ToString());
+            Actions.Add("valid");
         }
 
         public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)

@@ -8,13 +8,19 @@ using System.Collections.Generic;
 
 namespace Maya.Raynet.Crm.Model.Request.Post
 {
-    public class OP
+    public class SalesOrder
     {
         [JsonProperty("name", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Name { get; set; }
 
         [JsonProperty("company", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Company { get; set; }
+
+        [JsonProperty("businessCase", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int BusinessCase { get; set; }
+
+        [JsonProperty("offer", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int Offer { get; set; }
 
         [JsonProperty("owner", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int Owner { get; set; }
@@ -25,26 +31,36 @@ namespace Maya.Raynet.Crm.Model.Request.Post
         [JsonProperty("estimatedValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int EstimatedValue { get; set; }
 
-        [JsonProperty("probability", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Probability { get; set; }
-
         [JsonProperty("validFrom", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string ValidFrom { get; set; }
-
-        [JsonProperty("validTill", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string ValidTill { get; set; }
 
         [JsonProperty("description", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string Description { get; set; }
 
-        [JsonProperty("businessCaseClassification1", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int BusinessCaseClassification1 { get; set; }
+        [JsonProperty("salesOrderStatus", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int SalesOrderStatus { get; set; }
 
-        [JsonProperty("currency", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int Currency { get; set; }
+        /* "deliveryAddress": {
+  "name": "RAYNET Praha s.r.o.",
+  "city": "Praha",
+  "country": "CZ",
+  "province": "Praha",
+  "street": "Albertov 2038/6",
+  "zipCode": "128 00"
+} */
+        [JsonProperty("deliveryAddress", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object DeliveryAddress { get; set; }
 
-        [JsonProperty("exchangeRate", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public int ExchangeRate { get; set; }
+        /* "invoiceAddress": {
+  "name": "RAYNET s.r.o.",
+  "city": "Ostrava-Poruba",
+  "country": "CZ",
+  "province": "Moravskoslezský kraj",
+  "street": "Francouzská 6167/5",
+  "zipCode": "708 00"
+} */
+        [JsonProperty("invoiceAddress", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public object InvoiceAddress { get; set; }
 
         /* "customFields": {
   "Popis_prio_c49d5": ""

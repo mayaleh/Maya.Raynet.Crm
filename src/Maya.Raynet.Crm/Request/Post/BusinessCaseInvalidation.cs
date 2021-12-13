@@ -10,16 +10,17 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class OfferUnlock : PostRequest
+    public class BusinessCaseInvalidation : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public OfferUnlock(long offerId)
+        public BusinessCaseInvalidation(long businessCaseId)
         {
-            Actions.Add("offer");
-            Actions.Add(offerId.ToString());
-            Actions.Add("unlock");
+            Actions.Add("businessCase");
+            Actions.Add(businessCaseId.ToString());
+            Actions.Add("invalid");
         }
+
 
         public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteNoResultNoBodyAsync(apiClient);

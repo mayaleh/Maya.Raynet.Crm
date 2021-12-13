@@ -10,14 +10,14 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class OfferUnlock : PostRequest
+    public class BusinessCaseUnlock : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public OfferUnlock(long offerId)
+        public BusinessCaseUnlock(long businessCaseId)
         {
-            Actions.Add("offer");
-            Actions.Add(offerId.ToString());
+            Actions.Add("businessCase");
+            Actions.Add(businessCaseId.ToString());
             Actions.Add("unlock");
         }
 

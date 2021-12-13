@@ -10,25 +10,18 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class OP : PostRequest
+    public class BusinessCaseLock : PostRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public OP(long businessCaseId)
+        public BusinessCaseLock(long businessCaseId)
         {
                 Actions.Add("businessCase");
                 Actions.Add(businessCaseId.ToString());
+                Actions.Add("lock");
         }
-        public OP SetRequestData(Model.Request.Post.OP body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.OP>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.OP, Response.Post.OP>(apiClient, this.requestBody);
-
-        private Model.Request.Post.OP requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

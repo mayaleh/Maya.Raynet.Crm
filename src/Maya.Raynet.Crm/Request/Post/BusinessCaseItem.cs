@@ -10,18 +10,19 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class OfferUnlock : PostRequest
+    public class BusinessCaseItem : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public OfferUnlock(long offerId)
+        public BusinessCaseItem(long businessCaseId, long businessCaseItemId)
         {
-            Actions.Add("offer");
-            Actions.Add(offerId.ToString());
-            Actions.Add("unlock");
+            Actions.Add("businessCase");
+            Actions.Add(businessCaseId.ToString());
+            Actions.Add("item");
+            Actions.Add(businessCaseItemId.ToString());
         }
 
         public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteNoResultNoBodyAsync(apiClient);
+            => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }
