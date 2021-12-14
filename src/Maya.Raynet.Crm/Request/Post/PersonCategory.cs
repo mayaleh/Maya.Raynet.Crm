@@ -12,21 +12,22 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class PersonCategory : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public PersonCategory(long id)
         {
-                Actions.Add("personCategory");
-                Actions.Add(id.ToString());
+            Actions.Add("personCategory");
+            Actions.Add(id.ToString());
         }
-        public PersonCategory SetRequestData(Model.Request.Post.PersonCategory body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.PersonCategory>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.PersonCategory, Response.Post.PersonCategory>(apiClient, this.requestBody);
+        public PersonCategory SetRequestData(Model.Request.Post.PersonCategory body)
+        {
+            this.requestBody = body;
+            return this;
+        }
+
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Post.PersonCategory requestBody;
 

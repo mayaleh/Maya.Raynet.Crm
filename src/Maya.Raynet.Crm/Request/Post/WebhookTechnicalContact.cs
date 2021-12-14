@@ -10,17 +10,16 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class ProjectCategory : PostRequest
+    public class WebhookTechnicalContact : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public ProjectCategory(long id)
+        public WebhookTechnicalContact()
         {
-            Actions.Add("projectCategory");
-            Actions.Add(id.ToString());
+            Actions.Add("webhook");
+            Actions.Add("technicalContact");
         }
-
-        public ProjectCategory SetRequestData(Model.Request.Post.ProjectCategory body)
+        public WebhookTechnicalContact SetRequestData(Model.Request.Post.TechnicalContact body)
         {
             this.requestBody = body;
             return this;
@@ -29,7 +28,7 @@ namespace Maya.Raynet.Crm.Request.Post
         public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
-        private Model.Request.Post.ProjectCategory requestBody;
+        private Model.Request.Post.TechnicalContact requestBody;
 
     }
 }

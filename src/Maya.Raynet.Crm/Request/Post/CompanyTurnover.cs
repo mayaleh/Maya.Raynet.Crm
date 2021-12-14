@@ -10,26 +10,25 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class ProjectCategory : PostRequest
+    public class CompanyTurnover : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public ProjectCategory(long id)
+        public CompanyTurnover(long id)
         {
-            Actions.Add("projectCategory");
+            Actions.Add("companyTurnover");
             Actions.Add(id.ToString());
         }
-
-        public ProjectCategory SetRequestData(Model.Request.Post.ProjectCategory body)
+        public CompanyTurnover SetRequestData(Model.Request.Post.Turnover body)
         {
             this.requestBody = body;
             return this;
         }
 
         public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
+            => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
-        private Model.Request.Post.ProjectCategory requestBody;
+        private Model.Request.Post.Turnover requestBody;
 
     }
 }

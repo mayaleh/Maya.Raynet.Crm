@@ -12,21 +12,21 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class Project : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public Project(long projectId)
         {
-                Actions.Add("project");
-                Actions.Add(projectId.ToString());
+            Actions.Add("project");
+            Actions.Add(projectId.ToString());
         }
         public Project SetRequestData(Model.Request.Post.Project body)
-         {
-             this.requestBody = body;
-             return this;
-         }
+        {
+            this.requestBody = body;
+            return this;
+        }
 
-        public async Task<Model.DataResult<Response.Post.Project>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.Project, Response.Post.Project>(apiClient, this.requestBody);
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Post.Project requestBody;
 

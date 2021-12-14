@@ -10,18 +10,18 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class PriceListLock : PostRequest
+    public class PersonValidation : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public PriceListLock(long priceListId)
+        public PersonValidation(long personId)
         {
-            Actions.Add("priceList");
-            Actions.Add(priceListId.ToString());
-            Actions.Add("lock");
+            Actions.Add("person");
+            Actions.Add(personId.ToString());
+            Actions.Add("valid");
         }
 
         public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteNoResultNoBodyAsync(apiClient);
+            => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

@@ -12,24 +12,16 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class PriceUnlock : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public PriceUnlock(long priceListId)
         {
-                Actions.Add("priceList");
-                Actions.Add(priceListId.ToString());
-                Actions.Add("unlock");
+            Actions.Add("priceList");
+            Actions.Add(priceListId.ToString());
+            Actions.Add("unlock");
         }
-        public PriceUnlock SetRequestData(Model.Request.Post.PriceUnlock body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.PriceUnlock>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.PriceUnlock, Response.Post.PriceUnlock>(apiClient, this.requestBody);
-
-        private Model.Request.Post.PriceUnlock requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

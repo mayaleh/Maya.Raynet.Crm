@@ -10,17 +10,19 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class ProjectCategory : PostRequest
+    public class CustomFieldEnum : PostRequest
     {
         protected override List<string> Actions { get; set; } = new List<string>();
 
-        public ProjectCategory(long id)
+        public CustomFieldEnum(string entityName, string fieldName)
         {
-            Actions.Add("projectCategory");
-            Actions.Add(id.ToString());
+            Actions.Add("customField");
+            Actions.Add("enum");
+            Actions.Add(entityName.ToString());
+            Actions.Add(fieldName.ToString());
         }
 
-        public ProjectCategory SetRequestData(Model.Request.Post.ProjectCategory body)
+        public CustomFieldEnum SetRequestData(Model.Request.Post.ToAnEnumerationItem body)
         {
             this.requestBody = body;
             return this;
@@ -29,7 +31,7 @@ namespace Maya.Raynet.Crm.Request.Post
         public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
-        private Model.Request.Post.ProjectCategory requestBody;
+        private Model.Request.Post.ToAnEnumerationItem requestBody;
 
     }
 }

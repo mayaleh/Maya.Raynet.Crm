@@ -10,15 +10,15 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class PriceListLock : PostRequest
+    public class SalesOrderSync : PostRequest
     {
-        protected override List<string> Actions { get; set; } = new List<string>();
+        protected override List<string> Actions {get; set;} = new List<string>();
 
-        public PriceListLock(long priceListId)
+        public SalesOrderSync(long salesOrderId)
         {
-            Actions.Add("priceList");
-            Actions.Add(priceListId.ToString());
-            Actions.Add("lock");
+                Actions.Add("salesOrder");
+                Actions.Add(salesOrderId.ToString());
+                Actions.Add("sync");
         }
 
         public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)

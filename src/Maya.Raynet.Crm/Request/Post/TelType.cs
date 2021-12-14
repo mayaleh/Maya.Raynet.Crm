@@ -10,24 +10,25 @@ using Maya.Raynet.Crm.Attribute;
 
 namespace Maya.Raynet.Crm.Request.Post
 {
-    public class UploadFileToCRM : PostRequest
+    public class TelType : PostRequest
     {
         protected override List<string> Actions {get; set;} = new List<string>();
 
-        public UploadFileToCRM()
+        public TelType(long id)
         {
-                Actions.Add("fileUpload");
+                Actions.Add("telType");
+                Actions.Add(id.ToString());
         }
-        public UploadFileToCRM SetRequestData(Model.Request.Post.UploadFileToCRM body)
+        public TelType SetRequestData(Model.Request.Post.TelType body)
          {
              this.requestBody = body;
              return this;
          }
 
-        public async Task<Model.DataResult<Response.Post.UploadFileToCRM>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.UploadFileToCRM, Response.Post.UploadFileToCRM>(apiClient, this.requestBody);
+        public async Task<Model.EmptyResult> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteEmptyResultAsync(apiClient, this.requestBody);
 
-        private Model.Request.Post.UploadFileToCRM requestBody;
+        private Model.Request.Post.TelType requestBody;
 
     }
 }

@@ -12,23 +12,24 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class PriceListItem : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public PriceListItem(long priceListId, long priceListItemId)
         {
-                Actions.Add("priceList");
-                Actions.Add(priceListId.ToString());
-                Actions.Add("item");
-                Actions.Add(priceListItemId.ToString());
+            Actions.Add("priceList");
+            Actions.Add(priceListId.ToString());
+            Actions.Add("item");
+            Actions.Add(priceListItemId.ToString());
         }
-        public PriceListItem SetRequestData(Model.Request.Post.PriceListItem body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.PriceListItem>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.PriceListItem, Response.Post.PriceListItem>(apiClient, this.requestBody);
+        public PriceListItem SetRequestData(Model.Request.Post.PriceListItem body)
+        {
+            this.requestBody = body;
+            return this;
+        }
+
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+            => await base.ExecuteNoResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Post.PriceListItem requestBody;
 

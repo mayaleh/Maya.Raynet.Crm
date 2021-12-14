@@ -20,16 +20,8 @@ namespace Maya.Raynet.Crm.Request.Post
                 Actions.Add(projectId.ToString());
                 Actions.Add("unlock");
         }
-        public ProjectUnlock SetRequestData(Model.Request.Post.ProjectUnlock body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.ProjectUnlock>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.ProjectUnlock, Response.Post.ProjectUnlock>(apiClient, this.requestBody);
-
-        private Model.Request.Post.ProjectUnlock requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }

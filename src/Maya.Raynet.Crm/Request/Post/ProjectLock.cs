@@ -12,24 +12,16 @@ namespace Maya.Raynet.Crm.Request.Post
 {
     public class ProjectLock : PostRequest
     {
-        protected override List<string> Actions {get; set;} = new List<string>();
+        protected override List<string> Actions { get; set; } = new List<string>();
 
         public ProjectLock(long projectId)
         {
-                Actions.Add("project");
-                Actions.Add(projectId.ToString());
-                Actions.Add("lock");
+            Actions.Add("project");
+            Actions.Add(projectId.ToString());
+            Actions.Add("lock");
         }
-        public ProjectLock SetRequestData(Model.Request.Post.ProjectLock body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Post.ProjectLock>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Post.ProjectLock, Response.Post.ProjectLock>(apiClient, this.requestBody);
-
-        private Model.Request.Post.ProjectLock requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteNoResultNoBodyAsync(apiClient);
     }
 }
