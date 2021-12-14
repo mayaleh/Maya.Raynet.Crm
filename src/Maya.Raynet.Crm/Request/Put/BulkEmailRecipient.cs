@@ -26,7 +26,7 @@ namespace Maya.Raynet.Crm.Request.Put
              return this;
          }
 
-        public async Task ExecuteAsync(ApiClient apiClient)
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteNoResultAsync(apiClient, this.requestBody);
 
         private Model.Request.Put.BulkEmailRecipient requestBody;
