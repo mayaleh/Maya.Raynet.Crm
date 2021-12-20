@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("notification");
                 Actions.Add(notificationId.ToString());
         }
-        public Notification SetRequestData(Model.Request.Delete.Notification body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Notification>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Notification, Response.Delete.Notification>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Notification requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

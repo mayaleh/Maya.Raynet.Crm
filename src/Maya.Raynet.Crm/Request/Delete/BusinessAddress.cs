@@ -21,16 +21,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("address");
                 Actions.Add(addressId.ToString());
         }
-        public BusinessAddress SetRequestData(Model.Request.Delete.BusinessAddress body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.BusinessAddress>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.BusinessAddress, Response.Delete.BusinessAddress>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.BusinessAddress requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

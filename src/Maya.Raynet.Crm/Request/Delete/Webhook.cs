@@ -19,16 +19,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("webhook");
                 Actions.Add(uuid.ToString());
         }
-        public Webhook SetRequestData(Model.Request.Delete.Webhook body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Webhook>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Webhook, Response.Delete.Webhook>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Webhook requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

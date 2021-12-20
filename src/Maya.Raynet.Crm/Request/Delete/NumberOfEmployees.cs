@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("employeesNumber");
                 Actions.Add(id.ToString());
         }
-        public NumberOfEmployees SetRequestData(Model.Request.Delete.NumberOfEmployees body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.NumberOfEmployees>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.NumberOfEmployees, Response.Delete.NumberOfEmployees>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.NumberOfEmployees requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

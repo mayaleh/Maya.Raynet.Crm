@@ -21,16 +21,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("recipient");
                 Actions.Add(recipientId.ToString());
         }
-        public BulkEmailRecipient SetRequestData(Model.Request.Delete.BulkEmailRecipient body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.BulkEmailRecipient>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.BulkEmailRecipient, Response.Delete.BulkEmailRecipient>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.BulkEmailRecipient requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

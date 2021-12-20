@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("losingCategory");
                 Actions.Add(id.ToString());
         }
-        public LossCategory SetRequestData(Model.Request.Delete.LossCategory body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.LossCategory>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.LossCategory, Response.Delete.LossCategory>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.LossCategory requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

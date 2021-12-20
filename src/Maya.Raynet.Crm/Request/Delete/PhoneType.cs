@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("telType");
                 Actions.Add(id.ToString());
         }
-        public PhoneType SetRequestData(Model.Request.Delete.PhoneType body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.PhoneType>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.PhoneType, Response.Delete.PhoneType>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.PhoneType requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

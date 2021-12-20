@@ -21,16 +21,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("post");
                 Actions.Add(postId.ToString());
         }
-        public DiscussionPost SetRequestData(Model.Request.Delete.DiscussionPost body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.DiscussionPost>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.DiscussionPost, Response.Delete.DiscussionPost>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.DiscussionPost requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

@@ -15,7 +15,7 @@ namespace Maya.Raynet.Crm
         {
             try
             {
-                var uri = RequestHelper.ComposeUri(ApiClient.Endpoint, Actions, this);
+                var uri = RequestHelper.ComposeUri(Actions, this);
 
                 var result = await apiClient.GetHttpClient()
                     .PutAsync<Model.DataResult<TResponse>>(uri)
@@ -38,7 +38,7 @@ namespace Maya.Raynet.Crm
         {
             try
             {
-                var uri = RequestHelper.ComposeUri(ApiClient.Endpoint, Actions, this);
+                var uri = RequestHelper.ComposeUri(Actions, this);
 
                 var result = await apiClient.GetHttpClient()
                     .PutAsync<Model.EmptyResult>(uri)
@@ -61,7 +61,7 @@ namespace Maya.Raynet.Crm
         {
             try
             {
-                var uri = RequestHelper.ComposeUri(ApiClient.Endpoint, Actions, this);
+                var uri = RequestHelper.ComposeUri(Actions, this);
 
                 var result = await apiClient.GetHttpClient()
                     .PutAsync<TReqeustBody, Model.DataResult<TResponse>>(uri, body)
@@ -84,7 +84,7 @@ namespace Maya.Raynet.Crm
         {
             try
             {
-                var uri = RequestHelper.ComposeUri(ApiClient.Endpoint, Actions, this);
+                var uri = RequestHelper.ComposeUri(Actions, this);
 
                 var result = await apiClient.GetHttpClient()
                     .PutAsync(uri, body)
@@ -107,7 +107,7 @@ namespace Maya.Raynet.Crm
         {
             try
             {
-                var uri = RequestHelper.ComposeUri(ApiClient.Endpoint, Actions, this);
+                var uri = RequestHelper.ComposeUri(Actions, this);
 
                 var result = await apiClient.GetHttpClient()
                     .PutEmptyAsync(uri, body)

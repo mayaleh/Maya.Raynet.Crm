@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("personClassification3");
                 Actions.Add(id.ToString());
         }
-        public ClassificationOf3Persons SetRequestData(Model.Request.Delete.ClassificationOf3Persons body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.ClassificationOf3Persons>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.ClassificationOf3Persons, Response.Delete.ClassificationOf3Persons>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.ClassificationOf3Persons requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

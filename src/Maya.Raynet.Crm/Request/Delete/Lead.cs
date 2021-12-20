@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("lead");
                 Actions.Add(leadId.ToString());
         }
-        public Lead SetRequestData(Model.Request.Delete.Lead body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Lead>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Lead, Response.Delete.Lead>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Lead requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

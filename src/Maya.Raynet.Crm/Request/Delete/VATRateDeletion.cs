@@ -19,16 +19,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("taxRate");
                 Actions.Add(id.ToString());
         }
-        public VATRateDeletion SetRequestData(Model.Request.Delete.VATRateDeletion body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.VATRateDeletion>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.VATRateDeletion, Response.Delete.VATRateDeletion>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.VATRateDeletion requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

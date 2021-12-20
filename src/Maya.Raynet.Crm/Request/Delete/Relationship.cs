@@ -21,16 +21,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("relationship");
                 Actions.Add(relationshipId.ToString());
         }
-        public Relationship SetRequestData(Model.Request.Delete.Relationship body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Relationship>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Relationship, Response.Delete.Relationship>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Relationship requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

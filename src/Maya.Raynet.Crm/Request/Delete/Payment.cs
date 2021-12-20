@@ -21,16 +21,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("payment");
                 Actions.Add(paymentId.ToString());
         }
-        public Payment SetRequestData(Model.Request.Delete.Payment body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Payment>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Payment, Response.Delete.Payment>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Payment requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

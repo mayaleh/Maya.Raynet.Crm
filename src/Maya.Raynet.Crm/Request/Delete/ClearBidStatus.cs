@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("offerStatus");
                 Actions.Add(id.ToString());
         }
-        public ClearBidStatus SetRequestData(Model.Request.Delete.ClearBidStatus body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.ClearBidStatus>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.ClearBidStatus, Response.Delete.ClearBidStatus>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.ClearBidStatus requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

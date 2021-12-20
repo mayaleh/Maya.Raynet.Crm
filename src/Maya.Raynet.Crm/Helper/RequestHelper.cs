@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Maya.AnyHttpClient;
+using Maya.AnyHttpClient.Model;
 
 namespace Maya.Raynet.Crm.Helper
 {
     internal class RequestHelper
     {
-        internal static Uri ComposeUri<T>(string endpoint, IEnumerable<string> actions, T uriParameters)
+        internal static UriRequest ComposeUri<T>(IEnumerable<string> actions, T uriParameters)
         {
             var _dict = new Dictionary<string, string>();
 
@@ -31,7 +32,7 @@ namespace Maya.Raynet.Crm.Helper
                 }
             }
 
-            return BaseApiService.ComposeUri(endpoint, actions, _dict.ToArray());
+            return new UriRequest(actions, _dict.ToArray());
         }
     }
 }

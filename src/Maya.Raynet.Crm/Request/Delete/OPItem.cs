@@ -21,16 +21,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("item");
                 Actions.Add(businessCaseItemId.ToString());
         }
-        public OPItem SetRequestData(Model.Request.Delete.OPItem body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.OPItem>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.OPItem, Response.Delete.OPItem>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.OPItem requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

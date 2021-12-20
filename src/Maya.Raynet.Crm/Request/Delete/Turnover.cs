@@ -19,16 +19,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("companyTurnover");
                 Actions.Add(id.ToString());
         }
-        public Turnover SetRequestData(Model.Request.Delete.Turnover body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Turnover>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Turnover, Response.Delete.Turnover>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Turnover requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

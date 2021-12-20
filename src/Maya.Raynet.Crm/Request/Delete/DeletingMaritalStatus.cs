@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("maritalStatus");
                 Actions.Add(id.ToString());
         }
-        public DeletingMaritalStatus SetRequestData(Model.Request.Delete.DeletingMaritalStatus body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.DeletingMaritalStatus>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.DeletingMaritalStatus, Response.Delete.DeletingMaritalStatus>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.DeletingMaritalStatus requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

@@ -21,16 +21,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("item");
                 Actions.Add(offerItemId.ToString());
         }
-        public MenuItem SetRequestData(Model.Request.Delete.MenuItem body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.MenuItem>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.MenuItem, Response.Delete.MenuItem>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.MenuItem requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

@@ -20,16 +20,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add(personId.ToString());
                 Actions.Add("tag");
         }
-        public TAG SetRequestData(Model.Request.Delete.TAG body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.TAG>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.TAG, Response.Delete.TAG>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.TAG requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

@@ -20,16 +20,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("document");
                 Actions.Add(documentId.ToString());
         }
-        public Document SetRequestData(Model.Request.Delete.Document body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Document>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Document, Response.Delete.Document>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Document requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

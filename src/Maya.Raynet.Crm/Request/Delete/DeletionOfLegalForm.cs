@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("legalForm");
                 Actions.Add(id.ToString());
         }
-        public DeletionOfLegalForm SetRequestData(Model.Request.Delete.DeletionOfLegalForm body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.DeletionOfLegalForm>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.DeletionOfLegalForm, Response.Delete.DeletionOfLegalForm>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.DeletionOfLegalForm requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

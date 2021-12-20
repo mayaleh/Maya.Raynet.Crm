@@ -19,16 +19,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("meeting");
                 Actions.Add(meetingId.ToString());
         }
-        public Appointment SetRequestData(Model.Request.Delete.Appointment body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Appointment>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Appointment, Response.Delete.Appointment>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Appointment requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

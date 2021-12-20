@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("economyActivity");
                 Actions.Add(id.ToString());
         }
-        public FieldOfActivity SetRequestData(Model.Request.Delete.FieldOfActivity body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.FieldOfActivity>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.FieldOfActivity, Response.Delete.FieldOfActivity>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.FieldOfActivity requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

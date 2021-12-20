@@ -19,16 +19,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("phoneCall");
                 Actions.Add(phoneCallId.ToString());
         }
-        public Call SetRequestData(Model.Request.Delete.Call body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Call>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Call, Response.Delete.Call>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Call requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

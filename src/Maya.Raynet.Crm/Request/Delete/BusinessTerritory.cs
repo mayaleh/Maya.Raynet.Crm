@@ -19,16 +19,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("territory");
                 Actions.Add(id.ToString());
         }
-        public BusinessTerritory SetRequestData(Model.Request.Delete.BusinessTerritory body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.BusinessTerritory>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.BusinessTerritory, Response.Delete.BusinessTerritory>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.BusinessTerritory requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

@@ -20,16 +20,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("folder");
                 Actions.Add(folderId.ToString());
         }
-        public Folder SetRequestData(Model.Request.Delete.Folder body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Folder>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Folder, Response.Delete.Folder>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Folder requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

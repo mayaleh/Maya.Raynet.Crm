@@ -19,16 +19,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("projectCategory");
                 Actions.Add(id.ToString());
         }
-        public ProjectCategory SetRequestData(Model.Request.Delete.ProjectCategory body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.ProjectCategory>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.ProjectCategory, Response.Delete.ProjectCategory>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.ProjectCategory requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

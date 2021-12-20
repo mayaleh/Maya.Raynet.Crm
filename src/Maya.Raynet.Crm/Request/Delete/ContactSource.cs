@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("contactSource");
                 Actions.Add(id.ToString());
         }
-        public ContactSource SetRequestData(Model.Request.Delete.ContactSource body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.ContactSource>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.ContactSource, Response.Delete.ContactSource>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.ContactSource requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

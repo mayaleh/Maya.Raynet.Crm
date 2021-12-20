@@ -21,16 +21,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("extId");
                 Actions.Add(extId.ToString());
         }
-        public ExternalIdentifier SetRequestData(Model.Request.Delete.ExternalIdentifier body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.ExternalIdentifier>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.ExternalIdentifier, Response.Delete.ExternalIdentifier>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.ExternalIdentifier requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

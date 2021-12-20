@@ -19,16 +19,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("attachment");
                 Actions.Add(attachmentId.ToString());
         }
-        public Attachment SetRequestData(Model.Request.Delete.Attachment body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Attachment>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Attachment, Response.Delete.Attachment>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Attachment requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

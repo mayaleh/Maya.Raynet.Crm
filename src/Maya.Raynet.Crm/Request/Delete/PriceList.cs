@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("priceList");
                 Actions.Add(priceListId.ToString());
         }
-        public PriceList SetRequestData(Model.Request.Delete.PriceList body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.PriceList>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.PriceList, Response.Delete.PriceList>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.PriceList requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

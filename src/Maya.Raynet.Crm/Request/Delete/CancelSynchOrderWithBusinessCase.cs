@@ -20,16 +20,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add(salesOrderId.ToString());
                 Actions.Add("sync");
         }
-        public CancelSynchOrderWithBusinessCase SetRequestData(Model.Request.Delete.CancelSynchOrderWithBusinessCase body)
-         {
-             this.requestBody = body;
-             return this;
-         }
 
-        public async Task<Model.DataResult<Response.Delete.CancelSynchOrderWithBusinessCase>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.CancelSynchOrderWithBusinessCase, Response.Delete.CancelSynchOrderWithBusinessCase>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.CancelSynchOrderWithBusinessCase requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

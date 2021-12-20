@@ -21,16 +21,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add(entityName.ToString());
                 Actions.Add(fieldName.ToString());
         }
-        public ToAnEnumerationItem SetRequestData(Model.Request.Delete.ToAnEnumerationItem body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.ToAnEnumerationItem>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.ToAnEnumerationItem, Response.Delete.ToAnEnumerationItem>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.ToAnEnumerationItem requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

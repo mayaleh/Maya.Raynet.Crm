@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("businessCase");
                 Actions.Add(businessCaseId.ToString());
         }
-        public OP SetRequestData(Model.Request.Delete.OP body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.OP>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.OP, Response.Delete.OP>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.OP requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

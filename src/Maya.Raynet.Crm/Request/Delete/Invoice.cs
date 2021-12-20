@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("invoice");
                 Actions.Add(invoiceId.ToString());
         }
-        public Invoice SetRequestData(Model.Request.Delete.Invoice body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Invoice>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Invoice, Response.Delete.Invoice>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Invoice requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

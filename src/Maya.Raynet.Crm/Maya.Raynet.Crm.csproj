@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+	  <AssemblyName>Maya.Raynet.Crm</AssemblyName>
+	  <RootNamespace>Maya.Raynet.Crm</RootNamespace>
 	  <Authors>Salim Mayaleh</Authors>
 	  <Title>Maya.Raynet.Crm</Title>
 	  <PackageId>Maya.Raynet.Crm</PackageId>
@@ -10,6 +12,8 @@
 	  <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
 	  <NeutralLanguage>en</NeutralLanguage>
 
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
 	  <Deterministic>true</Deterministic>
 	  <EmbedUntrackedSources>true</EmbedUntrackedSources>
 	  <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
@@ -30,11 +34,11 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Maya.AnyHttpClient" Version="1.0.1" />
+    <PackageReference Include="Maya.AnyHttpClient" Version="2.1.0" />
   </ItemGroup>
 </Project>

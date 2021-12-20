@@ -21,16 +21,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("post");
                 Actions.Add(personId.ToString());
         }
-        public DiscussionTracker SetRequestData(Model.Request.Delete.DiscussionTracker body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.DiscussionTracker>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.DiscussionTracker, Response.Delete.DiscussionTracker>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.DiscussionTracker requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

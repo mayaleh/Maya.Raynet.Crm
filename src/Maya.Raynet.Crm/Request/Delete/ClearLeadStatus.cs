@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("leadPhase");
                 Actions.Add(id.ToString());
         }
-        public ClearLeadStatus SetRequestData(Model.Request.Delete.ClearLeadStatus body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.ClearLeadStatus>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.ClearLeadStatus, Response.Delete.ClearLeadStatus>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.ClearLeadStatus requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

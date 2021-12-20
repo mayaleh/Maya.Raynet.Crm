@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("product");
                 Actions.Add(productId.ToString());
         }
-        public ProductDeletion SetRequestData(Model.Request.Delete.ProductDeletion body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.ProductDeletion>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.ProductDeletion, Response.Delete.ProductDeletion>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.ProductDeletion requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

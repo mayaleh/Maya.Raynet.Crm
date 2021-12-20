@@ -19,16 +19,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("securityLevel");
                 Actions.Add(securityLevelId.ToString());
         }
-        public SecurityLevel SetRequestData(Model.Request.Delete.SecurityLevel body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.SecurityLevel>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.SecurityLevel, Response.Delete.SecurityLevel>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.SecurityLevel requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }

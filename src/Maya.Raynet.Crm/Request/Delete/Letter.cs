@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("letter");
                 Actions.Add(letterId.ToString());
         }
-        public Letter SetRequestData(Model.Request.Delete.Letter body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Letter>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Letter, Response.Delete.Letter>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Letter requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

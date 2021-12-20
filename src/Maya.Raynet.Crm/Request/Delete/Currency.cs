@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("currency");
                 Actions.Add(id.ToString());
         }
-        public Currency SetRequestData(Model.Request.Delete.Currency body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.Currency>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.Currency, Response.Delete.Currency>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.Currency requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

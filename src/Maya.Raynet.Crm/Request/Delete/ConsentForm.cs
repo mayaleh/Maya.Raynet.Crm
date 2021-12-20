@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("gdprFormAgreement");
                 Actions.Add(id.ToString());
         }
-        public ConsentForm SetRequestData(Model.Request.Delete.ConsentForm body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.ConsentForm>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.ConsentForm, Response.Delete.ConsentForm>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.ConsentForm requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

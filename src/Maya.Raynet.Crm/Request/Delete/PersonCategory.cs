@@ -19,16 +19,8 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("personCategory");
                 Actions.Add(id.ToString());
         }
-        public PersonCategory SetRequestData(Model.Request.Delete.PersonCategory body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.PersonCategory>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.PersonCategory, Response.Delete.PersonCategory>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.PersonCategory requestBody;
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
 
     }
 }

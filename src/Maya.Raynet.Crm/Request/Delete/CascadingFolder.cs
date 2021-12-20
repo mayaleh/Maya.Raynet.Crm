@@ -21,16 +21,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add(folderId.ToString());
                 Actions.Add("cascade");
         }
-        public CascadingFolder SetRequestData(Model.Request.Delete.CascadingFolder body)
-         {
-             this.requestBody = body;
-             return this;
-         }
-
-        public async Task<Model.DataResult<Response.Delete.CascadingFolder>> ExecuteAsync(ApiClient apiClient)
-                => await base.ExecuteAsync<Model.Request.Delete.CascadingFolder, Response.Delete.CascadingFolder>(apiClient, this.requestBody);
-
-        private Model.Request.Delete.CascadingFolder requestBody;
-
+        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+                => await base.ExecuteAsync(apiClient);
     }
 }
