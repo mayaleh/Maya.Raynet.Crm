@@ -10,7 +10,7 @@ namespace Maya.Raynet.Crm.Tests
 {
     public class IntegrationFixture
     {
-        public Model.RaynetApiOption apiOptions = new Model.RaynetApiOption()
+        public Model.RaynetApiOption apiOptions = new()
         {
             InstanceName = "test",
             ApiKey = "123",

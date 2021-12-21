@@ -61,6 +61,7 @@ namespace Maya.Raynet.Crm
         {
             try
             {
+#pragma warning disable CS8601 // Possible null reference assignment.
                 var httpConfig = new Maya.AnyHttpClient.Model.HttpClientConnector
                 {
                     Headers = new List<Maya.AnyHttpClient.Model.KeyValue>
@@ -73,6 +74,7 @@ namespace Maya.Raynet.Crm
                     Password = raynetApiOption.ApiKey,
                     TimeoutSeconds = 30,
                 };
+#pragma warning restore CS8601 // Possible null reference assignment.
 
                 return httpConfig;
             }
