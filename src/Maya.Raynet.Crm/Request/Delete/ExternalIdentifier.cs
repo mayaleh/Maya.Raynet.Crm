@@ -21,7 +21,7 @@ namespace Maya.Raynet.Crm.Request.Delete
                 Actions.Add("extId");
                 Actions.Add(extId.ToString());
         }
-        public async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
+        public new async Task<Ext.Unit> ExecuteAsync(ApiClient apiClient)
                 => await base.ExecuteAsync(apiClient);
 
     }

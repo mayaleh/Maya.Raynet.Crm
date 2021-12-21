@@ -67,7 +67,7 @@ namespace Maya.Raynet.Crm
                     {
                         new AnyHttpClient.Model.KeyValue { Name = "X-Instance-Name", Value = raynetApiOption.InstanceName}
                     },
-                    Endpoint = $"{Endpoint}",
+                    Endpoint = raynetApiOption.Endpoint ?? Endpoint,
                     AuthType = "Basic",
                     UserName = raynetApiOption.UserName,
                     Password = raynetApiOption.ApiKey,
