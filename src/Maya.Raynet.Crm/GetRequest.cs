@@ -7,7 +7,7 @@ using Maya.Raynet.Crm.Helper;
 
 namespace Maya.Raynet.Crm
 {
-    public class GetRequest : IGetRequest
+    public class GetRequest
     {
         protected virtual List<string> Actions { get; set; }
 
